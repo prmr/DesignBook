@@ -43,12 +43,12 @@ public class TwelveDays
 	};
 	
 	/*
-     * Returns the first verse in the stanza for a given day.
+     * Returns the first line in the verse for a given day.
 	 */
-	static String firstVerse(int day) 
-	{ 
-		return "On the " + DAYS[day] + 
-				" day of Christmas\nmy true love sent to me:\n"; 
+	static String firstLine(int day)
+	{
+	  return "On the " + DAYS[day] +
+	    " day of Christmas my true love sent to me:\n";
 	}
 	
 	/*
@@ -72,10 +72,10 @@ public class TwelveDays
 	 */
 	static String poem()
 	{
-		String poem = firstVerse(0) + GIFTS[0] + "\n\n";
+		String poem = firstLine(0) + GIFTS[0] + "\n\n";
 		for( int day = 1; day < 12; day++ )
 		{ 
-			poem += firstVerse(day) + allGifts(day) + "\n\n"; 
+			poem += firstLine(day) + allGifts(day) + "\n\n"; 
 		}
 		return poem;
 	}
