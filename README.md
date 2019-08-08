@@ -1,6 +1,6 @@
 # DesignBook
 
-Companion web site for the book "Introduction to Software Design with Java" by Martin P. Robillard, Springer 2019.
+Companion web site for the book ["Introduction to Software Design with Java"](https://www.springer.com/gp/book/9783030240936) by Martin P. Robillard, Springer 2019.
 
 ## License
 
