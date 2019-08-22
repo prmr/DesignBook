@@ -2,7 +2,7 @@
 
 ## Exercise 1
 
-Ultimately this reduces to an integer-to-binary base conversion problem. We need six boolean values (i.e., bits) because `ceil(log2(52))=6`. To make things a bit more interesting, we can split the problem into mapping the rank and the suit to bits separately, and create a mini-decision tree for the suit (red vs. black, high vs. low), and apply the standard base conversion algorithm for the rank. See [the complete solution](../solutions-code/Card2/java). The impact of this design on the maintainers of class `Card` is unnecessary complexity. Assuming they don't need to look at the source code, there is *no impact* on the users of the class, because the new implementation respects the original interface.
+Ultimately this reduces to an integer-to-binary base conversion problem. We need six boolean values (i.e., bits) because `ceil(log2(52))=6`. To make things a bit more interesting, we can split the problem into mapping the rank and the suit to bits separately, and create a mini-decision tree for the suit (red vs. black, high vs. low), and apply the standard base conversion algorithm for the rank. See [the complete solution](../solutions-code/chapter2/Card2.java). The impact of this design on the maintainers of class `Card` is unnecessary complexity. Assuming they don't need to look at the source code, there is *no impact* on the users of the class, because the new implementation respects the original interface.
 
 ## Exercise 2
 
