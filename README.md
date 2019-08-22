@@ -2,7 +2,7 @@
 
 Companion web site for the book ["Introduction to Software Design with Java"](https://www.springer.com/gp/book/9783030240936) by Martin P. Robillard, Springer 2019. 
 
-All the material on this site is organized by book chapter. To the extent possible, this site will be actively maintained, with new material being released occasionally. If you would like to report a problem, please use the [issue management system](https://github.com/prmr/DesignBook/issues), making sure the problem has not already been reported.
+All the material on this site is organized by book chapter. To the extent possible, this site will be actively maintained, with new material being released occasionally. If you would like to report a problem, please use the [issue management system](https://github.com/prmr/DesignBook/issues), making sure the problem has not already been reported in the "Clarifications and Corrections" page for the chapter or in existing issue reports.
 
 ## Chapter 1: Introduction
 
@@ -29,7 +29,12 @@ All the material on this site is organized by book chapter. To the extent possib
 
 * [Source code](chapter-code/chapter5)
 
-## Chapters 6-9
+## Chapter 6: Composition
+
+* [Source code](chapter-code/chapter6)
+* [Clarifications and Corrections](corrections/c-chapter6.md)
+
+## Chapters 7-9
 
 *Coming soon*
 
