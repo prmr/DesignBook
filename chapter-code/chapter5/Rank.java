@@ -1,4 +1,4 @@
-package chapter05;
+package chapter5;
 
 /**
  * Represents the rank of a playing card.

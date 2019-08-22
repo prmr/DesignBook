@@ -9,7 +9,7 @@
  * 
  * See http://creativecommons.org/licenses/by-nc-nd/4.0/
  *******************************************************************************/
-package chapter03;
+package chapter3;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -9,9 +9,9 @@
  * 
  * See http://creativecommons.org/licenses/by-nc-nd/4.0/
  *******************************************************************************/
-package chapter04;
+package chapter4;
 
-import chapter04.Deck.Shuffler;
+import chapter4.Deck.Shuffler;
 
 public class Client
 {

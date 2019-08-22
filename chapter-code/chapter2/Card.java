@@ -9,7 +9,7 @@
  * 
  * See http://creativecommons.org/licenses/by-nc-nd/4.0/
  *******************************************************************************/
-package chapter02;
+package chapter2;
 
 /**
  * Implementation of a playing card. This class yields immutable objects.

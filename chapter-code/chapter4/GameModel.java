@@ -9,7 +9,7 @@
  * 
  * See http://creativecommons.org/licenses/by-nc-nd/4.0/
  *******************************************************************************/
-package chapter04;
+package chapter4;
 
 /**
  * Stub for a GameModel class that is an application

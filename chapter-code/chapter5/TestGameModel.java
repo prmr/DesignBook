@@ -9,7 +9,7 @@
  * 
  * See http://creativecommons.org/licenses/by-nc-nd/4.0/
  *******************************************************************************/
-package chapter05;
+package chapter5;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;

@@ -9,7 +9,7 @@
  * 
  * See http://creativecommons.org/licenses/by-nc-nd/4.0/
  *******************************************************************************/
-package chapter04;
+package chapter4;
 
 /**
  * Represents the rank of a playing card.

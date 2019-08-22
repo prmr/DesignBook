@@ -9,7 +9,7 @@
  * 
  * See http://creativecommons.org/licenses/by-nc-nd/4.0/
  *******************************************************************************/
-package chapter01;
+package chapter1;
 
 /**
  * Outputs the text of the poem "The Twelve Days of Christmas"
