@@ -7,6 +7,7 @@ All the material on this site is organized by book chapter. To the extent possib
 ## Chapter 1: Introduction
 
 * [Source code](chapter-code/chapter1)
+* [Exercises](exercises/e-chapter1.md)
 
 ## Chapter 2: Encapsulation
 
