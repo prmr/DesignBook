@@ -1,6 +1,14 @@
 # DesignBook
 
-Companion web site for the book ["Introduction to Software Design with Java"](https://www.springer.com/gp/book/9783030240936) by Martin P. Robillard, Springer 2019.
+Companion web site for the book ["Introduction to Software Design with Java"](https://www.springer.com/gp/book/9783030240936) by Martin P. Robillard, Springer 2019. 
+
+All the material on this site is organized by book chapter. To the extent possible, this site will be actively maintained, with new material being released occasionally. If you would like to report a problem, please use the [issue management system](https://github.com/prmr/DesignBook/issues), making sure the problem has not already been reported.
+
+## Chapter 1: Introduction
+
+* [Source code](chapter-code/chapter01)
+
+
 
 ## License
 
