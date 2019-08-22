@@ -8,6 +8,27 @@ All the material on this site is organized by book chapter. To the extent possib
 
 * [Source code](chapter-code/chapter01)
 
+## Chapter 2: Encapsulation
+
+* [Source code](chapter-code/chapter02)
+
+## Chapter 3: Types and Interfaces
+
+* [Source code](chapter-code/chapter03)
+
+## Chapter 4: Object State
+
+* [Source code](chapter-code/chapter04)
+
+## Chapter 5: Unit Testing
+
+* [Source code](chapter-code/chapter05)
+
+## Chapters 6-9
+
+*Coming soon*
+
+
 
 
 ## License
