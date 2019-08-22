@@ -1,4 +1,4 @@
-# DesignBook
+# Introduction to Software Design with Java
 
 Companion web site for the book ["Introduction to Software Design with Java"](https://www.springer.com/gp/book/9783030240936) by Martin P. Robillard, Springer 2019. 
 
@@ -13,6 +13,9 @@ All the material on this site is organized by book chapter. To the extent possib
 ## Chapter 2: Encapsulation
 
 * [Source code](chapter-code/chapter2)
+* [Exercises](exercises/e-chapter2.md)
+* [Solutions](solutions/s-chapter2.md)
+
 
 ## Chapter 3: Types and Interfaces
 
