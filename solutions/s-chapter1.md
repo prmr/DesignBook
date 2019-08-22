@@ -21,4 +21,4 @@ Here is the [complete code](../solutions-code/chaper1/TwelveDaysIterative.java).
 
 ## Problem 2
 
-This is [one possible solution](../solutions-code/chaper1/TwelveDays2.java). The highlight of this solution is that instead of retrieving the string that describes the day directly from a data structure, a method `day(int)` now *abstract* this concept, and hides the details of where the string comes from and the switching logic. Abstraction and information hiding are topics covered in Chapter 2. 
+This is [one possible solution](../solutions-code/chaper1/TwelveDays2.java). The highlight of this solution is that instead of retrieving the string that describes the day directly from a data structure, a method `day(int)` now *abstracts* this concept, and hides the details of where the string comes from and the switching logic. Abstraction and information hiding are topics covered in Chapter 2. 
