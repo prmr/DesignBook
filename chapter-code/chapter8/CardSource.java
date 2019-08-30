@@ -9,10 +9,11 @@
  * 
  * See http://creativecommons.org/licenses/by-nc-nd/4.0/
  *******************************************************************************/
-package chapter7;
+package chapter8;
 
 /**
  * Represents an entity from which it is possible to obtain cards.
+ * This version is visitable.
  */
 public interface CardSource
 {
@@ -28,4 +29,11 @@ public interface CardSource
 	 * @return True if there is no card in the source.
 	 */
 	boolean isEmpty();
+	
+	/**
+	 * Accepts a visitor for traversal into this structure.
+	 * 
+	 * @param pVisitor The visitor to accept
+	 */
+	void accept(CardSourceVisitor pVisitor);
 }

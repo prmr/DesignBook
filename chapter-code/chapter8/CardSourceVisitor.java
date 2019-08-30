@@ -9,23 +9,17 @@
  * 
  * See http://creativecommons.org/licenses/by-nc-nd/4.0/
  *******************************************************************************/
-package chapter7;
+package chapter8;
 
 /**
- * Represents an entity from which it is possible to obtain cards.
+ * Defines the ability to visit all types of card sources in
+ * a composite structure.
  */
-public interface CardSource
+public interface CardSourceVisitor
 {
-	/**
-	 * Returns a card from the source.
-	 *
-	 * @return The next available card.
-	 * @pre !isEmpty()
-	 */
-	Card draw();
-	
-	/**
-	 * @return True if there is no card in the source.
-	 */
-	boolean isEmpty();
+	void visitCompositeCardSource(CompositeCardSource pCompositeCardSource);
+
+	void visitDeck(Deck pDeck);
+
+	void visitCardSequence(CardSequence pCardSequence);
 }

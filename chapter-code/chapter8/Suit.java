@@ -9,23 +9,13 @@
  * 
  * See http://creativecommons.org/licenses/by-nc-nd/4.0/
  *******************************************************************************/
-package chapter7;
+package chapter8;
 
 /**
- * Represents an entity from which it is possible to obtain cards.
+ * Represents the suit of a playing card.
  */
-public interface CardSource
-{
-	/**
-	 * Returns a card from the source.
-	 *
-	 * @return The next available card.
-	 * @pre !isEmpty()
-	 */
-	Card draw();
-	
-	/**
-	 * @return True if there is no card in the source.
-	 */
-	boolean isEmpty();
+public enum Suit 
+{ 
+	CLUBS, DIAMONDS, SPADES, HEARTS;
 }
+

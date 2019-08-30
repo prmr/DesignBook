@@ -9,23 +9,24 @@
  * 
  * See http://creativecommons.org/licenses/by-nc-nd/4.0/
  *******************************************************************************/
-package chapter7;
+package chapter8;
 
-/**
- * Represents an entity from which it is possible to obtain cards.
- */
-public interface CardSource
+public class AbstractCardSourceVisitor implements CardSourceVisitor
 {
-	/**
-	 * Returns a card from the source.
-	 *
-	 * @return The next available card.
-	 * @pre !isEmpty()
-	 */
-	Card draw();
-	
-	/**
-	 * @return True if there is no card in the source.
-	 */
-	boolean isEmpty();
+	@Override
+	public void visitCompositeCardSource(CompositeCardSource pCompositeCardSource)
+	{
+		for( CardSource source : pCompositeCardSource )
+		{
+			source.accept(this);
+		}
+	}
+
+	@Override
+	public void visitDeck(Deck pDeck)
+	{}
+
+	@Override
+	public void visitCardSequence(CardSequence pCardSequence)
+	{}
 }
