@@ -34,12 +34,13 @@ All the material on this site is organized by book chapter. To the extent possib
 * [Source code](chapter-code/chapter6)
 * [Clarifications and Corrections](corrections/c-chapter6.md)
 
-## Chapters 7-9
+## Chapter 7: Inheritance
+
+* [Source code](chapter-code/chapter7)
+
+## Chapters 8-9
 
 *Coming soon*
-
-
-
 
 ## License
 
