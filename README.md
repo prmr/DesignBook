@@ -38,7 +38,11 @@ All the material on this site is organized by book chapter. To the extent possib
 
 * [Source code](chapter-code/chapter7)
 
-## Chapters 8-9
+## Chapter 8: Inversion of Control
+
+* [Source code](chapter-code/chapter8)
+
+## Chapter 9
 
 *Coming soon*
 
