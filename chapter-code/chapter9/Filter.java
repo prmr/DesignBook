@@ -11,28 +11,12 @@
  *******************************************************************************/
 package chapter9;
 
-/**
- * Represents the suit of a playing card.
- */
-public enum Suit 
-{ 
-	CLUBS, DIAMONDS, SPADES, HEARTS;
-	
-	public enum Color { RED, BLACK }
-			
+public interface Filter
+{
 	/**
-	 * @return The color of the suit.
+	 * @param pCard The card to test
+	 * @return True if this filter accepts pCard
+	 * @pre pCard != null
 	 */
-	public Color getColor()
-	{
-		if( this == CLUBS || this == SPADES )
-		{
-			return Color.BLACK;
-		}
-		else
-		{
-			return Color.RED;
-		}
-	}
+	boolean accept(Card pCard);
 }
-

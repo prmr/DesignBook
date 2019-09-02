@@ -11,6 +11,8 @@
  *******************************************************************************/
 package chapter9;
 
+import chapter9.Suit.Color;
+
 /**
  * Implementation of a playing card. This class yields immutable objects.
  * This version of the class shows an application of the Flyweight design
@@ -81,4 +83,13 @@ public class Card
 	{
 		return pCard1.getRank().compareTo(pCard2.getRank()); 
 	}
+	
+	public boolean hasBlackSuit()
+	{
+		return aSuit.getColor() == Color.BLACK;
+	}
+
+	public boolean hasRedSuit()
+	{
+		return aSuit.getColor() == Color.RED; }
 }
