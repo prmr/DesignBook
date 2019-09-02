@@ -44,7 +44,8 @@ All the material on this site is organized by book chapter. To the extent possib
 
 ## Chapter 9
 
-*Coming soon*
+* [Source code](chapter-code/chapter9)
+* [Clarifications and Corrections](corrections/c-chapter9.md)
 
 ## License
 
