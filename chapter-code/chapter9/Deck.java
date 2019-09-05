@@ -36,6 +36,14 @@ public class Deck
 	}
 	
 	/**
+	 * @return The card at the top of the deck.
+	 */
+	public Card peek()
+	{
+		return aCards.peek();
+	}
+	
+	/**
 	 * Creates a new deck of 52 cards, shuffled.
 	 */
 	public Deck()
