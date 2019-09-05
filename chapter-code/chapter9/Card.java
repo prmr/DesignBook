@@ -11,6 +11,11 @@
  *******************************************************************************/
 package chapter9;
 
+import static java.util.Comparator.*;
+
+import java.util.Comparator;
+import java.util.List;
+
 import chapter9.Suit.Color;
 
 /**
@@ -91,5 +96,139 @@ public class Card
 
 	public boolean hasRedSuit()
 	{
-		return aSuit.getColor() == Color.RED; }
+		return aSuit.getColor() == Color.RED; 
+	}
+	
+	// ********** Code samples for Section 9.3 **********
+	
+	public static Comparator<Card> bySuitComparator()
+	{
+		return (card1, card2) -> card1.getSuit().compareTo(card2.getSuit());
+	}
+	
+	public static Comparator<Card> byRankComparator()
+	{
+		return (card1, card2) -> card1.getRank().compareTo(card2.getRank()); 
+	}
+	
+	/*
+	 * This version uses basic comparison logic
+	 */
+	public static Comparator<Card> bySuitThenRankComparator1()
+	{
+		return (card1, card2) -> {
+			if (card1.getSuit() == card2.getSuit())
+			{
+				return card1.getRank().compareTo(card2.getRank());
+			}
+			else
+			{
+				return card1.getSuit().compareTo(card2.getSuit());
+			}
+		};
+	}
+	
+	/* This version uses comparator factories */
+	public static Comparator<Card> bySuitThenRankComparator2()
+	{
+		return (card1, card2) -> {
+			if(bySuitComparator().compare(card1, card2) == 0)
+			{
+				return byRankComparator().compare(card1, card2);
+			}
+			else
+			{
+				return bySuitComparator().compare(card1, card2);
+			}
+		};
+	}
+	
+	public static Comparator<Card> byRankThenSuitComparator()
+	{
+		return (card1, card2) -> {
+			if (byRankComparator().compare(card1, card2) == 0)
+			{
+				return bySuitComparator().compare(card1, card2);
+			}
+			else
+			{
+				return byRankComparator().compare(card1, card2);
+			}
+		};
+	}
+
+	/*
+	 * This version uses the comparing method.
+	 */
+	public static Comparator<Card> byRankComparator2()
+	{
+		return Comparator.comparing(card -> card.getRank()); 
+	}
+	
+	/*
+	 * Uses comparator factories combined with thenComparing
+	 */
+	public static Comparator<Card> byRankThenSuitComparator2()
+	{
+		return byRankComparator().thenComparing(bySuitComparator()); 
+	}
+	
+	/*
+	 * Uses comparator factories combined with thenComparing
+	 */
+	public static Comparator<Card> bySuitThenRankComparator3()
+	{
+		return bySuitComparator().thenComparing(byRankComparator());
+	}
+	
+	public static Comparator<Card> byRankComparatorReversed()
+	{
+		return (card1, card2) -> card2.getRank().compareTo(card1.getRank()); 
+	}
+	
+	public static Comparator<Card> bySuitReversedThenRankComparator()
+	{
+		return bySuitComparator().reversed().thenComparing(byRankComparator());
+	}
+	
+	public static Comparator<Card> bySuitReversedThenRankReversedComparator()
+	{
+		return bySuitComparator().reversed().thenComparing(byRankComparator().reversed());
+	}
+	
+	public static void sampleSortingApplication1()
+	{
+		List<Card> cards = new Deck().getCards();
+		cards.sort(
+			Comparator
+				.comparing((Card card) -> card.getSuit())
+				.reversed()
+				.thenComparing(Comparator.comparing((Card card) -> card.getRank())
+						.reversed()));
+	}
+	
+	public static void sampleSortingApplication2()
+	{
+		List<Card> cards = new Deck().getCards();
+		cards.sort(comparing((Card card) -> card.getSuit())
+				.reversed()
+				.thenComparing(comparing((Card card) -> card.getRank())
+						.reversed()));
+	}
+	
+	public static void sampleSortingApplication3()
+	{
+		List<Card> cards = new Deck().getCards();
+		cards.sort(comparing(Card::getSuit)
+				.reversed()
+				.thenComparing(comparing(Card::getRank)
+						.reversed()));
+	}
+	
+	public static void sampleSortingApplication4()
+	{
+		List<Card> cards = new Deck().getCards();
+		cards.sort(comparing(Card::getSuit)
+				.thenComparing(Card::getRank).reversed());
+	}
 }

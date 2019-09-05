@@ -18,8 +18,8 @@ import java.util.List;
 import java.util.function.Predicate;
 
 /**
- * Code samples for Sections 9.1-9.3
- *
+ * Code samples for Sections 9.1-9.2. The code samples for Section 9.3 are in 
+ * class Card.
  */
 public class Samples
 {	
