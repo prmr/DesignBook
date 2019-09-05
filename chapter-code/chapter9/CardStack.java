@@ -14,6 +14,7 @@ package chapter9;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * Represents a general-purpose stack of cards. New CardStack
@@ -29,6 +30,11 @@ public class CardStack implements Iterable<Card>
 	public CardStack()
 	{
 		aCards = new ArrayList<>();
+	}
+	
+	public Stream<Card> stream()
+	{ 
+		return aCards.stream(); 
 	}
 	
 	/**

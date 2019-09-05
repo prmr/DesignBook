@@ -23,8 +23,10 @@ import chapter9.Suit.Color;
  * This version of the class shows an application of the Flyweight design
  * pattern where the flyweight store is pre-initialized.
  */
-public class Card 
+public class Card implements Comparable<Card>
 {
+	private static final Comparator<Card> COMPARATOR = Comparator.comparing(Card::getSuit).thenComparing(Card::getRank);
+	
 	// Flyweight store
 	private static final Card[][] CARDS = new Card[Suit.values().length][Rank.values().length];
 	
@@ -230,5 +232,16 @@ public class Card
 		List<Card> cards = new Deck().getCards();
 		cards.sort(comparing(Card::getSuit)
 				.thenComparing(Card::getRank).reversed());
+	}
+	
+	public boolean isFaceCard()
+	{
+		return getRank().ordinal() >= Rank.JACK.ordinal(); 
+	}
+
+	@Override
+	public int compareTo(Card o)
+	{
+		return COMPARATOR.compare(this, o);
 	}
 }

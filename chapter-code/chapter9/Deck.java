@@ -14,6 +14,7 @@ package chapter9;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * Models a deck of 52 cards.
@@ -33,6 +34,11 @@ public class Deck
 			result.add(card);
 		}
 		return result;
+	}
+	
+	public Stream<Card> stream() 
+	{ 
+		return aCards.stream(); 
 	}
 	
 	/**

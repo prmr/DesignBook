@@ -16,17 +16,22 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import chapter9.Suit.Color;
 
 /**
- * Code samples for Sections 9.1-9.2. The code samples for Section 9.3 are in 
- * class Card.
+ * Code samples for Sections 9.1-9.2 and 9.6. The code samples for Section 9.3 are in 
+ * their corresponding classes.
  */
 public class Samples
 {	
 	public static void main(String[] args)
 	{
-		samples1();
-		samples2();
+		samples1(); // Section 9.1
+		samples2(); // Section 9.2
+		samples3(); // Section 9.6
 	}
 	
 	/**
@@ -109,6 +114,81 @@ public class Samples
 		cards = new ArrayList<>(new Deck().getCards());
 		cards.removeIf(Card::hasBlackSuit);
 		printAll(cards);
+	}
+	
+	/**
+	 * For Section 9.6
+	 */
+	@SuppressWarnings("unused")
+	public static void samples3()
+	{
+		Stream<Card> cards = new Deck().stream();
+		long total = cards.count();
+		System.out.println(total);
+		
+		Stream<Card> sortedCards = new Deck().stream().sorted();
+		sortedCards.forEach(System.out::println);
+		
+		Stream<Card> sortedCards2 = new Deck().stream().sorted().limit(10);
+		sortedCards2.forEach(System.out::println);
+		
+		Stream<Card> cards2 = Stream.concat(new Deck().stream(), new Deck().stream());
+		System.out.println(cards2.count());
+
+		Stream<Card> withDuplicates = Stream.concat(new Deck().stream(), new Deck().stream());
+		Stream<Card> withoutDuplicates = withDuplicates.distinct();
+		
+		new Deck().stream().forEach(card -> System.out.println(card));
+		
+		boolean allClubs = new Deck().stream()
+				.allMatch(card -> card.getSuit() == Suit.CLUBS );
+		
+		long numberOfFaceCards = new Deck().stream()
+				.filter(card -> card.getRank().ordinal() >= Rank.JACK.ordinal()).count();
+		
+		long numberOfFaceCards2 = new Deck().stream()
+				.filter(Card::isFaceCard)
+				.count();
+		
+		long result = new Deck().stream()
+				.filter(card -> card.getRank().ordinal() >= Rank.JACK.ordinal()
+				&& card.getSuit()==Suit.CLUBS).count();
+		
+		long result2 = new Deck().stream()
+				.filter(Card::isFaceCard)
+				.filter(card -> card.getSuit() == Suit.CLUBS)
+				.count();
+		
+		new Deck().stream().map(card -> card.getSuit().getColor() );
+		
+		long result3 = new Deck().stream()
+				.map(card -> card.getSuit().getColor() )
+				.filter( color -> color == Color.BLACK )
+				.count();
+		
+		new Deck().stream()
+			.map(card -> Math.min(10, card.getRank().ordinal() + 1));
+		
+		int total2 = new Deck().stream()
+				.mapToInt(card -> Math.min(10, card.getRank().ordinal() + 1))
+				.sum();
+		
+		int total3 = new Deck().stream()
+				.map(Card::getRank)
+				.mapToInt(Rank::ordinal)
+				.map(ordinal -> Math.min(10, ordinal + 1))
+				.sum();
+		
+		// Not ideal
+		List<Card> result4 = new ArrayList<>();
+		new Deck().stream()
+			.filter(Card::isFaceCard)
+			.forEach(card -> result4.add(card));
+		
+		// Better
+		List<Card> result5 = new Deck().stream()
+				.filter(Card::isFaceCard)
+				.collect(Collectors.toList());
 	}
 	
 	private static void printAll(List<Card> pCards)
