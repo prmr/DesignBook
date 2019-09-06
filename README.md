@@ -20,6 +20,7 @@ All the material on this site is organized by book chapter. To the extent possib
 ## Chapter 3: Types and Interfaces
 
 * [Source code](chapter-code/chapter3)
+* [Exercises](exercises/e-chapter3.md)
 
 ## Chapter 4: Object State
 
