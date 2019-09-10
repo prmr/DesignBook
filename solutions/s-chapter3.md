@@ -18,6 +18,16 @@ See [Hand.java](../solutions-code/chapter3/Hand.java).
 
 See [UniversalComparator.java](../solutions-code/chapter3/UniversalComparator.java).
 
+## Exercise 7
+
+See [Hand.java](../solutions-code/chapter3/Hand.java).
+
+## Exercise 8
+
+![](c3-exercise8.png)
+
+[Diagram File](c3-exercise8.class.jet)
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
