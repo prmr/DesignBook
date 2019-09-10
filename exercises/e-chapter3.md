@@ -2,7 +2,7 @@
 
 ## Exercise 1
 
-Design and implement a well-encapsulated abstraction to represent a `Hand` of cards in a player's hand as a Java class. A `Hand` should be able to contain between 0 and `N` cards, where `N` is a a parameterizable upper bound that will depend on the card game being played (e.g., 5 for Draw Poker, 13 for Bridge, etc.). Implement the following services on a `Hand`: `add(Card)`, `remove(Card)`, `contains(Card)`, `isEmpty()`, `size()`, and `isFull()`. Find a way to provide access to the cards in the hand. Ensure that all the rules of encapsulation seen in Module 1 are respected and use design by contract to clarify valid and invalid inputs.
+Design and implement a well-encapsulated abstraction to represent a `Hand` of cards in a player's hand as a Java class. A `Hand` should be able to contain between 0 and `N` cards, where `N` is a a parameterizable upper bound that will depend on the card game being played (e.g., 5 for Draw Poker, 13 for Bridge, etc.). Implement the following services on a `Hand`: `add(Card)`, `remove(Card)`, `contains(Card)`, `isEmpty()`, `size()`, and `isFull()`. Find a way to provide access to the cards in the hand. Ensure that all the rules of encapsulation seen in Chapter 2 are respected and use design by contract to clarify valid and invalid inputs. Assume there are no duplicate cards and that there only ever exists only a single instance that represents a given card in a running program (more on this in Chapter 4).
 
 ## Exercise 2
 
