@@ -15,6 +15,7 @@ All the material on this site is organized by book chapter. To the extent possib
 * [Source code](chapter-code/chapter2)
 * [Exercises](exercises/e-chapter2.md)
 * [Solutions](solutions/s-chapter2.md)
+* [Clarifications and Corrections](corrections/c-chapter2.md)
 
 
 ## Chapter 3: Types and Interfaces
