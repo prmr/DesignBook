@@ -20,6 +20,7 @@ public class TwelveDaysIterative
 	public static void main(String[] args)
 	{
 		System.out.println(poem());
+		System.out.println("---");
 	}
 	
 	static String[] DAYS = {"first", "second", "third", "fourth",
@@ -56,13 +57,13 @@ public class TwelveDaysIterative
 	 */
 	static String allGifts(int day)
 	{
-		StringBuilder result = new StringBuilder();
+		String result = "";
 		for( int i = day; i > 0; i-- )
 		{
-			result.append(GIFTS[i] + "\n");
+			result += GIFTS[i] + "\n";
 		}
-		result.append("and " + GIFTS[0]);
-		return result.toString();
+		result += "and " + GIFTS[0];
+		return result;
 	}
 	
 	/*
@@ -70,10 +71,10 @@ public class TwelveDaysIterative
 	 */
 	static String poem()
 	{
-		String poem = firstLine(0) + GIFTS[0] + "\n\n";
+		String poem = firstLine(0) + GIFTS[0];
 		for( int day = 1; day < 12; day++ )
 		{ 
-			poem += firstLine(day) + allGifts(day) + "\n\n"; 
+			poem += "\n\n" + firstLine(day) + allGifts(day); 
 		}
 		return poem;
 	}
