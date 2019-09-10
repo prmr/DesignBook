@@ -22,7 +22,7 @@ Add a static factory method to class `Hand` that takes an `Rank` as parameter an
 
 ## Exercise 6
 
-Implement a `UniversalComparator` that stores the type of desired comparison from Exercise 3 as an enumerated type, and switches on that type.
+Implement a `UniversalComparator` that stores the type of desired comparison from Exercise 3 as an enumerated type, and switches on that type. Note that this will require you to add a `size()` method to the interface of class `Hand`.
 
 ## Exercise 7
 
@@ -46,7 +46,7 @@ Following the Interface Segregation Principle, decompose the interface of class 
 
 ## Exercise 12 :mag:
 
-Review the code of class `Foudations` in the Solitaire application and create a class diagram that captures the main design decisions for this class.
+Review the code of class `Foundations` in the Solitaire application and create a class diagram that captures the main design decisions for this class.
 
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>

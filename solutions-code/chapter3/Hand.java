@@ -127,6 +127,14 @@ public class Hand implements Iterable<Card>, Comparable<Hand>
 	}
 	
 	/**
+	 * @return The number of cards currently in the hand.
+	 */
+	public int size()
+	{
+		return aCards.size();
+	}
+	
+	/**
 	 * Creates a comparator that compares hands in terms of ascending number
 	 * of cards of rank pRank in the hand.
 	 * 
