@@ -26,6 +26,7 @@ All the material on this site is organized by book chapter. To the extent possib
 ## Chapter 4: Object State
 
 * [Source code](chapter-code/chapter4)
+* [Exercises](exercises/e-chapter4.md)
 
 ## Chapter 5: Unit Testing
 
