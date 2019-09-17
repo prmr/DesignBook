@@ -22,6 +22,8 @@ All the material on this site is organized by book chapter. To the extent possib
 
 * [Source code](chapter-code/chapter3)
 * [Exercises](exercises/e-chapter3.md)
+* [Solutions](solutions/s-chapter3.md)
+
 
 ## Chapter 4: Object State
 

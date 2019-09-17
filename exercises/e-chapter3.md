@@ -34,7 +34,7 @@ Draw a class diagram that illustrates how a `Hand` supports being iterated over.
 
 ## Exercise 9 :star: 
 
-Modify your `Hand` class to support a poker game and sort hands in terms of their strengths as [poker hands](https://en.wikipedia.org/wiki/List_of_poker_hands). How should you deal with hands that do not have exactly five cards?
+Modify your `Hand` class to support a poker game and compare hands in terms of their strengths as [poker hands](https://en.wikipedia.org/wiki/List_of_poker_hands). How should you deal with hands that do not have exactly five cards?
 
 ## Exercise 10
 
