@@ -17,7 +17,7 @@ static String allGifts(int day)
 }
 ```
 
-Here is the [complete code](../solutions-code/chapter1/TwelveDaysIterative.java). This code uses the [StringBuilder](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html) library class, which is a more efficient way to perform string concatenation operations than using the overloaded version of the `+` operator. Because the change can be isolated to within a method, the impact on the design is minimal. Perhaps it makes the code easier to understand for readers unfamiliar with recursion.
+Here is the [complete code](../solutions-code/chapter1/TwelveDaysIterative.java). Because the change can be isolated to within a method, the impact on the design is minimal. Perhaps it makes the code easier to understand for readers unfamiliar with recursion.
 
 ## Exercise 2
 
