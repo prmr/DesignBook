@@ -18,7 +18,7 @@ Draw a class diagram that represents the design of `Hand` realized as part of Ex
 
 ## Exercise 5
 
-Add a static factory method to class `Hand` that takes an `Rank` as parameter and returns an instance of an anonymous class that can compare hands in increasing number of cards of that rank in the hand. Clients should use this method to compare hands by number of aces, or number kings, or number of fours, etc. For example, if the client chooses to compare hands by number of aces, a hand with one ace should come before a hand with two aces. If two hands have the same number of aces, they should be considered equal and their order does not matter. 
+Add a static factory method to class `Hand` that takes an `Rank` as parameter and returns an instance of a class that can compare hands in increasing number of cards of that rank in the hand. Clients should use this method to compare hands by number of aces, or number kings, or number of fours, etc. For example, if the client chooses to compare hands by number of aces, a hand with one ace should come before a hand with two aces. If two hands have the same number of aces, they should be considered equal and their order does not matter. 
 
 ## Exercise 6
 
