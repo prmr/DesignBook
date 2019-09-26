@@ -24,7 +24,6 @@ public class MultiDeck
 		for( int i =0; i < aDecks.length; i++ )
 		{
 			aDecks[i] = new Deck();
-			aDecks[i].shuffle();
 		}
 	}
 	
