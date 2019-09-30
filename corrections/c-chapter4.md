@@ -1,0 +1,3 @@
+# Clarifications and Corrections for Chapter 4
+
+* On p.63, 'A more useful abstract state for Player would be "non-zero score" and one for Deck would be "empty", which in both cases happen to correspond to a single concrete state.' The second clause only applies to the "empty" state. Although "zero score" maps to a single concrete state for an integer, obviously, non-zero scope maps to `2^32-1` concrete states (if the full integer range is permitted).
