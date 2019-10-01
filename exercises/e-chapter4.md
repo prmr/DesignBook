@@ -31,7 +31,7 @@ In a given context we need a comparator for cards:
 ```java
 public class Game
 {
-   private final Comparator<Card> aComparator;
+   private Comparator<Card> aComparator;
 }
 ```
 

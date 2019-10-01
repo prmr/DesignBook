@@ -22,6 +22,23 @@ The key insight here is that the state of the door (open or closed) needs to be 
 
 There are various solutions. Here is one possibility: [Card4.java](../solutions-code/chapter4/Card4.java), [Deck4.java](../solutions-code/chapter4/Deck4.java). This solution hides the `Joker` enumerated type from the clients, but has a non-intuitive way to construct jokers that could be easily improved with factory methods.
 
+## Exercise 6
+
+The constraint that we do not change the type of the field rules out using type `Optional`. Instead, we can derive a solution based on the Null Object pattern and simply create a comparator that always returns that objects are equals. This is consistent with the notion that the comparison order is initially "undefined". Technically, the private field could be inlined. However, to use a named null object can help clarify the role of the anonymous comparator. Additionally, this idiom provides a clean way to dynamically check if the `aComparator` field has been initialized with a value other than 
+the default "null" comparator.
+
+```java
+public class Game
+{
+   private static final Comparator<Card> NULL_COMPARATOR = new Comparator<Card>() {
+      public int compare(Card pCard1, Card pCard2)
+      {
+         return 0;
+      }};
+	
+   private Comparator<Card> aComparator = NULL_COMPARATOR;
+}
+```
 
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
