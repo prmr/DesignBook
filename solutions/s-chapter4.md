@@ -52,6 +52,10 @@ See a sample solution here [Card5.java](../solutions-code/chapter4/Card5.java). 
 
 A sample solution for this exercise can already be found in the book [code](../chapter-code/chapter4/Card.java). Try modifying it to use a `Map` to store the flyweights. 
 
+## Exercise 10
+
+The adapted version that uses a bidimensional array for the flyweight store can be found [here](../solutions-code/chapter4/Card10.java).
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
