@@ -24,7 +24,7 @@ There are various solutions. Here is one possibility: [Card4.java](../solutions-
 
 ## Exercise 6
 
-The constraint that we do not change the type of the field rules out using type `Optional`. Instead, we can derive a solution based on the Null Object pattern and simply create a comparator that always returns that objects are equals. This is consistent with the notion that the comparison order is initially "undefined". Technically, the private field could be inlined. However, to use a named null object can help clarify the role of the anonymous comparator. Additionally, this idiom provides a clean way to dynamically check if the `aComparator` field has been initialized with a value other than 
+The constraint that we do not change the type of the field rules out using type `Optional`. Instead, we can derive a solution based on the Null Object pattern and simply create a comparator that always returns that objects are equals. This is consistent with the notion that the comparison order is initially "undefined". Technically, the private static field `NULL_COMPARATOR` could be inlined. However, to use a named null object can help clarify the role of the anonymous comparator. Additionally, this idiom provides a clean way to dynamically check if the `aComparator` field has been initialized with a value other than 
 the default "null" comparator.
 
 ```java
