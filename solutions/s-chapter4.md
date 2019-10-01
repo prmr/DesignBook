@@ -48,6 +48,9 @@ A possible solution is illustrated by the use of a [Shufflable interface](../sol
 
 See a sample solution here [Card5.java](../solutions-code/chapter4/Card5.java). As usual small variations are possible.
 
+## Exercise 9
+
+A sample solution for this exercise can already be found in the book [code](../chapter-code/chapter4/Card.java). Try modifying it to use a `Map` to store the flyweights. 
 
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
