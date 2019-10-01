@@ -56,6 +56,10 @@ A sample solution for this exercise can already be found in the book [code](../c
 
 The adapted version that uses a bidimensional array for the flyweight store can be found [here](../solutions-code/chapter4/Card10.java).
 
+## Exercise 11
+
+See the code [here](../solutions-code/chapter4/GameModel4.java).
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
