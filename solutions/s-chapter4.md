@@ -18,7 +18,7 @@ The key insight here is that the state of the door (open or closed) needs to be 
 
 ![](c4-exercise4.png)
 
-[Diagram file](c)
+[Diagram file](c4-exercise4.state.jet)
 
 ## Exercise 5
 
