@@ -18,6 +18,8 @@ The key insight here is that the state of the door (open or closed) needs to be 
 
 ![](c4-exercise4.png)
 
+[Diagram file](c)
+
 ## Exercise 5
 
 There are various solutions. Here is one possibility: [Card4.java](../solutions-code/chapter4/Card4.java), [Deck4.java](../solutions-code/chapter4/Deck4.java). This solution hides the `Joker` enumerated type from the clients, but has a non-intuitive way to construct jokers that could be easily improved with factory methods.
