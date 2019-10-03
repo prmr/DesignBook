@@ -42,7 +42,7 @@ public class Card4 implements Comparable<Card4>
 		System.out.println("Done");
 	}
 	
-	private enum Joker { BLACK, WHITE }
+	private enum Joker { WHITE, BLACK }
 	
 	private final Optional<Rank> aRank;
 	private final Optional<Suit> aSuit;
