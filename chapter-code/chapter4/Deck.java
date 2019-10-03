@@ -113,6 +113,9 @@ public class Deck implements CardSource
 	 * @param pRank The rank to use to compare the decks. 
 	 * @return A comparator that compares two decks based on the number of cards
 	 * of rank pRank that they contains.
+	 * 
+	 * Note that this version is improved from the code in the book,
+	 * by avoiding the unnecessary parameter pRank in CountCards.
 	 */
 	public static Comparator<Deck> createByRankComparator(Rank pRank)
 	{
@@ -120,10 +123,10 @@ public class Deck implements CardSource
 		{
 			public int compare(Deck pDeck1, Deck pDeck2)
 			{
-				return countCards(pDeck1, pRank) - countCards(pDeck2, pRank);
+				return countCards(pDeck1) - countCards(pDeck2);
 			}
 			
-			private int countCards(Deck pDeck, Rank pRank)
+			private int countCards(Deck pDeck)
 			{ 
 				int result = 0;
 				for( Card card : pDeck.aCards )
