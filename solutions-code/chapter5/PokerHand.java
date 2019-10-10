@@ -33,6 +33,7 @@ public class PokerHand
 			}});
 	}
 	
+	@SuppressWarnings("unused")
 	private boolean isStraightFlush()
 	{
 		Suit suit  = aCards.get(0).getSuit();

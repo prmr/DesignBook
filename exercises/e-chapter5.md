@@ -40,6 +40,10 @@ Extend your test suite for [PokerHand](../solutions-code/chapter5/PokerHand.java
 
 Extend your test suite for [PokerHand](../solutions-code/chapter5/PokerHand.java) to achieve *complete branch coverage* with a minimum number of executions of the UUT.
 
+## Exercise 11
+
+Write a test suite for all the public methods of class [BiCardSource](../solutions-code/chapter5/BiCardSource.java) to achieve 100% branch coverage, using stubs to helps isolate the behavior to test.
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
