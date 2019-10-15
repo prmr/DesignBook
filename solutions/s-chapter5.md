@@ -8,6 +8,10 @@ A sample test class can be found [here](../solutions-code/chapter5/TestMin.java)
 
 The goal of this exercise was to raise your awareness of the challenges of unit testing when floating-point values are involved, and consequently of the implications of using floating-point values as part of an interface. Because NaN refers to a specific bit pattern, it is possible to test that part of the specification exactly. However, testing for general cosine values is much trickier and requires the use of a `delta` tolerance for matching the value. See my [sample test](../solutions-code/chapter5/TestCos.java), which has one test for each of the first four quadrants of the circle. Interestingly, two of the tests fail on my machine, which raises interesting questions about the definition of "exact value" when the input is an approximation of an irrational number. 
 
+## Exercise 3
+
+A sample test class can be found [here](../solutions-code/chapter5/TestConcat.java). The goal of this exercise was to think about equality and identity when testing with values of reference types. Because concatenating the empty string to a string is required to return the *original* string, we must assert that the result is the *same object* as the implicit argument, not merely equal to it. Interestingly this specification is not symmetrical, so we must use `assertEquals` in the other cases, even when the implicit argument is empty. Unit testing also helps surface the disturbing fact that the behavior of `concat` is undefined when a null reference is provided as argument. In practice a `NullPointerException` is raised. I included a test to document this fact, but indicated this rationale in a comment. Note how using the concatenation operator `+` has a different behavior. 
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
