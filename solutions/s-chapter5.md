@@ -20,6 +20,10 @@ The diagram below shows the minimal representation that includes all the types. 
 
 [Diagram file](c5-exercise4.state.jet)
 
+## Exercise 5
+
+The following [sample solution](../solutions-code/chapter5/NumberLoader.java) provides a minimal implementation.
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
