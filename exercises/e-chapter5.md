@@ -14,7 +14,7 @@ Write JUnit 5 unit tests for [String.concat(String)](https://docs.oracle.com/jav
 
 ## Exercise 4
 
-Assume a class `Sentence` implements class `Iterable<String>`. Draw an object diagram that shows the relation between `Sentence`, `Iterable`, `Iterator`, and `String`. Use the reflection API documentation and/or a debugger for help if necessary.
+Assume a class `Sentence` implements class `Iterable<String>`. Draw an object diagram that shows the relation between the instances of class `Class` that represent `Sentence`, `Iterable`, `Iterator`, and `String`. Assume that all methods of class `Class` that provide information about the class are getters for fields of the same name (e.g., there is a field `interfaces` that matches method `getInterfaces()`). Only use simple names for classes. Use the reflection API documentation and/or a debugger for help if necessary.
 
 ## Exercise 5
 

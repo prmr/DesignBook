@@ -12,6 +12,14 @@ The goal of this exercise was to raise your awareness of the challenges of unit 
 
 A sample test class can be found [here](../solutions-code/chapter5/TestConcat.java). The goal of this exercise was to think about equality and identity when testing with values of reference types. Because concatenating the empty string to a string is required to return the *original* string, we must assert that the result is the *same object* as the implicit argument, not merely equal to it. Interestingly this specification is not symmetrical, so we must use `assertEquals` in the other cases, even when the implicit argument is empty. Unit testing also helps surface the disturbing fact that the behavior of `concat` is undefined when a null reference is provided as argument. In practice a `NullPointerException` is raised. I included a test to document this fact, but indicated this rationale in a comment. Note how using the concatenation operator `+` has a different behavior. 
 
+## Exercise 4
+
+The diagram below shows the minimal representation that includes all the types. Notice how there is no sign of generic types in the diagram. This is consistent with what you should have observed by executing or debugging a test program. Information about generic types only exists in the program source code: it is *erased* when the code is compiled into bytecode. For this reason, the run-time type of an `Iterable` is `Iterable`, not `Iterable<String>`. For the same reason, the diagram does not include any reference to a class that represents `String`.
+
+![](c5-exercise4.png)
+
+[Diagram file](c5-exercise4.state.jet)
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
