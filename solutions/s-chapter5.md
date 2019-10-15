@@ -1,0 +1,16 @@
+# Chapter 5 Solutions to Practice Exercises
+
+## Exercise 1
+
+A sample test class can be found [here](../solutions-code/chapter5/TestMin.java). How to partition the input space into unit test is somewhat discretionary (in the context of this course), but it would be important to have at least the case where the two inputs are the same given that it is mentioned in the specification, and one case where they are not the same (by extension). Given the essential logic of a `min` operation, I chose to distinguish between the cases where the minimum is the first vs. the second argument, and also checked that the minimum is the same for negative as well as positive inputs. Other cases might make sense too.
+
+## Exercise 2
+
+The goal of this exercise was to raise your awareness of the challenges of unit testing when floating-point values are involved, and consequently of the implications of using floating-point values as part of an interface. Because NaN refers to a specific bit pattern, it is possible to test that part of the specification exactly. However, testing for general cosine values is much trickier and requires the use of a `delta` tolerance for matching the value. See my [sample test](../solutions-code/chapter5/TestCos.java), which has one test for each of the first four quadrants of the circle. Interestingly, two of the tests fail on my machine, which raises interesting questions about the definition of "exact value" when the input is an approximation of an irrational number. 
+
+---
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+
+Unless otherwise noted, the content of this repository is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>. 
+
+Copyright Martin P. Robillard 2019

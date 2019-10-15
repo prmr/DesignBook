@@ -37,6 +37,7 @@ All the material on this site is organized by book chapter. To the extent possib
 
 * [Source code](chapter-code/chapter5)
 * [Exercises](exercises/e-chapter5.md)
+* [Solutions](solutions/s-chapter5.md)
 
 ## Chapter 6: Composition
 
