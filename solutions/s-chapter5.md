@@ -32,6 +32,22 @@ See this [sample solution](../solutions-code/chapter5/StringTester.java).
 
 See this [sample solution](../solutions-code/chapter5/TestStack.java).
 
+## Exercise 8
+
+See methods `invokeIsStraightFlush` and `testIsStraightFlush_True` is class [TestPokerHand](../solutions-code/chapter5/TestPokerHand.java). Because there are only nine possible straight flushes per suit, we can cover all possible straight flushes with 36 test cases. However, this only covers executions that result in a `true` outcome, so it does not mean we can achieve exhaustive coverage with just 36 executions, as there are many more hand configurations that will result in a `false` outcome.
+
+## Exercise 9
+
+Including either method `testIsStraightFlush_WrongSuit` or `testIsStraightFlush_WrongRank` in the test suite will achieve 100% statement coverage.
+
+## Exercise 10
+
+Adding the remaining method in the test suite will achieve 100% branch coverage.
+
+## Exercise 11
+
+See this [sample solution](../solutions-code/chapter5/TestBiCardSource.java), which will reveal a seeded bug. Once you fix the bug, the suite should achieve complete branch coverage.
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
