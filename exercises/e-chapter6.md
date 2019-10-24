@@ -20,6 +20,12 @@ Draw an object diagram of the object graph created as part of exercise 2.
 
 Draw a sequence diagram that illustrates the sequence of method calls that results from a call to `description` on the root `Show`.
 
+## Exercise 6
+
+Change the code of [HandDealer.java](../solutions-code/chapter6/HandDealer.java) so that it shows a hand of 13 cards, which each card overlaid on another, as in the figure below. Once the user clicks the button, the cards should be flipped so that they are face-side up. Every subsequent button click should reveal a new, random, hand, also face-side up. Use the Composite and Decorator patterns applied to the `Icon` interface to solve the problem.
+
+![](HandDealer.png)
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
