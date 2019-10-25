@@ -26,6 +26,31 @@ Change the code of [HandDealer.java](../solutions-code/chapter6/HandDealer.java)
 
 ![](HandDealer.png)
 
+## Exercise 7
+
+We add the following requirement to the system created and documented as part of Exercises 1-7: We need a way to obtain all the shows in a composite show so that a client can "flatten" a show into a list of "atomic shows" (an show is considered atomic if it consists of one and exactly one show). Implement this requirement using an iterator in a way that *does not change the `Show` interface*. Implement a client method `flattenShow(Show):List<Show>` that returns a list of atomic shows. What do we have to give up to avoid changing the `Show` interface?
+
+## Exercise 8
+
+Implement a variant of the feature described in Exercise 7, but this time by modifying the `Show` interface. How is this solution better? How is it worse? 
+
+## Exercise 9
+
+Create a new class `DoubleBill` that represents a sequence of exactly two movies, but that is *not* a Decorator. Make sure your implementation respects the requirement expressed in Exercise 8.
+
+## Exercise 10
+
+Implement a copy constructor for `Concert`, `Movie`, and `DoubleBill`, in this order. Then implement a copy constructor for `IntroducedShow`. Why is the solution problematic?
+
+## Exercise 11
+
+Add support for *polymorphic copying* into the `Show` type hierarchy. Add a `copy()` method to the `Show` interface with the semantics that it does a deep copy of the object (which includes deep copies of fields of any type except primitive types and `String`).
+
+## Exercise 12
+
+Using JUnit, write a unit test that checks that a copy of the object graph created as part of exercise 2 is a correct deep copy.
+
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
