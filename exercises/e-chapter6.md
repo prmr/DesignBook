@@ -18,7 +18,7 @@ Draw an object diagram of the object graph created as part of exercise 2.
 
 ## Exercise 5
 
-Draw a sequence diagram that illustrates the sequence of method calls that results from a call to `description` on the root `Show`.
+Draw a sequence diagram that illustrates the sequence of method calls that results from a call to `description` on the root `Show` for the object graph depicted in Exercise 5.
 
 ## Exercise 6
 
