@@ -43,6 +43,7 @@ All the material on this site is organized by book chapter. To the extent possib
 
 * [Source code](chapter-code/chapter6)
 * [Exercises](exercises/e-chapter6.md)
+* [Solutions](solutions/s-chapter6.md)
 * [Clarifications and Corrections](corrections/c-chapter6.md)
 
 ## Chapter 7: Inheritance
