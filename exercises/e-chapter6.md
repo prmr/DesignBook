@@ -6,7 +6,7 @@ Consider interface [Show](../solutions-code/chapter6/Show.java) and the two impl
 
 ## Exercise 2
 
-Extend the design produced in Exercise 1 to apply the Decorator design pattern so as to provide a `ConferencedShow` feature, which consists of a show introduced by a speaker giving a fixed-time speech (e.g., 10 minutes). In client code, create a `Show` object that is a conferenced version of the show created in Exercise 1, where the second movie is also conferenced (so, two speakers, one presenting the entire show, and one presenting the second movie).
+Extend the design produced in Exercise 1 to apply the Decorator design pattern so as to provide a `IntroducedShow` feature, which consists of a show introduced by a speaker giving a fixed-time speech (e.g., 10 minutes). In client code, create a `Show` object that is an introduced version of the show created in Exercise 1, where the second movie is also introduced (so, two speakers, one presenting the entire show, and one presenting the second movie).
 
 ## Exercise 3
 
