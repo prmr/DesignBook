@@ -14,13 +14,9 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public class HandDealer extends JFrame
 {
-	private final Deck aDeck;
-	
 	public HandDealer()
 	{
 		super("Hand Dealer");
-		
-		aDeck = new Deck();
 		
 		final HandPanel aNorth = new HandPanel();
 		
@@ -34,7 +30,6 @@ public class HandDealer extends JFrame
 			@Override
 			public void actionPerformed(ActionEvent arg0)
 			{
-				aDeck.shuffle();	
 				aNorth.showHand(dealHand());
 			}
 		});
@@ -51,12 +46,13 @@ public class HandDealer extends JFrame
 		new HandDealer();
 	}
 	
-	private Card[] dealHand()
+	private static Card[] dealHand()
 	{
 		Card[] lReturn = new Card[13];
+		Deck deck = new Deck();
 		for( int i = 0; i < 13; i++)
 		{
-			lReturn[i] = aDeck.draw();
+			lReturn[i] = deck.draw();
 		}
 		return lReturn;
 	}

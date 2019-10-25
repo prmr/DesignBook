@@ -20,7 +20,7 @@ public class Program
 	/**
 	 * Clear the program by removing all existing shows.
 	 */
-	private void clear()
+	public void clear()
 	{
 		// TODO
 	}
@@ -42,7 +42,7 @@ public class Program
 	 * Removes a show from the program.
 	 * @param pDay The day when we want to zap the show.
 	 */
-	private void remove(Day pDay)
+	public void remove(Day pDay)
 	{
 		assert pDay != null;
 		// TODO

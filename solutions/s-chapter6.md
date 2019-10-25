@@ -26,6 +26,23 @@ The following is a sample [Decorator](../solutions-code/chapter6/IntroducedShow.
 
 [Diagram file](c6-exercise5.sequence.jet)
 
+## Exercise 6
+
+The first steps are to create helper classes [CompositeIcon](../solutions-code/chapter6/CompositeIcon.java) and [ShiftedIcon](../solutions-code/chapter6/ShiftedIcon.java). Then a method to create the desired icon becomes relatively simple. Assuming `SHIFT_X` and `SHIFT_Y` denote `int` values that represent a number of pixels.
+
+```java
+private Icon createHandIcon(Card[] pHand, boolean pHidden)
+{
+	CompositeIcon result = new CompositeIcon();
+	for( int i = 0; i < pHand.length; i++ )
+	{
+		result.addIcon(new ShiftedIcon(pHidden?CardImages.getBack():CardImages.getCard(pHand[i]), SHIFT_X, SHIFT_Y));
+	}
+	return result;
+}
+
+```
+
 
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
