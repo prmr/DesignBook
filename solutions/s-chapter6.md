@@ -12,7 +12,13 @@ The following is a sample [Decorator](../solutions-code/chapter6/IntroducedShow.
 
 ![](c6-exercise3.png)
 
-[Diagram file](c6-exercise3.state.jet)
+[Diagram file](c6-exercise3.class.jet)
+
+## Exercise 4
+
+![](c6-exercise4.png)
+
+[Diagram file](c6-exercise4.object.jet)
 
 
 ---
