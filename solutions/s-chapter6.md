@@ -8,6 +8,13 @@ The following is a sample [Composite](../solutions-code/chapter6/CompositeShow.j
 
 The following is a sample [Decorator](../solutions-code/chapter6/IntroducedShow.java) and [Client](../solutions-code/chapter6/CompositeShow.java) (second block). 
 
+## Exercise 3
+
+![](c6-exercise3.png)
+
+[Diagram file](c6-exercise3.state.jet)
+
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
