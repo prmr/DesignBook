@@ -2,10 +2,11 @@ package chapter6;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.StringJoiner;
 
-public class CompositeShow implements Show
+public class CompositeShow implements Show, Iterable<Show>
 {
 	private List<Show> aShows = new ArrayList<>();
 	
@@ -38,5 +39,11 @@ public class CompositeShow implements Show
 			time += show.runningTime();
 		}
 		return time;
+	}
+
+	@Override
+	public Iterator<Show> iterator()
+	{
+		return aShows.iterator();
 	}
 }

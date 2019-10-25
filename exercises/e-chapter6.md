@@ -20,13 +20,13 @@ Draw an object diagram of the object graph created as part of exercise 2.
 
 Draw a sequence diagram that illustrates the sequence of method calls that results from a call to `description` on the root `Show` for the object graph depicted in Exercise 5.
 
-## Exercise 6
+## Exercise 6 
 
 Change the code of [HandDealer.java](../solutions-code/chapter6/HandDealer.java) so that it shows a hand of 13 cards, which each card overlaid on another, as in the figure below. Once the user clicks the button, the cards should be flipped so that they are face-side up. Every subsequent button click should reveal a new, random, hand, also face-side up. Use the Composite and Decorator patterns applied to the `Icon` interface to solve the problem.
 
 ![](HandDealer.png)
 
-## Exercise 7
+## Exercise 7 :star:
 
 We add the following requirement to the system created and documented as part of Exercises 1-5: We need a way to obtain all the shows in a composite show so that a client can "flatten" a show into a list of "atomic shows" (a show is considered atomic if it consists of one and exactly one show). Implement this requirement using an iterator in a way that *does not change the `Show` interface*. Implement a client method `flattenShow(Show):List<Show>` that returns a list of atomic shows. What do we have to give up to avoid changing the `Show` interface?
 
