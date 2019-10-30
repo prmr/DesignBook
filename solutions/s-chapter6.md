@@ -67,7 +67,7 @@ Show show = ...;
 if( show instanceof CompositeShow )
 {
    for( Show subshow : show )
-	{ /* ... */ }
+   { /* ... */ }
 }
 ```
 
@@ -87,7 +87,7 @@ for( Show subshow : show )
 { /* ... */ } // Not executed if an empty iterator is returned.
 ```
 
-The disadvantage of this approach is that an implementation of `iterator()` must also be supplied for classes that have nothing to unpack. However, with Java 8 is is a relatively minor concern because we can specific a default method that returns an empty iterator in the `Show` interface:
+The disadvantage of this approach is that an implementation of `iterator()` must also be supplied for classes that have nothing to unpack. However, with Java 8 it is a relatively minor concern because we can specific a default method that returns an empty iterator in the `Show` interface:
 
 ```java
 @Override
