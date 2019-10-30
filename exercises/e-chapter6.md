@@ -26,13 +26,13 @@ Change the code of [HandDealer.java](../solutions-code/chapter6/HandDealer.java)
 
 ![](HandDealer.png)
 
-## Exercise 7 :star:
+## Exercise 7
 
-We add the following requirement to the system created and documented as part of Exercises 1-5: We need a way to obtain all the shows in a composite show so that a client can "flatten" a show into a list of "atomic shows" (a show is considered atomic if it consists of one and exactly one show). Implement this requirement using an iterator in a way that *does not change the `Show` interface*. Implement a client method `flattenShow(Show):List<Show>` that returns a list of atomic shows. What do we have to give up to avoid changing the `Show` interface?
+We add the following requirement to the system created and documented as part of Exercises 1-5: We need a way to obtain all the shows in a composite show so that a client can "unpack" a composite. Implement this requirement using an iterator in a way that *does not change the `Show` interface*.
 
 ## Exercise 8
 
-Implement a variant of the feature described in Exercise 7, but this time by modifying the `Show` interface. How is this solution better? How is it worse? 
+Implement a variant of the feature described in Exercise 7, but this time by modifying the `Show` interface. 
 
 ## Exercise 9
 
