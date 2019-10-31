@@ -49,6 +49,7 @@ All the material on this site is organized by book chapter. To the extent possib
 ## Chapter 7: Inheritance
 
 * [Source code](chapter-code/chapter7)
+* [Exercises](exercises/e-chapter7.md)
 * [Clarifications and Corrections](corrections/c-chapter7.md)
 
 ## Chapter 8: Inversion of Control
