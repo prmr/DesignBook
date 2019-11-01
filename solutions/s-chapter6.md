@@ -97,6 +97,46 @@ default Iterator<Show> iterator()
 }
 ```
 
+## Exercise 9
+
+For `DoubleBill` to work with `Movie` instances specifically (as opposed to `Show` instances), and thereby not be a constructor, it is simply a matter of declaring the two aggregated objects to be of type `Movie`:
+
+```java
+/**
+ * Represents a show that consists of the screening of two movies
+ * in sequence.
+ */
+public class DoubleBill implements Show
+{
+   private Movie aMovie1;
+   private Movie aMovie2;
+	
+   /**
+    * @param pMovie1 The first movie.
+    * @param pMovie2 The second movie.
+    */
+   public DoubleBill(Movie pMovie1, Movie pMovie2)
+   {
+      aMovie1 = pMovie1;
+      aMovie2 = pMovie2;
+   }
+	
+   @Override
+   public String description() 
+   { 
+      return String.format("%s and %s", aMovie1.description(), aMovie2.description()); 
+   }
+
+   @Override
+   public int runningTime() 
+   { 
+      return aMovie1.runningTime() + aMovie2.runningTime(); 
+   }
+}
+
+```
+
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
