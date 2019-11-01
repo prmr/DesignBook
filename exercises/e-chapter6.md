@@ -40,7 +40,7 @@ Create a new class `DoubleBill` that represents a sequence of exactly two movies
 
 ## Exercise 10
 
-Implement a copy constructor for `Concert`, `Movie`, and `DoubleBill`, in this order. Then implement a copy constructor for `IntroducedShow`. Why is the solution problematic?
+Implement a copy constructor for `Concert`, `Movie`, and `DoubleBill`, in this order. Assume all `Show` object need to be copied deeply. Then implement a copy constructor for `IntroducedShow`. Why is the solution problematic?
 
 ## Exercise 11
 

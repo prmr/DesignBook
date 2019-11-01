@@ -136,6 +136,30 @@ public class DoubleBill implements Show
 
 ```
 
+## Exercise 10
+
+The copy constructor for `Movie` and `Concert` consist of trivial field initialization statements. Here is the one for `Movie`:
+
+```java
+public Movie(Movie pMovie)
+{
+   aTitle = pMovie.aTitle;
+   aYear = pMovie.aYear;
+   aRunningTime = pMovie.aRunningTime;
+}
+```
+
+The copy constructor for `DoubleBill` needs to make a copy of the underlying movies to fulfill the deep-copy requirement. This can be accomplished by using the just-implemented copy constructor for `Movie`.
+
+```java
+public DoubleBill(DoubleBill pDoubleBill)
+{
+   aMovie1 = new Movie(pDoubleBill.aMovie1);
+   aMovie2 = new Movie(pDoubleBill.aMovie2);
+}
+```
+
+The problem for `IntroducedShow` is that it aggregates an instance of the interface type `Show`. As a consequence of the polymorphism, the actual type of the `Show` object aggregated may only be known at run-time, so it is not possible to use a copy constructor in the source code without introducing a battery of inelegant and unsafe checks.
 
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
