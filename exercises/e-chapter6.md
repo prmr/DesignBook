@@ -40,37 +40,41 @@ Create a new class `DoubleBill` that represents a sequence of exactly two movies
 
 ## Exercise 10
 
-Implement a copy constructor for `Concert`, `Movie`, and `DoubleBill`, in this order. Assume all `Show` object need to be copied deeply. Then implement a copy constructor for `IntroducedShow`. Why is the solution problematic?
+Implement a copy constructor for `Concert`, `Movie`, and `DoubleBill`, in this order. Assume all `Show` object need to be copied deeply (which includes making copies of the object stored in fields of any type except primitive types and `String`). Then implement a copy constructor for `IntroducedShow`. Why is the solution problematic?
 
 ## Exercise 11
 
-Add support for *polymorphic copying* into the `Show` type hierarchy. Add a `copy()` method to the `Show` interface with the semantics that it does a deep copy of the object (which includes deep copies of fields of any type except primitive types and `String`).
+Add support for *polymorphic copying* into the `Show` type hierarchy. Add a `copy()` method to the `Show` interface with the semantics that it does a deep copy of the object as defined for Exercise 10.
 
 ## Exercise 12
 
-Using JUnit, write a unit test that checks that a copy of the object graph created as part of exercise 2 is a correct deep copy.
+Implement methods `equals` and `hashCode` on all implementing classes of `Show`. Consider that two composite shows are equals if they contain equal shows in the same sequence.
 
 ## Exercise 13
 
-Complete class [Program](../solutions-code/chapter6/Program.java) so that the requirements as met, including by creating a new class `NullShow`. It should be possible to copy instances of `NullShow` to respect the contracts  of the `Show.copy()` and `Program.get()` methods, but clients should also be able to determine if a given show is a `NullShow`.
+Using JUnit, write a unit test that checks that a copy of the object graph created as part of exercise 2 is a correct deep copy.
 
 ## Exercise 14
 
-Apply the `Command` design pattern so that is is possible to clear a program, add shows to it, and remove shows from it using `Command` objects. Write a sample client code that adds two movies to a program, removes one, then clears the program (from the remaining movie). Implement commands using anonymous classes (which will require you to write factory methods for them).
+Complete class [Program](../solutions-code/chapter6/Program.java) so that the requirements as met, including by creating a new class `NullShow`. It should be possible to copy instances of `NullShow` to respect the contracts  of the `Show.copy()` and `Program.get()` methods, but clients should also be able to determine if a given show is a `NullShow`.
 
 ## Exercise 15
 
-Extend the design created in Exercise 14 to allow commands to be *undoable*. Extend the client code of Exercise 14 to undo all commands executed, and verify that after each command can be properly undone.
+Apply the `Command` design pattern so that is is possible to clear a program, add shows to it, and remove shows from it using `Command` objects. Write a sample client code that adds two movies to a program, removes one, then clears the program (from the remaining movie). Implement commands using anonymous classes (which will require you to write factory methods for them).
 
 ## Exercise 16
 
-Build a `CommandProcessor` that is an abstraction that allows clients to execute commands, store executed commands, and undo the last executed command. Ensure your design respects the Law of Demeter.
+Extend the design created in Exercise 14 to allow commands to be *undoable*. Extend the client code of Exercise 14 to undo all commands executed, and verify that after each command can be properly undone.
 
 ## Exercise 17
 
-Extends the `CommandProcessor` so that is supports *redoing* commands (that is, executing undone commands).
+Build a `CommandProcessor` that is an abstraction that allows clients to execute commands, store executed commands, and undo the last executed command. Ensure your design respects the Law of Demeter.
 
 ## Exercise 18
+
+Extends the `CommandProcessor` so that is supports *redoing* commands (that is, executing undone commands).
+
+## Exercise 19
 
 Modify your design so that the operations of a `CommandProcessor` are encapsulated within a `Program`. In other words, client code should be able to once again call `add` `remove` and `clear` on an instance of `Program` to perform these actions, but the actions would be stored as commands within a program and be undoable through an `undoLast()` method added to the interface of `Program`. How can you avoid pushing `Program` towards a God class responsible for two different things: managing a program and managing a stack of commands?
 

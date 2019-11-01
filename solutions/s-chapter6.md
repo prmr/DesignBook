@@ -149,6 +149,15 @@ public Movie(Movie pMovie)
 }
 ```
 
+Here is the one for `Concert`, showing a different way of accomplishing the same thing:
+
+```java
+public Concert(Concert pConcert)
+{
+   this(pConcert.aTitle, pConcert.aPerformer, pConcert.aRunningTime);
+}
+```
+
 The copy constructor for `DoubleBill` needs to make a copy of the underlying movies to fulfill the deep-copy requirement. This can be accomplished by using the just-implemented copy constructor for `Movie`.
 
 ```java
@@ -160,6 +169,79 @@ public DoubleBill(DoubleBill pDoubleBill)
 ```
 
 The problem for `IntroducedShow` is that it aggregates an instance of the interface type `Show`. As a consequence of the polymorphism, the actual type of the `Show` object aggregated may only be known at run-time, so it is not possible to use a copy constructor in the source code without introducing a battery of inelegant and unsafe checks.
+
+## Exercise 11
+
+For the "leaf" classes (`Movie`, `Concert`, and `DoubleBill`) the simplest is probably to return a new object using the copy constructor. For example, for `Movie`:
+
+```java
+@Override
+public Show copy()
+{
+   return new Movie(this);
+}
+```
+
+For classes that polymorphically aggregate one or more `Show` objects, these objects must also be copied:
+
+```java
+@Override
+public Show copy()
+{
+   return new IntroducedShow(aSpeaker, aSpeechTime, aShow.copy());
+}
+```
+
+```java
+@Override
+public Show copy()
+{
+   CompositeShow copy = new CompositeShow();
+   for( Show show : aShows )
+   {
+      copy.aShows.add(show.copy());
+   }
+   return copy;
+}
+```
+
+One Java feature that will be introduced in more detail in Chapter 7 but that is worth mentioning here is that, in this case, it is perfectly legal to declare a return type for an implementing method that is *a subtype* of the interface method. This feature is called *covariant return types*, and it means that method `copy()` can declare to return the actual type being returned. For example:
+
+```java
+@Override
+public Movie copy()
+{
+   return new Movie(this);
+}
+```
+
+The major benefit of this is that client code that holds a reference to a `Movie` can copy that movie and assign the result to a variable of type `Movie` without casting:
+
+```java
+Movie movie = ...;
+Movie copy = movie.copy();
+```
+
+## Exercise 12
+
+For equals, in all cases the fields can be compared pairwise. This also works for `CompositeShow` given the behavior of `List.equals`:
+
+```java
+@Override
+public boolean equals(Object obj)
+{
+   if (this == obj)
+      return true;
+   if (obj == null)
+      return false;
+   if (getClass() != obj.getClass())
+      return false;
+   CompositeShow other = (CompositeShow) obj;
+   return Objects.equals(aShows, other.aShows);
+}
+```
+
+For `hashCode`, the result of `Objects.hash` with all the fields also works.
 
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
