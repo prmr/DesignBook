@@ -35,7 +35,64 @@ public class SponsoredConcert extends Concert
 
 A solution that would make proper use of inheritance would be to access `aPerformer` through a getter method, either public or protected. 
 
+# Exercise 3
 
+Here is `AbstractShow`:
+
+```java
+public abstract class AbstractShow implements Show
+{
+   private String aTitle;
+   private int aTime;
+	
+   protected AbstractShow(String pTitle, int pTime)
+   {
+      aTitle = pTitle;
+      aTime = pTime;
+   }
+	
+   public String title()
+   {
+      return aTitle;
+   }
+	
+   public void setTitle(String pTitle)
+   {
+      aTitle = pTitle;
+   }
+	
+   public int time()
+   {
+      return aTime;
+   }
+	
+   public void setTime(int pTime)
+   {
+      aTime = pTime;
+   }
+}
+```
+
+And here is the refactored `Concert` as an example. Class `Movie` is conceptually similar:
+
+```java
+public class Concert extends AbstractShow
+{
+   protected String aPerformer;
+	
+   public Concert(String pTitle, String pPerformer, int pTime)
+   {
+      super(pTitle, pTime);
+      aPerformer = pPerformer;
+   }
+	
+   @Override
+   public String description()
+   {
+      return String.format("%s by %s", title(), aPerformer);
+   }
+}
+```
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
