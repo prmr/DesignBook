@@ -243,6 +243,29 @@ public boolean equals(Object obj)
 
 For `hashCode`, the result of `Objects.hash` with all the fields also works.
 
+## Exercise 13
+
+Let's assume `fixture` is a reference to the object graph created in Exercise 2 and that `equals` and `hashCode` have been *correctly* redefined as described in Exercise 12.
+
+```java
+IntroducedShow fixture = ...;
+```
+
+Then a solution could starts as follows:
+
+```java
+@Test
+public void testCopy()
+{
+   IntroducedShow exercise2 = ...;
+   IntroducedShow copy = exercise2.copy();
+   assertNotSame(exercise2, copy);
+   assertEquals(exercise2, copy);
+}
+```
+However, this test does not have very much bug-finding power because the test would still pass if references are shared within the object structure. To properly test the structure, it would be necessary to "unpack" the aggregator objects within the structure (`CompositeShow` and `IntroducedShow`). For `CompositeShow` it isn't so bad if we assume the iterator of Exercise 8 is available. However, getting at the element wrapped by `IntroducedShow` would require more work, for example the use of reflection. The end test would be a mess of iterations and tests. What is to be observed from this exercise is that using elaborate recursive structures as input and oracle is perhaps not the best way to go about testing a recursive method. Ideally, each implementation should be tested in isolation, using stubs to verify the copying is deep.
+
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
