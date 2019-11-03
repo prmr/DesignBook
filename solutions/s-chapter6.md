@@ -265,6 +265,73 @@ public void testCopy()
 ```
 However, this test does not have very much bug-finding power because the test would still pass if references are shared within the object structure. To properly test the structure, it would be necessary to "unpack" the aggregator objects within the structure (`CompositeShow` and `IntroducedShow`). For `CompositeShow` it isn't so bad if we assume the iterator of Exercise 8 is available. However, getting at the element wrapped by `IntroducedShow` would require more work, for example the use of reflection. The end test would be a mess of iterations and tests. What is to be observed from this exercise is that using elaborate recursive structures as input and oracle is perhaps not the best way to go about testing a recursive method. Ideally, each implementation should be tested in isolation, using stubs to verify the copying is deep.
 
+# Exercise 14
+
+For the Null show requirement I decided to use an anonymous class and encapsulate everything within `Program` to minimize the API related to the Null show case, but other solutions are possible:
+
+```java
+public class Program
+{
+   private static final Show NULL = createNullShow();
+	
+   private static Show createNullShow() {
+      return new Show() {
+         @Override public String description() { return ""; }
+         @Override public int runningTime() { return 0; }
+         @Override public Show copy() { return createNullShow(); }
+         @Override public int hashCode() { return 0; }
+         @Override public boolean equals(Object pObject) 
+         { return pObject != null && pObject.getClass() == this.getClass(); }
+      };
+   }
+	
+   public boolean isNull(Show pShow)
+   {
+      return NULL.equals(pShow);
+   }
+   
+   /* ... */
+}
+```
+
+The `clear()` method and constructor fill the program with Null shows:
+
+```java
+public Program()
+{ 
+   clear();
+}
+	
+public void clear()
+{
+   for( Day day : Day.values() )
+   {
+      aShows.put(day, NULL);
+   }
+}
+```
+
+With this in place, the `add`, `remove`, and `get` methods don't need to do anything special:
+
+```java
+public void add(Show pShow, Day pDay)
+{
+   assert pShow != null && pDay != null;
+   aShows.put(pDay, pShow);
+}
+	
+public void remove(Day pDay)
+{
+   assert pDay != null;
+   aShows.remove(pDay);
+}
+	
+public Show get(Day pDay)
+{
+   assert pDay != null && aShows.containsKey(pDay);
+   return aShows.get(pDay);
+}
+```
 
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
