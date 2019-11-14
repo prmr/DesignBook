@@ -57,6 +57,7 @@ All the material on this site is organized by book chapter. To the extent possib
 ## Chapter 8: Inversion of Control
 
 * [Source code](chapter-code/chapter8)
+* [Exercises](exercises/e-chapter8.md)
 
 ## Chapter 9
 
