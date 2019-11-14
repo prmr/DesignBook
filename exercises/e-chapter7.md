@@ -30,6 +30,22 @@ where `$TITLE` is a placeholder for the title of the show, and `$TIME` is a plac
 
 Draw a UML sequence diagram that model the sequence of calls that results from an invocation of method `description` on an instance of `SponsoredConcert`. To clarify which implementation of a method is used, name the call using the convention `Class#Method`, so that for example a call to method `time()` of class `SponsoredConcert` would be labeled as `SponsoredConcert#time()`.
 
+# Exercise 7
+
+Consider the class `AbstractShow` created as part of Exercise 3. Add a method `setTitle(String)` in `AbstractShow` to set the title of the show. Because the title of a movie does not change after the movie is released, override `setTitle` to throw an [UnsupportedOperationException](https://docs.oracle.com/javase/8/docs/api/java/lang/UnsupportedOperationException.html). Similarly, implement a method `setTime` in `AbstractShow` with an input precondition of `> 0`, and override this method in `Movie` to have the precondition `> 10`. Does class `Movie` respect the Liskov Substitution Principle? Support your answer with a piece of demonstration client code.
+
+# Exercise 8
+
+Assume class `AbstractShow` provides a method `setTime(int minutes)`. Add an additional method `setTime(int hours, int minutes)` that sets the time of the show as `hours * 60 + minutes`. Is this a case of overloading or overriding? Now remove the implementation of `setTime(int hours, int minutes)` and add it to class `Movie` instead. Is this a case of overloading or overriding? Does it make a difference whether we place this method in `AbstractShow` or `Movie`?
+
+# Exercise 9
+
+We which to add a *recommendation* feature to our `Show` type hierarchy, where `Show` instances can hold a reference to a "recommended" shows (if a person likes a given show). For this purpose add a field `Show aRecommended` to class `AbstractShow`, together with public methods `Show setRecommended(Show)` and `Show getRecommended()`. For movies, we wish to constraint recommendations to movies only, so that movies can only hold recommendations to other movies. Override methods `setRecommended` and `getRecommended` in class `Movie` to only take `Movie` as parameter and return `Movie`, respectively. Does this design respect the Liskov Substitution Principle? Support your answer with a piece of demonstration client code.
+
+# Exercise 10
+
+Make the `Show` class hierarchy `Cloneable` so that it is possible to clone instances of `Concert`, `Movie`, or `SponsoredConcert`.
+
 
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
