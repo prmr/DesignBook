@@ -4,3 +4,4 @@
 * Page 162: "the first instruction of any constructor is to call a constructor of its superclass" is not completely accurate because it is also possible to call a constructor *of the same class* with `this(...)`. 
 * Page 162: In the first code fragment, `Cards.get` should be `Card.get` and `Suit.SPACES` should be `Suit.SPADES`.
 * Page 176: class `AbstractDecorator` is intended to be also declared as `abstract`.  See [`AbstractDecorator`](../chapter-code/chapter7/AbstractDecorator.java) for the corrected version.
+* Page 185: For the first code fragment to work as expected, the first line should read `MemorizingDeck deck = new MemorizingDeck();`
