@@ -45,6 +45,14 @@ Extend the [UserInterface](../solutions-code/chapter8/UserInterface.java) skelet
 
 Extend Exercise 10 to embed the node that contains the textfields in a [ScrollPane](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/ScrollPane.html). Draw an object diagram that shows your component graph. What design patterns are being applied in this design? Add the event handler to your object diagram.
 
+# Exercise 12
+
+Consider the sample class [Node](../solutions-code/chapter8/Node.java) class hierarchy to support a file system. Apply the Visitor pattern to support the traversal of object graphs created from this class hierarchy. Implement the traversal code in the `Node` hierarchy, then write client code to try our your visitor support. Write a `PrintVisitor` to pretty-print all the nodes in a sample file tree. Try indenting the names of the nodes based on their depth in the tree. Draw a sequence diagram for the visit of a directory with one file and one symbolic link.
+
+# Exercise 13
+
+Change the design of Exercise 12 to include an `AbstractVisitor` class. Move the traversal code to this class, and change your `PrintVisitor` so it extends `AbstractVisitor`. Draw a sequence diagram for the visit of a directory with one file and one symbolic link, and make sure to see the difference with the diagram created as part of exercise 12.
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
