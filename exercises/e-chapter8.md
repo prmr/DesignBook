@@ -21,6 +21,30 @@ Change the design of your observable `Deck` from exercise 1 so that all the obse
 
 Model the solution produced in exercise 4 with a class diagram, object diagram, and sequence diagram that illustrates a call initiated by calling `draw` on a `Deck` object.
 
+# Exercise 6
+
+Apply the Observer design pattern to make it possible to observe class [Program](../solutions-code/chapter6/Program.java) from exercise 6.14. Use the push data-flow strategy and a single observer interface. Create a dummy concrete observer class to test the application of the pattern.
+
+# Exercise 7
+
+Change the design produced in Exercise 6 to use the pull data-flow strategy and a two different observer interfaces, one for addition events, and one for clearing and removing shows from the program. Use the interface segregation principle to ensure observers do not reference methods that can change the state of the subject.
+
+# Exercise 8
+
+Extend the [LuckyNumber](../chapter-code/chapter8/LuckyNumber.java) JavaFX application to support an additional panel that shows the number in Roman numerals. For an extra challenge, parameterize the text panel so that it is possible to use a single class to create different representations of the number.
+
+# Exercise 9
+
+Extend the [UserInterface](../solutions-code/chapter8/UserInterface.java) skeleton JavaFX program to create a GUI with a single [Label](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Label.html) and a single [Button](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Button.html), where the label shows the current date and time, and gets updated every time the button is clicked. Try to create the solution by using only the API documentation, without looking at sample code. You will also need a [Pane](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/Pane.html) (consider using a subclass). For a quick solution to obtain the current time, you can use `LocalDateTime.now().toString()`.
+
+# Exercise 10
+
+Extend the [UserInterface](../solutions-code/chapter8/UserInterface.java) skeleton JavaFX program to create a GUI with two [TextField](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TextField.html) instances and a single [Button](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Button.html), where any text in the two text fields is swapped when the button is clicked. Organize the logical arrangement of the GUI components so that both text fields are in one parent, and the button is a child of the root.
+
+# Exercise 11
+
+Extend Exercise 10 to embed the node that contains the textfields in a [ScrollPane](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/ScrollPane.html). Draw an object diagram that shows your component graph. What design patterns are being applied in this design? Add the event handler to your object diagram.
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 

@@ -56,7 +56,7 @@ Using JUnit, write a unit test that checks that a copy of the object graph creat
 
 ## Exercise 14
 
-Complete class [Program](../solutions-code/chapter6/Program.java) so that the requirements as met, including by creating a new class that represents the absence of a show ("Null show"). It should be possible to copy instances of a Null show to respect the contracts  of the `Show.copy()` and `Program.get()` methods, but clients should also be able to determine if a given show is a Null show.
+Complete class [Program](../solutions-code/chapter6/Program.java) so that the requirements are met, including by creating a new class that represents the absence of a show ("Null show"). It should be possible to copy instances of a Null show to respect the contracts  of the `Show.copy()` and `Program.get()` methods, but clients should also be able to determine if a given show is a Null show.
 
 ## Exercise 15
 
