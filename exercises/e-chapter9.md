@@ -24,6 +24,10 @@ Transform the static comparator factory from Exercise 5 into a simple static met
 
 Use the methods of class `Comparator` to create a comparator that compares movies by running time, then by title.
 
+## Exercise 7
+
+Turn class `Movie` into a Flyweight class with lazily-instantiated flyweights where the flyweight store is a `Map<String, Movie>` and the key is the title (assumed to be unique for this exercise). Use `Map.computeIfAbsent` with a lambda expression in the implementation of your flyweight object accessor method.
+
 
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
