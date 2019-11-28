@@ -1,5 +1,7 @@
 package chapter6;
 
+import java.util.Objects;
+
 public class IntroducedShow implements Show
 {
 	private final Show aShow;
@@ -18,4 +20,30 @@ public class IntroducedShow implements Show
 
 	@Override
 	public int runningTime() { return aSpeechTime + aShow.runningTime(); }
+
+	@Override
+	public IntroducedShow copy()
+	{
+		return new IntroducedShow(aSpeaker, aSpeechTime, aShow.copy());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(aShow, aSpeaker, aSpeechTime);
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		IntroducedShow other = (IntroducedShow) obj;
+		return Objects.equals(aShow, other.aShow) && Objects.equals(aSpeaker, other.aSpeaker)
+				&& aSpeechTime == other.aSpeechTime;
+	}
 }

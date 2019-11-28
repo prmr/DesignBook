@@ -1,4 +1,4 @@
-package chapter8;
+package chapter8.copy;
 
 import javafx.application.Application;
 import javafx.scene.Parent;

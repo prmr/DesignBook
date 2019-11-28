@@ -9,24 +9,24 @@
  * 
  * See http://creativecommons.org/licenses/by-nc-nd/4.0/
  *******************************************************************************/
-package chapter6;
+package chapter7.copy;
 
 /**
- * Represents a performance that can take place in a theater. All implementations
- * of this interface should be immutable.
+ * Represents a concert.
  */
-public interface Show
+public class Concert extends AbstractShow
 {
-	/**
-	 * @return A description of the show.
-	 */
-	String description();
+	protected String aPerformer;
 	
+	public Concert(String pTitle, String pPerformer, int pTime)
+	{
+		super(pTitle, pTime);
+		aPerformer = pPerformer;
+	}
 	
-	/**
-	 * @return The running time of the show, in minutes.
-	 */
-	int runningTime();
-	
-	Show copy();
+	@Override
+	protected String extra()
+	{
+		return "by " + aPerformer;
+	}
 }

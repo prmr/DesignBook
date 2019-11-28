@@ -3,6 +3,7 @@ package chapter6;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.StringJoiner;
 
 public class CompositeShow implements Show
@@ -38,5 +39,35 @@ public class CompositeShow implements Show
 			time += show.runningTime();
 		}
 		return time;
+	}
+
+	@Override
+	public Show copy()
+	{
+		List<Show> copies = new ArrayList<>();
+		for( Show show : aShows )
+		{
+			copies.add(show.copy());
+		}
+		return new CompositeShow(copies.toArray(new Show[copies.size()]));
+	}
+
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(aShows);
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		CompositeShow other = (CompositeShow) obj;
+		return Objects.equals(aShows, other.aShows);
 	}
 }
