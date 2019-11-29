@@ -28,6 +28,38 @@ Use the methods of class `Comparator` to create a comparator that compares movie
 
 Turn class `Movie` into a Flyweight class with lazily-instantiated flyweights where the flyweight store is a `Map<String, Movie>` and the key is the title (assumed to be unique for this exercise). Use `Map.computeIfAbsent` with a lambda expression in the implementation of your flyweight object accessor method.
 
+## Exercise 8
+
+Write a stream-based expression that prints the running time of all movies in the database in the format: ``HH:mm` (hours, minutes). Except for the terminal operation, use only mapping operations and method references. You can define helper methods as necessary.
+
+## Exercise 9
+
+Write a stream-based expression that evaluates to a list that contains the three longest movies from before the year 2000, in reverse alphabetical order of title.
+
+## Exercise 10
+
+Use a IntStream-based expression to compute the minimum, maximum, average, and sum of a sequence of one million integers. Do the same with `double` numbers.
+
+## Exercise 11
+
+Use a flatMap operation to count the number of times the word "the" occurs in the title of any movie (ignore case).
+
+## Exercise 12
+
+Use a single reduce operation to obtain the longest movie in the collection.
+
+## Exercise 13
+
+Write a stream-based expression to create a `Map<String, Integer>` where the key is the title of the movie and the value is its running time. Assume movie titles are unique.
+
+## Exercise 14
+
+Write a stream-based expression to create a map that group movies by decade. For example, all the movies produced in the years 1950-1959 should be accessible using the key `50s`, etc.
+
+## Exercise 15
+
+Use the map created in Exercise 14, write a stream-based expression that evaluates to a list of all the movies from the 50s and 60s.
+
 
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
