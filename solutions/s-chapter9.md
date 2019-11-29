@@ -39,7 +39,43 @@ then the expression can use a method reference:
 movies.removeIf(Movie::isOld);
 ```
 
+## Exercise 3
 
+With an anonymous class:
+
+```java
+Movies.movies().forEach(new Consumer<Movie>() 
+{
+   @Override
+   public void accept(Movie pMovie)
+   {
+      System.out.println(pMovie);
+   }
+});
+```
+
+With a lambda expression:
+
+```java
+Movies.movies().forEach(movie -> System.out.println(movie));
+```
+
+With a reference to a static method, assumed to be in class `Exercise3`:
+
+```java
+Movies.movies().forEach(Exercise3::print);
+	
+private static void print(Movie pMovie)
+{
+   System.out.println(pMovie);
+}
+```
+
+And with a reference to `System.out.println(Object)`:
+
+```java
+Movies.movies().forEach(System.out::println);
+```
 
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
