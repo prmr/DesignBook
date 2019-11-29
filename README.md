@@ -65,6 +65,7 @@ All the material on this site is organized by book chapter. To the extent possib
 
 * [Source code](chapter-code/chapter9)
 * [Exercises](exercises/e-chapter9.md)
+* [Solutions](solutions/s-chapter9.md)
 * [Clarifications and Corrections](corrections/c-chapter9.md)
 
 ## License
