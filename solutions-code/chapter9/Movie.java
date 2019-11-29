@@ -21,9 +21,9 @@ public class Movie implements Show
 		aRunningTime = pTime;
 	}
 	
-	public boolean isShort()
+	public int year()
 	{
-		return time() < 75;
+		return aYear;
 	}
 	
 	public Movie(Movie pMovie)
