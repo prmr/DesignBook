@@ -22,6 +22,25 @@ As a lambda expression:
 movies.removeIf( movie -> movie.year() < 1960 );
 ```
 
+## Exercise 2
+
+If we add method `isOld` to class `Movie`:
+
+```java
+public boolean isOld()
+{
+    return aYear < 1960;
+}
+```
+
+then the expression can use a method reference:
+
+```java
+movies.removeIf(Movie::isOld);
+```
+
+
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
