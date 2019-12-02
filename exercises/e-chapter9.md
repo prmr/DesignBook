@@ -14,7 +14,7 @@ Use the method `Iterable.forEach` to print the description of all [movies](../so
 
 ## Exercise 4
 
-Use method `Collections.sort` to sort the [movies](../solutions-code/chapter9/Movies.java) by running time, using a lambda expression to define the required comparator. Move this lambda expression to a static factory method `static createByTimeComparator(): Comparator<Show>` and call this method as a second argument to `sort`. Notice how this code compiles even though the type argument of the collection (`Movie`) and the type argument of the comparator (`Show`) don't match exactly. 
+Use method [`List.sort`](https://docs.oracle.com/javase/8/docs/api/java/util/List.html#sort-java.util.Comparator-) to sort the [movies](../solutions-code/chapter9/Movies.java) in order of increasing running time, using a lambda expression to define the required comparator. Move this lambda expression to a static factory method `static createByTimeComparator(): Comparator<Show>` and call this method as the argument to `sort`. Notice how this code compiles even though the type argument of the collection (`Movie`) and the type argument of the comparator (`Show`) don't match exactly. 
 
 ## Exercise 5
 
