@@ -105,6 +105,12 @@ The rest of the solution from Exercise 1 can remain unchanged. For this particul
 
 [Diagram file](c8-exercise5.sequence.jet)
 
+## Exercise 6
+
+![](c8-exercise6.class.png)
+
+[Diagram file](c8-exercise6.class.jet)
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
