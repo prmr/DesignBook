@@ -217,6 +217,8 @@ primaryStage.setScene(new Scene(rootPane));
 
 [Diagram file](c8-exercise11.object.jet)
 
+This solution shows an application of the Composite design pattern because a `Parent` (`HBox` or `VBox`) *is* a `Node` and *aggregates* multiple `Node`. The solution also shows an application of the Decorator design pattern because a `Scrollpane` *is* a `Node` and *wraps* a `Node`.
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
