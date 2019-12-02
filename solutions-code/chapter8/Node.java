@@ -10,7 +10,7 @@ public interface Node
 	String name();
 }
 
-abstract class AbstractNode
+abstract class AbstractNode implements Node
 {
 	private String aName;
 	
