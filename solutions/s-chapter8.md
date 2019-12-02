@@ -175,7 +175,6 @@ button.setOnAction(e -> label.setText(LocalDateTime.now().toString()));
 
 ## Exercise 10
 
-```java
 The minimal solution with an anonymous class is as follows. If you have read Chapter 9, try using a lambda expression.
 
 ```java
