@@ -148,6 +148,31 @@ private static final String[] ENGLISH = {"Zero", "One", "Two", "Three", ...
 private static final String[] ROMAN = {"nullus", "I", "II", "III", "IV", ...
 ```
 
+## Exercise 9
+
+The minimal solution with an anonymous class is as follows:
+
+```java
+Label label = new Label(LocalDateTime.now().toString());
+Button button = new Button("Now");
+button.setOnAction(new EventHandler<ActionEvent>()
+{
+   @Override
+   public void handle(ActionEvent event)
+   {
+      label.setText(LocalDateTime.now().toString());
+   }
+});
+primaryStage.setScene(new Scene(new VBox(label, button)));
+primaryStage.show();
+```
+
+An even more compact solution can be achieved with a lambda expression (Chapter 9), in which case the call to `setOnAction` becomes:
+
+```java
+button.setOnAction(e -> label.setText(LocalDateTime.now().toString()));
+```
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
