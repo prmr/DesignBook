@@ -39,6 +39,57 @@ The disadvantages are numerous:
 * We cannot design individual callbacks specific to our situation, we have to rely on a single general one offered by `Observer` and use an event type instead;
 * The code we write to use `java.util.Observer` is brittle because of the downcasts required.
 
+## Exercise 4
+
+The first part of the solution is to declare `ObservableDeck` to extend `Deck` and declare the extra field to hold a list of observers, and a method to add to that list:
+
+```java
+public class ObservableDeck extends Deck
+{
+	private final List<DeckObserver> aObservers = new ArrayList<>();
+	
+	public void addObserver(DeckObserver pObserver)
+	{
+		assert pObserver != null;
+		aObservers.add(pObserver);
+	}
+```
+
+Then each state-changing method needs to be redefined so it triggers observer notifications:
+
+
+```java
+public void shuffle()
+{
+   super.shuffle();
+   for(DeckObserver1 observer : aObservers)
+   {
+      observer.shuffled();
+   }
+}
+
+public void push(chapter2.Card pCard)
+{
+   super.push(pCard);
+   for(DeckObserver1 observer : aObservers)
+   {
+      observer.cardPushed(pCard);
+   }
+}
+	
+public Card draw()
+{
+   Card card = super.draw();
+   for(DeckObserver1 observer : aObservers)
+   {
+      observer.cardDrawn(card);
+   }
+   return card;
+}
+
+```
+
+The rest of the solution from Exercise 1 can remain unchanged. For this particular application of the pattern, this use of inheritance works relatively well. The code handling the observer functionality is isolated in one class, it's possible to have both `Deck` and `ObservableDeck` without much code duplication, and retain the flexibility to have our own `Observer` interface and callbacks.
 
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
