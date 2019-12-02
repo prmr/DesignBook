@@ -117,6 +117,36 @@ The rest of the solution from Exercise 1 can remain unchanged. For this particul
 
 [Diagram file](c8-exercise7.jet)
 
+## Exercise 8
+
+The `TextPanel` can be very easily refactored to take in any set of strings. I made the static field `LABELS` an instance field (renamed `aLabels`), and assigned its value in the constructor:
+
+```java
+class TextPanel extends HBox implements Observer
+{
+   private final String[] aLabels;
+	
+   / *...*/
+	
+   TextPanel(Model pModel, String... pLabels)
+   {
+      assert pLabels != null && pLabels.length == 11;
+      aLabels = Arrays.copyOf(pLabels, pLabels.length);
+```
+
+and nothing else needs to change except the construction of the final application, which now looks like this:
+
+```java
+root.add(new TextPanel(model, ENGLISH), 0, 2, 1, 1);
+root.add(new TextPanel(model, ROMAN), 0, 3, 1, 1);
+```
+
+where `ENGLISH` and `ROMAN` are constant collections of labels:
+
+```java
+private static final String[] ENGLISH = {"Zero", "One", "Two", "Three", ...
+private static final String[] ROMAN = {"nullus", "I", "II", "III", "IV", ...
+```
 
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
