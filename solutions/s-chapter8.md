@@ -195,6 +195,28 @@ primaryStage.setScene(new Scene(new VBox(new HBox(textfield1, textfield2), butto
 primaryStage.show();
 ```
 
+## Exercise 11
+
+This can be achieved by wrapping the `Pane` that holds the text fields into a `ScrollPane`:
+
+```java
+primaryStage.setScene(new Scene(
+   new VBox(new ScrollPane(new HBox(textfield1, textfield2)), button)));
+```
+
+To make the solution more obvious, we can extract individual parents into temporary variables:
+
+```java
+HBox textFieldPane = new HBox(textfield1, textfield2);
+ScrollPane scrollableTextFieldPane = new ScrollPane(textFieldPane);
+VBox rootPane = new VBox(scrollableTextFieldPane, button);
+primaryStage.setScene(new Scene(rootPane));
+```
+
+![](c8-exercise11.png)
+
+[Diagram file](c8-exercise11.object.jet)
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
