@@ -113,9 +113,9 @@ The rest of the solution from Exercise 1 can remain unchanged. For this particul
 
 ## Exercise 7
 
-![](c8-exercise7.class.png)
+![](c8-exercise7.png)
 
-[Diagram file](c8-exercise7.class.jet)
+[Diagram file](c8-exercise7.jet)
 
 
 ---
