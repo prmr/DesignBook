@@ -91,6 +91,20 @@ public Card draw()
 
 The rest of the solution from Exercise 1 can remain unchanged. For this particular application of the pattern, this use of inheritance works relatively well. The code handling the observer functionality is isolated in one class, it's possible to have both `Deck` and `ObservableDeck` without much code duplication, and retain the flexibility to have our own `Observer` interface and callbacks.
 
+## Exercise 5
+
+![](c8-exercise5.class.png)
+
+[Diagram file](c8-exercise5.class.jet)
+
+![](c8-exercise5.object.png)
+
+[Diagram file](c8-exercise5.object.jet)
+
+![](c8-exercise5.sequence.png)
+
+[Diagram file](c8-exercise5.sequence.jet)
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 

@@ -19,7 +19,7 @@ Change the design of your observable `Deck` from exercise 1 so that all the obse
 
 ## Exercise 5
 
-Model the solution produced in exercise 4 with a class diagram, object diagram, and sequence diagram that illustrates a call initiated by calling `draw` on a `Deck` object.
+Model the solution produced in exercise 4 with a class diagram, object diagram, and sequence diagram that illustrates a call initiated by calling `draw` on an `ObservableDeck` object.
 
 ## Exercise 6
 
