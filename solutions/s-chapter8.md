@@ -173,6 +173,29 @@ An even more compact solution can be achieved with a lambda expression (Chapter 
 button.setOnAction(e -> label.setText(LocalDateTime.now().toString()));
 ```
 
+## Exercise 10
+
+```java
+The minimal solution with an anonymous class is as follows. If you have read Chapter 9, try using a lambda expression.
+
+```java
+TextField textfield1 = new TextField("text field 1");
+TextField textfield2 = new TextField("text field 2");
+Button button = new Button("Swap");
+button.setOnAction(new EventHandler<ActionEvent>()
+{
+   @Override
+   public void handle(ActionEvent event)
+   {
+      String temp = textfield1.getText();
+      textfield1.setText(textfield2.getText());
+      textfield2.setText(temp);
+   }
+});
+primaryStage.setScene(new Scene(new VBox(new HBox(textfield1, textfield2), button)));
+primaryStage.show();
+```
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
