@@ -116,6 +116,21 @@ We can then refer to it wherever a function type `(Show,Show)->int` is expected:
 movies.sort(Exercise5::compareByTime);
 ```
 
+## Exercise 6
+
+Assuming we have the static import:
+
+```java
+import static java.util.Comparator.comparing;
+```
+
+the solution is:
+
+```java
+List<Movie> movies = Movies.movies();
+movies.sort(comparing(Movie::time).thenComparing(Movie::title));
+```
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
