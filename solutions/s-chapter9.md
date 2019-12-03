@@ -171,6 +171,26 @@ Movies.movies().stream()
    .forEach(System.out::println);
 ```
 
+## Exercise 9
+
+To make the code more readable I import the following static members:
+
+```java
+import static java.util.Comparator.comparing;
+import static java.util.stream.Collectors.toList;
+```
+
+The solution:
+
+```java
+List<Movie> mySelection = Movies.movies().stream()
+   .filter(movie -> movie.time() < 2000)
+   .sorted(comparing(Movie::time).reversed())
+   .limit(3)
+   .sorted(comparing(Movie::title).reversed())
+   .collect(toList());
+```
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
