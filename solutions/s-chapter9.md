@@ -150,6 +150,27 @@ public static Movie get(String pTitle, int pYear, int pTime)
 
 In this simple exercise there's no way to get the year and time for a movie, so we have to provide all the information required to create an object (title, year, time) to the accessor method.
 
+## Exercise 8
+
+I created a helper function to turn a number of minutes into the requires output:
+
+```java
+private static String toHHMM(int pMinutes)
+{
+   assert pMinutes >=0;
+   return String.format("%d:%02d", pMinutes/60, pMinutes%60);
+}
+```
+
+The solution is then:
+
+```java
+Movies.movies().stream()
+   .map(Movie::time)
+   .map(Exercise8::toHHMM)
+   .forEach(System.out::println);
+```
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
