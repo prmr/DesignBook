@@ -191,6 +191,26 @@ List<Movie> mySelection = Movies.movies().stream()
    .collect(toList());
 ```
 
+## Exercise 10
+
+With integers:
+
+```java
+Random random = new Random();
+System.out.println(
+   IntStream.generate(()->random.nextInt(101))
+      limit(1000000)
+      .summaryStatistics());
+```
+
+With doubles it's only a matter of changing the stream class and working around the `0-1.0` bounds for the random number generation:
+
+```java
+DoubleStream.generate(()-> 100 * random.nextDouble())
+   .limit(1000000)
+   .summaryStatistics()
+```
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 

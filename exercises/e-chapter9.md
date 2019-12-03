@@ -38,7 +38,7 @@ Write a stream-based expression that evaluates to a list that contains the three
 
 ## Exercise 10
 
-Use a IntStream-based expression to compute the minimum, maximum, average, and sum of a sequence of one million integers. Do the same with `double` numbers.
+Use a IntStream-based expression to compute the minimum, maximum, average, and sum of a sequence of one million integers between 0 and 100 (inclusive). Do the same with `double` numbers (in which case `1.0` can be exclusive.
 
 ## Exercise 11
 
