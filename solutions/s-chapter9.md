@@ -211,6 +211,19 @@ DoubleStream.generate(()-> 100 * random.nextDouble())
    .summaryStatistics()
 ```
 
+## Exercise 11
+
+The following code assumes `Predicate.isEqual` and `Arrays.stream` are statically imported:
+
+```java
+long result = Movies.movies().stream()
+   .map(Movie::title)
+   .map(String::toLowerCase)
+   .flatMap(string -> stream(string.split("[\\s,]+")))
+   .filter(isEqual("the"))
+   .count();
+```
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
