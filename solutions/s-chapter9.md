@@ -99,6 +99,23 @@ the client code becomes:
 movies.sort(createByTimeComparator());
 ```
 
+## Exercise 5
+
+We transform the factory into a simple comparison method:
+
+```java
+private static int compareByTime(Show pShow1, Show pShow2)
+{
+   return pShow1.time() - pShow2.time();
+}
+```
+
+We can then refer to it wherever a function type `(Show,Show)->int` is expected:
+
+```java
+movies.sort(Exercise5::compareByTime);
+```
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 

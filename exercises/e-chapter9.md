@@ -18,7 +18,7 @@ Use method [`List.sort`](https://docs.oracle.com/javase/8/docs/api/java/util/Lis
 
 ## Exercise 5
 
-Transform the static comparator factory from Exercise 5 into a simple static method declaration `compare(Show, Show):int`. Then, change the code of Exercise 4 to use this method implementation instead.
+Transform the static comparator factory from Exercise 5 into a simple static method declaration `compareByTime(Show, Show):int`. Then, change the code of Exercise 4 to use this method implementation instead.
 
 ## Exercise 6
 
