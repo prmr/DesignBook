@@ -199,7 +199,7 @@ With integers:
 Random random = new Random();
 System.out.println(
    IntStream.generate(()->random.nextInt(101))
-      limit(1000000)
+      .limit(1000000)
       .summaryStatistics());
 ```
 
