@@ -131,6 +131,25 @@ List<Movie> movies = Movies.movies();
 movies.sort(comparing(Movie::time).thenComparing(Movie::title));
 ```
 
+## Exercise 7
+
+As usual with the Flyweight pattern the first step is to make the constructor(s) private. Then we need a static flyweight store:
+
+```java
+private static final Map<String, Movie> aMovies = new HashMap<>();
+```
+
+and a static accessor method:
+
+```java
+public static Movie get(String pTitle, int pYear, int pTime)
+{
+   return aMovies.computeIfAbsent(pTitle, title -> new Movie(pTitle, pYear, pTime));
+}
+```
+
+In this simple exercise there's no way to get the year and time for a movie, so we have to provide all the information required to create an object (title, year, time) to the accessor method.
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
