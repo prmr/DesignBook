@@ -58,7 +58,7 @@ Write a stream-based expression to create a map that group movies by decade. For
 
 ## Exercise 15
 
-Use the map created in Exercise 14, write a stream-based expression that evaluates to a list of all the movies from the 50s and 60s.
+Using the map created in Exercise 14, write a stream-based expression that evaluates to a list of all the movies from the 50s and 60s.
 
 
 ---

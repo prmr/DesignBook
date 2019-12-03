@@ -261,6 +261,18 @@ Map<String, List<Movie>> result =
       .collect(groupingBy(Exercise14::decade));
 ```
 
+## Exercise 15
+
+This solution relies on the fact that we can get a stream of all the entries in a `Map`:
+
+```java
+Movies.movies().stream()
+   .collect(groupingBy(Exercise15::decade))
+   .entrySet().stream()
+   .filter( entry -> entry.getKey().equals("50s") || entry.getKey().equals("60s"))
+   .flatMap( entry -> entry.getValue().stream() );
+```
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
