@@ -234,10 +234,31 @@ Movie result = Movies.movies().stream()
 
 ## Exercise 13
 
+This code assumes `Collectors.toMap` has been statically imported.
+
 ```java
 Map<String, Integer> result = 
    Movies.movies().stream()
-      .collect(Collectors.toMap(Movie::title, Movie::time));
+      .collect(toMap(Movie::title, Movie::time));
+```
+
+## Exercise 14
+
+This exercise is easier to organize with a helper function that returns the decade a `Movie` was produced in, for example:
+
+```java
+private static String decade(Movie pMovie)
+{
+   return String.format("%02ds", ((pMovie.year()-1900)%100)/10*10);
+}
+```
+
+Assuming `Collectors.groupingBy` is statically imported, we have:
+
+```java
+Map<String, List<Movie>> result = 
+   Movies.movies().stream()
+      .collect(groupingBy(Exercise14::decade));
 ```
 
 ---
