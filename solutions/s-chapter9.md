@@ -232,6 +232,14 @@ Movie result = Movies.movies().stream()
       movie1.time() > movie2.time() ? movie1 : movie2).get();
 ```
 
+## Exercise 13
+
+```java
+Map<String, Integer> result = 
+   Movies.movies().stream()
+      .collect(Collectors.toMap(Movie::title, Movie::time));
+```
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
