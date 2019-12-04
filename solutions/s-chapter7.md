@@ -35,7 +35,7 @@ public class SponsoredConcert extends Concert
 
 A solution that would make proper use of inheritance would be to access `aPerformer` through a getter method, either public or protected. 
 
-# Exercise 3
+## Exercise 3
 
 Here is `AbstractShow`:
 
@@ -94,7 +94,7 @@ public class Concert extends AbstractShow
 }
 ```
 
-# Exercise 4
+## Exercise 4
 
 Note how the composite and decorator classes do not extend the abstract class.
 
@@ -102,7 +102,7 @@ Note how the composite and decorator classes do not extend the abstract class.
 
 [Diagram file](c7-exercise4.class.jet)
 
-# Exercise 5
+## Exercise 5
 
 We add the follow template method in `AbstractShow`:
 
@@ -118,7 +118,7 @@ protected abstract String extra();
 
 The template method need to get additional information from subclasses. This can be added to the design through the use of a call to an abstract method `extra()` that will return the extra information.
 
-Sample mplementation of `extra()` in `Concert`:
+Sample implementation of `extra()` in `Concert`:
 
 ```java
 @Override
