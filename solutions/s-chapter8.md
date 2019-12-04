@@ -298,14 +298,13 @@ Directory root = ...;
 root.accept(new PrintVisitor());
 ```
 
-To add **indentation** support to `PrintVisitor` is a bit tricky, because the traversal of the node tree is triggered from the target class hierarchy (as opposed to the visitor), so implementation of `Visitor` do not have the flexibility to add instructions before and after the children of a node are traversed *without additional support*. This support can be added using *pre-* and *post-* visit methods for aggregate nodes. We can implement this feature by adding such methods for `Directory` nodes to the visitor interface:
+To add **indentation** support to `PrintVisitor` is a bit tricky, because the traversal of the node tree is triggered from the target class hierarchy (as opposed to the visitor), so implementations of `Visitor` do not have the flexibility to add instructions before and after the children of a node are traversed *without additional support*. This support can be added using *pre-* and *post-* visit methods for aggregate nodes instead of a single `visit` method. We can implement this feature by adding such methods for `Directory` nodes to the visitor interface:
 
 ```java
 interface Visitor
 {
    void visitFile(File pFile);
    void preVisitDirectory(Directory pDirectory);
-   void visitDirectory(Directory pDirectory);
    void postVisitDirectory(Directory pDirectory);
    void visitSymbolicLink(SymbolicLink pLink);
 }
@@ -317,7 +316,6 @@ The implementation of `accept` for `Directory` now becomes:
 public void accept(Visitor pVisitor)
 {
    pVisitor.preVisitDirectory(this);
-   pVisitor.visitDirectory(this);
    for( Node node : this)
    {
       node.accept(pVisitor);
@@ -335,7 +333,7 @@ public class PrintVisitor implements Visitor
 	
    private StringBuilder aIndent = new StringBuilder();
 	
-	private void indent()
+   private void indent()
    {
       aIndent.append(TAB);
    }
@@ -355,11 +353,6 @@ public class PrintVisitor implements Visitor
    public void preVisitDirectory(Directory pDirectory)
    {
       System.out.println(aIndent.toString() + pDirectory.name());
-   }
-
-   @Override
-   public void visitDirectory(Directory pDirectory)
-   {
       indent();
    }
 	
