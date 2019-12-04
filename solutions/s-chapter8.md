@@ -219,6 +219,164 @@ primaryStage.setScene(new Scene(rootPane));
 
 This solution shows an application of the Composite design pattern because a `Parent` (`HBox` or `VBox`) *is* a `Node` and *aggregates* multiple `Node`. The solution also shows an application of the Decorator design pattern because a `Scrollpane` *is* a `Node` and *wraps* a `Node`.
 
+## Exercise 12
+
+A minimal application of the Visitor pattern requires a `Visitor` interface with a visit method for each concrete node of interest:
+
+```java
+interface Visitor
+{
+   void visitFile(File pFile);
+   void visitDirectory(Directory pDirectory);
+   void visitSymbolicLink(SymbolicLink pLink);
+}
+```
+
+We also need to add an `accept` method to the root of our target type hierarchy:
+
+```java
+public interface Node
+{
+   String name();
+   void accept(Visitor pVisitor);
+}
+```
+
+The implementation of `accept` for leaf nodes simply consists in a call to the appropriate `visit` method:
+
+```java
+class File extends AbstractNode
+{
+   /* ... */
+	
+   public void accept(Visitor pVisitor)
+   {
+      pVisitor.visitFile(this);
+   }
+}
+
+class SymbolicLink extends AbstractNode
+{
+	/* ... */
+	
+	public void accept(Visitor pVisitor)
+	{
+		pVisitor.visitSymbolicLink(this);
+	}
+}
+```
+
+To implement a non-indenting `PrintVisitor` is simply a matter of printing the name of a node whenever one is encountered:
+
+```java
+public class PrintVisitor implements Visitor
+{
+   @Override
+   public void visitFile(File pFile)
+   {
+      System.out.println(aIndent.toString() + pFile.name());
+   }
+
+   @Override
+   public void visitDirectory(Directory pDirectory)
+   {
+      System.out.println(aIndent.toString() + pDirectory.name());
+   }
+	
+   @Override
+   public void visitSymbolicLink(SymbolicLink pLink)
+   {
+      System.out.println(aIndent.toString() + pLink.name());
+   }
+}
+```
+
+To use the visitor, we create an instance of it and pass it to the `accept` method of a node:
+
+```java
+Directory root = ...;
+root.accept(new PrintVisitor());
+```
+
+To add **indentation** support to `PrintVisitor` is a bit tricky, because the traversal of the node tree is triggered from the target class hierarchy (as opposed to the visitor), so implementation of `Visitor` do not have the flexibility to add instructions before and after the children of a node are traversed *without additional support*. This support can be added using *pre-* and *post-* visit methods for aggregate nodes. We can implement this feature by adding such methods for `Directory` nodes to the visitor interface:
+
+```java
+interface Visitor
+{
+   void visitFile(File pFile);
+   void preVisitDirectory(Directory pDirectory);
+   void visitDirectory(Directory pDirectory);
+   void postVisitDirectory(Directory pDirectory);
+   void visitSymbolicLink(SymbolicLink pLink);
+}
+```
+
+The implementation of `accept` for `Directory` now becomes:
+
+```java
+public void accept(Visitor pVisitor)
+{
+   pVisitor.preVisitDirectory(this);
+   pVisitor.visitDirectory(this);
+   for( Node node : this)
+   {
+      node.accept(pVisitor);
+   }
+   pVisitor.postVisitDirectory(this);
+}
+```
+
+With this structure, it is now possible to implement an indenting `PrintVisitor`:
+
+```java
+public class PrintVisitor implements Visitor
+{
+   private static final String TAB = "   ";
+	
+   private StringBuilder aIndent = new StringBuilder();
+	
+	private void indent()
+   {
+      aIndent.append(TAB);
+   }
+	
+   private void unindent()
+   {
+      aIndent.delete(aIndent.length()-TAB.length(), aIndent.length());
+   }
+		
+   @Override
+   public void visitFile(File pFile)
+   {
+      System.out.println(aIndent.toString() + pFile.name());
+   }
+	
+   @Override
+   public void preVisitDirectory(Directory pDirectory)
+   {
+      System.out.println(aIndent.toString() + pDirectory.name());
+   }
+
+   @Override
+   public void visitDirectory(Directory pDirectory)
+   {
+      indent();
+   }
+	
+   @Override
+   public void postVisitDirectory(Directory pDirectory)
+   {
+      unindent();
+   }
+
+   @Override
+   public void visitSymbolicLink(SymbolicLink pLink)
+   {
+      System.out.println(aIndent.toString() + pLink.name());
+   }
+}
+```
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 

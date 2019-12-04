@@ -47,7 +47,7 @@ Extend Exercise 10 to embed the node that contains the textfields in a [ScrollPa
 
 ## Exercise 12
 
-Consider the sample class [Node](../solutions-code/chapter8/Node.java) class hierarchy to support a file system. Apply the Visitor pattern to support the traversal of object graphs created from this class hierarchy. Implement the traversal code in the `Node` hierarchy, then write client code to try our your visitor support. Write a `PrintVisitor` to pretty-print all the nodes in a sample file tree. Try indenting the names of the nodes based on their depth in the tree. Draw a sequence diagram for the visit of a directory with one file and one symbolic link.
+Consider the sample class [Node](../solutions-code/chapter8/Node.java) class hierarchy to support a file system. Apply the Visitor pattern to support the traversal of object graphs created from this class hierarchy. Implement the traversal code in the `Node` hierarchy, then write client code to try out your visitor support. Write a `PrintVisitor` to pretty-print all the nodes in a sample file tree. Try indenting the names of the nodes based on their depth in the tree. Draw a sequence diagram for the visit of a directory with one file and one symbolic link.
 
 ## Exercise 13
 
