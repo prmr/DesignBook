@@ -450,6 +450,28 @@ public Command createRemoveCommand(Day pDay)
 
 For clearing the program, things a more involved, since it requires making a copy of the map of shows and restoring the map in `Program` using the values in the copy.
 
+## Exercise 17
+
+```java
+public class CommandProcessor
+{
+   private final List<Command> aCommands = new ArrayList<>();
+	
+   public void consume(Command pCommand)
+   {
+      pCommand.execute();
+      aCommands.add(pCommand);
+   }
+	
+   public void undoLast()
+   {
+      assert !aCommands.isEmpty();
+      Command command = aCommands.remove(aCommands.size()-1);
+      command.undo();
+   }
+}
+```
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
