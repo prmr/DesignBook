@@ -257,12 +257,12 @@ class File extends AbstractNode
 
 class SymbolicLink extends AbstractNode
 {
-	/* ... */
+   /* ... */
 	
-	public void accept(Visitor pVisitor)
-	{
-		pVisitor.visitSymbolicLink(this);
-	}
+   public void accept(Visitor pVisitor)
+   {
+      pVisitor.visitSymbolicLink(this);
+   }
 }
 ```
 
@@ -274,19 +274,19 @@ public class PrintVisitor implements Visitor
    @Override
    public void visitFile(File pFile)
    {
-      System.out.println(aIndent.toString() + pFile.name());
+      System.out.println(pFile.name());
    }
 
    @Override
    public void visitDirectory(Directory pDirectory)
    {
-      System.out.println(aIndent.toString() + pDirectory.name());
+      System.out.println(pDirectory.name());
    }
 	
    @Override
    public void visitSymbolicLink(SymbolicLink pLink)
    {
-      System.out.println(aIndent.toString() + pLink.name());
+      System.out.println(pLink.name());
    }
 }
 ```
