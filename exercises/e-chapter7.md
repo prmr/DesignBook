@@ -14,7 +14,7 @@ Create an abstract class `AbstractShow` that groups all the fields that `Concert
 
 ## Exercise 4
 
-Draw a class diagram of the refactored design completed in Exercise 3, then extend the diagram to how `CompositeShow` (a composite) and `IntroducedShow` (a decorator) would integrate the design.
+Draw a class diagram of the refactored design completed in Exercise 3, then extend the diagram to show how `CompositeShow` (a composite) and `IntroducedShow` (a decorator) would integrate the design.
 
 ## Exercise 5
 
