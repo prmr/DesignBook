@@ -472,6 +472,42 @@ public class CommandProcessor
 }
 ```
 
+## Exercise 18
+
+We need another stack of undone commands:
+
+```java
+public class CommandProcessor implements CommandProcessor
+{
+   private final List<Command> aExecutedCommands = new ArrayList<>();
+   private final List<Command> aUndoneCommands = new ArrayList<>();
+
+   @Override
+   public void consume(Command pCommand)
+   {
+      pCommand.execute();
+      aExecutedCommands.add(pCommand);
+   }
+	
+   @Override
+   public void undoLast()
+   {
+      assert !aExecutedCommands.isEmpty();
+      Command command = aExecutedCommands.remove(aExecutedCommands.size()-1);
+      command.undo();
+      aUndoneCommands.add(command);
+   }
+	
+   public void redoLast()
+   {
+      assert !aUndoneCommands.isEmpty();
+      Command command = aUndoneCommands.remove(aUndoneCommands.size()-1);
+      command.undo();
+      aExecutedCommands.add(command);
+   }
+}
+```
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
