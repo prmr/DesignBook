@@ -427,9 +427,9 @@ public Command createAddCommand(Show pShow, Day pDay)
 For undoing removal, it's slightly more tricky as we need to keep a reference to the show that was removed (so that we can restore it). We can do with by declaring a field in our anonymous class:
 
 ```java
-public Command2 createRemoveCommand(Day pDay)
+public Command createRemoveCommand(Day pDay)
 {
-   return new Command2() 
+   return new Command() 
    {
       Show show = aShows.get(pDay);
       @Override
