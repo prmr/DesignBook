@@ -333,6 +333,62 @@ public Show get(Day pDay)
 }
 ```
 
+## Exercise 15
+
+We need a `Command` interface:
+
+```java
+interface Command
+{
+	void execute();
+}
+```
+
+and within class `Program` three instance methods to act as command factories:
+
+```java
+public Command createAddCommand(Show pShow, Day pDay)
+{
+   return new Command() {
+      @Override
+      public void execute()
+      {
+         add(pShow, pDay);				
+      }
+   };
+}
+	
+public Command createRemoveCommand(Day pDay)
+{
+   return new Command() 
+   {
+      @Override
+      public void execute()
+      {
+         remove(pDay);				
+      }
+   };
+}
+	
+public Command createClearCommand()
+{
+   return new Command() 
+   {
+      @Override
+      public void execute()
+      {
+         clear();				
+      }
+   };
+}
+```
+
+Executing commands can now be done through command objects, e.g.:
+
+```java
+Program program = new Program();
+program.createAddCommand(new Movie("Title",2000,120), MONDAY).execute();
+```
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
