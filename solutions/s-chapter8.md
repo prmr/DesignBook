@@ -370,6 +370,94 @@ public class PrintVisitor implements Visitor
 }
 ```
 
+## Exercise 13
+
+For this version we can return to our simple abstract visitor:
+
+```java
+interface Visitor
+{
+   void visitFile(File pFile);
+   void visitDirectory(Directory pDirectory);
+   void visitSymbolicLink(SymbolicLink pLink);
+}
+```
+
+We will implement default behavior in an `AbstractVisitor`. Strictly speaking the class does not need to be declared `abstract` because it's possible and not harmful to instantiate it, but the declaration helps further clarify our intent and it's also not harmful to declare it `abstract`.
+
+```java
+public abstract class AbstractVisitor implements Visitor
+{
+   @Override
+   public void visitFile(File pFile)
+   {}
+
+   @Override
+   public void visitDirectory(Directory pDirectory)
+   {
+      for( Node node : pDirectory )
+      {
+         node.accept(this);
+      }
+   }
+   
+   @Override
+   public void visitSymbolicLink(SymbolicLink pLink)
+   {}
+}
+```
+
+Because the graph traversal code is in the visitor, we can remove it from `Directory.accept`, which now looks like the other `accept` methods:
+
+```java
+public void accept(Visitor pVisitor)
+{
+   pVisitor.visitDirectory(this);
+}
+```
+
+Finally, our `PrintVisitor` can be written as a subclass of `AbstractVisitor`:
+
+```java
+public class PrintVisitor extends AbstractVisitor
+{
+   private static final String TAB = "   ";
+	
+   private StringBuilder aIndent = new StringBuilder();
+	
+   private void indent()  
+   {
+      aIndent.append(TAB);
+   }
+	
+   private void unindent()
+   {
+      aIndent.delete(aIndent.length()-TAB.length(), aIndent.length());
+   }
+		
+   @Override
+   public void visitFile(File pFile)
+   {
+      System.out.println(aIndent.toString() + pFile.name());
+   }
+	
+   @Override
+   public void visitDirectory(Directory pDirectory)
+   {
+      System.out.println(aIndent.toString() + pDirectory.name());
+      indent();
+      super.visitDirectory(pDirectory);
+      unindent();
+   }
+
+   @Override
+   public void visitSymbolicLink(SymbolicLink pLink)
+   {
+      System.out.println(aIndent.toString() + pLink.name());
+   }
+}
+```
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
