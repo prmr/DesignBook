@@ -144,6 +144,9 @@ public String extra()
 
 [Diagram file](c7-exercise6.class.jet)
 
+## Exercise 7
+
+Both changes are examples of violation of the Liskov Substitution Principle. Adding an additional (checked) exception *forces the clients of the supertype* to catch or propagate more exception types. Adding a stricter precondition *forces the clients of the supertype* to do additional input validation before providing an argument to the function. Because of the impact on the client code, the type `Movie` is not *substitutable* for another concrete subtype of `Show`.
 
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
