@@ -152,6 +152,26 @@ Both changes are examples of violation of the Liskov Substitution Principle. Add
 
 This is a case of *overloading*, independently of where we locate the method. Although the *name* of the method is the same, its *signature* (name and parameter types) is different. It matters where we place the method: if it is located in `AbstractShow`, we can call it on a variable of type `AbstractShow` or any of its subtypes, whereas if it is located in `Movie`, we can only call it on a variable of type `Movie` (or a subtype of `Movie`).
 
+## Exercise 9
+
+In this case what happens is that the version `setRecommended(Movie)` in class `Movie` *overloads* `setRecommended(Show)` in class `AbstractShow`, so in a round-about way it does *not* violate the Liskov Substitution Principle (LSP). However, there is also no dynamic binding for this method, as the target overloaded version is selected at compile-time based on the type of the argument. 
+
+In the following code, `setRecommended(Movie)` will be selected because the type of `movie1` is `Movie`. If we change this type to `Show`, then `setRecommended(Show)` will be selected.
+
+```java
+Movie movie1 = new Movie("Metropolis", 1927, 153);
+Movie movie2 = new Movie("The Good, the Bad, and the Ugly", 1966, 178);
+movie2.setRecommeded(movie1);
+```
+
+The case of `getRecommended()` is different. It is possible to declare `getRecommended(): Movie` in `Movie` as a proper overriding version of `AbstractShow.getRecommended()`. More specific (or *covariant*) return types are allowed in Java (version 5 and later), and their use respects the LSP because it's always possible to assign a reference to a *more specific* type where a *more general* one is expected:
+
+```java
+// a Movie is returned, which can be assigned to a variable of type Show
+Show recommended = movie2.getRecommended(); 
+```
+
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 

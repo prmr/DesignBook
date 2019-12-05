@@ -40,7 +40,7 @@ Assume class `AbstractShow` provides a method `setTime(int minutes)`. Add an add
 
 ## Exercise 9
 
-We which to add a *recommendation* feature to our `Show` type hierarchy, where `Show` instances can hold a reference to a "recommended" shows (if a person likes a given show). For this purpose add a field `Show aRecommended` to class `AbstractShow`, together with public methods `Show setRecommended(Show)` and `Show getRecommended()`. For movies, we wish to constraint recommendations to movies only, so that movies can only hold recommendations to other movies. Override methods `setRecommended` and `getRecommended` in class `Movie` to only take `Movie` as parameter and return `Movie`, respectively. Does this design respect the Liskov Substitution Principle? Support your answer with a piece of demonstration client code.
+We wish to add a *recommendation* feature to our `Show` type hierarchy, where `Show` instances can hold a reference to a "recommended" show (if a person likes a given show). For this purpose, add a field `Show aRecommended` to class `AbstractShow`, together with public methods `Show setRecommended(Show)` and `Show getRecommended()`. For movies, we wish to constrain recommendations to movies only, so that movies can only hold recommendations to other movies. Override methods `setRecommended` and `getRecommended` in class `Movie` to only take `Movie` as parameter and return `Movie`, respectively. Does this design respect the Liskov Substitution Principle? Support your answer with a piece of demonstration client code.
 
 ## Exercise 10
 
