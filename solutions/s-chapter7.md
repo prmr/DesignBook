@@ -148,6 +148,10 @@ public String extra()
 
 Both changes are examples of violation of the Liskov Substitution Principle. Adding an additional (checked) exception *forces the clients of the supertype* to catch or propagate more exception types. Adding a stricter precondition *forces the clients of the supertype* to do additional input validation before providing an argument to the function. Because of the impact on the client code, the type `Movie` is not *substitutable* for another concrete subtype of `Show`.
 
+## Exercise 8
+
+This is a case of *overloading*, independently of where we locate the method. Although the *name* of the method is the same, its *signature* (name and parameter types) is different. It matters where we place the method: if it is located in `AbstractShow`, we can call it on a variable of type `AbstractShow` or any of its subtypes, whereas if it is located in `Movie`, we can only call it on a variable of type `Movie` (or a subtype of `Movie`).
+
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
