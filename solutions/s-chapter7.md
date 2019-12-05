@@ -171,6 +171,44 @@ The case of `getRecommended()` is different. It is possible to declare `getRecom
 Show recommended = movie2.getRecommended(); 
 ```
 
+## Exercise 10
+
+We need to change `Show` to extend `Cloneable` and declare a `clone()` method:
+
+```java
+public interface Show extends Cloneable
+{
+   /* ... */
+	Show clone();
+}
+```
+
+We can then implement `clone()` in `AbstractShow`:
+
+```java
+public AbstractShow clone()
+{
+   try
+   {
+      return (AbstractShow) super.clone();
+   }
+   catch(CloneNotSupportedException e)
+   {
+      return null;
+   }
+}
+```
+
+Because `Movie` and `Concert` only require shallow copies (all their fields are primitive or `String`), they can simply inherit this version because the call to `Object.clone()` will copy all fields, no matter what the run-time type is. However, we can override `clone()` to declare a covariant return type and save the client code from having to downcast. For example, in class `Movie`:
+
+```java
+public Movie clone()
+{
+   return (Movie) super.clone();
+}
+```
+
+For subtypes of `Show` that require a deeper copy (e.g., aggregates like `CompositeShow` from Exercise 6.1), it will be necessary to make a copy of the mutable structures in the `clone()` method.
 
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
