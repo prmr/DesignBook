@@ -184,7 +184,7 @@ The solution:
 
 ```java
 List<Movie> mySelection = Movies.movies().stream()
-   .filter(movie -> movie.time() < 2000)
+   .filter(movie -> movie.year() < 2000)
    .sorted(comparing(Movie::time).reversed())
    .limit(3)
    .sorted(comparing(Movie::title).reversed())
