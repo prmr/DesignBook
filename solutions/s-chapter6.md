@@ -502,7 +502,7 @@ public class CommandProcessor implements CommandProcessor
    {
       assert !aUndoneCommands.isEmpty();
       Command command = aUndoneCommands.remove(aUndoneCommands.size()-1);
-      command.undo();
+      consume(command);
       aExecutedCommands.add(command);
    }
 }
