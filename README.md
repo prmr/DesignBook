@@ -80,6 +80,8 @@ Below you can find the list of [early adopters](#adopters) of the book.
 |[Neil Ernst](http://neilernst.net)|University of Victoria|Object-Oriented Design|
 |[Kostadin Damevski](http://damevski.github.io)|Virginia Commonwealth University|Software Engineering: Design and Implementation|
 |[Mattia Monga](https://homes.di.unimi.it/monga)|Universit&agrave; Degli Studi Di Milano|Computer Programming II|
+|[Carlo Nicola Maria Bellettini](https://www.unimi.it/it/ugov/person/carlo-bellettini)|Universit&agrave; Degli Studi Di Milano|Computer Programming II|
+
 
 ## License
 
