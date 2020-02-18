@@ -72,6 +72,8 @@ Below you can find the list of [early adopters](#adopters) of the book.
 
 ## Adopters
 
+*To be included in the list, please fill in [this form](https://docs.google.com/forms/d/1-Yb08kF8TnSYGmAyCMI_5SiNnGVKViyHIB-rqCEVLFY/edit)*.
+
 |Name|Institution|Course|
 |---|---|---|
 |[Jin Guo](http://jguo-web.com)|McGill University|Software Design|
