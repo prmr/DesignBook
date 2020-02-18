@@ -4,6 +4,8 @@ Companion web site for the book ["Introduction to Software Design with Java"](ht
 
 All the material on this site is organized by book chapter. To the extent possible, this site will be actively maintained, with new material being released occasionally. If you would like to report a problem, please use the [issue management system](https://github.com/prmr/DesignBook/issues), making sure the problem has not already been reported in the "Clarifications and Corrections" page for the chapter or in existing issue reports.
 
+Below you can find the list of [early adopters](#adopters) of the book.
+
 ## Chapter 1: Introduction
 
 * [Source code](chapter-code/chapter1)
@@ -67,6 +69,15 @@ All the material on this site is organized by book chapter. To the extent possib
 * [Exercises](exercises/e-chapter9.md)
 * [Solutions](solutions/s-chapter9.md)
 * [Clarifications and Corrections](corrections/c-chapter9.md)
+
+## Adopters
+
+|---|---|---|
+|Name|Institution|Course|
+|---|---|---|
+|[Jin Guo](http://jguo-web.com)|McGill University|Software Design|
+|[Neil Ernst](http://neilernst.net)|University of Victoria|Object-Oriented Design|
+|[Kostadin Damevski](http://damevski.github.io)|Virginia Commonwealth University|Software Engineering: Design and Implementation|
 
 ## License
 
