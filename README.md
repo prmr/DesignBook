@@ -72,12 +72,12 @@ Below you can find the list of [early adopters](#adopters) of the book.
 
 ## Adopters
 
-|---|---|---|
 |Name|Institution|Course|
 |---|---|---|
 |[Jin Guo](http://jguo-web.com)|McGill University|Software Design|
 |[Neil Ernst](http://neilernst.net)|University of Victoria|Object-Oriented Design|
 |[Kostadin Damevski](http://damevski.github.io)|Virginia Commonwealth University|Software Engineering: Design and Implementation|
+|[Mattia Monga](https://homes.di.unimi.it/monga)|Universit&agrave; Degli Studi Di Milano|Computer Programming II|
 
 ## License
 
@@ -85,5 +85,5 @@ Below you can find the list of [early adopters](#adopters) of the book.
 
 Unless otherwise noted, the content of this repository is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>. 
 
-Copyright Martin P. Robillard 2019
+Copyright Martin P. Robillard 2019-2020
 
