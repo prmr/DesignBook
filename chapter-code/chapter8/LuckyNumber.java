@@ -146,7 +146,7 @@ class IntegerPanel extends Parent implements Observer, EventHandler<ActionEvent>
 		aModel = pModel;
 		aModel.addObserver(this);
 		aText.setMinWidth(LuckyNumber.WIDTH); 
-		aText.setText(new Integer(aModel.getNumber()).toString());
+		aText.setText(Integer.valueOf(aModel.getNumber()).toString());
 		getChildren().add(aText);
 		
 		aText.setOnAction(new EventHandler<ActionEvent>()
@@ -186,7 +186,7 @@ class IntegerPanel extends Parent implements Observer, EventHandler<ActionEvent>
 	@Override
 	public void newNumber(int pNumber)
 	{
-		aText.setText(new Integer(pNumber).toString());
+		aText.setText(Integer.valueOf(pNumber).toString());
 	}
 }
 
