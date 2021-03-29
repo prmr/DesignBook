@@ -11,6 +11,7 @@ Below you can find the list of [early adopters](#adopters) of the book.
 * [Source code](chapter-code/chapter1)
 * [Exercises](exercises/e-chapter1.md)
 * [Solutions](solutions/s-chapter1.md)
+* [Clarifications and Corrections](corrections/c-chapter1.md)
 
 ## Chapter 2: Encapsulation
 
