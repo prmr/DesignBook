@@ -25,6 +25,6 @@ public class CardSourceManager
 
 	public CardSource createCardSource()
 	{
-		return aPrototype.clone();
+		return aPrototype.copy();
 	}
 }

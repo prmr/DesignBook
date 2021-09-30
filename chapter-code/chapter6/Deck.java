@@ -28,7 +28,7 @@ import java.util.Optional;
  * The Deck is also iterable: it fulfills the role of ConcreteIterable
  * in the Iterator design pattern.
  */
-public class Deck implements CardSource, Iterable<Card>, Cloneable
+public class Deck implements CardSource, Iterable<Card>
 {
 	private CardStack aCards = new CardStack();
 	
@@ -95,19 +95,11 @@ public class Deck implements CardSource, Iterable<Card>, Cloneable
 		return aCards.iterator();
 	}
 	
-	public Deck clone()
+	public Deck copy()
 	{
-		try
-		{
-			Deck clone = (Deck) super.clone();
-			clone.aCards = new CardStack(clone.aCards);
-			return clone;
-		}
-		catch (CloneNotSupportedException e)
-		{
-			assert false;
-			return null;
-		}
+		Deck copy = new Deck();
+		copy.aCards = new CardStack(copy.aCards);
+		return copy;
 	}
 	
 	/**

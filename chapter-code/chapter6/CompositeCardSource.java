@@ -61,21 +61,14 @@ public class CompositeCardSource implements CardSource
 	}
 	
 	@Override
-	public CardSource clone()
+	public CardSource copy()
 	{
-		try
+		CompositeCardSource copy = new CompositeCardSource();
+		copy.aElements = new ArrayList<>();
+		for(CardSource source : aElements)
 		{
-			CompositeCardSource clone = (CompositeCardSource) super.clone();
-			clone.aElements = new ArrayList<>();
-			for(CardSource source : aElements)
-			{
-				clone.aElements.add(source.clone());
-			}
-			return clone;
+			copy.aElements.add(source.copy());
 		}
-		catch (CloneNotSupportedException e)
-		{
-			return null;
-		}
+		return copy;
 	}
 }

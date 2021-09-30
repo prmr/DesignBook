@@ -15,7 +15,7 @@ package chapter6;
  * Represents an entity from which it is possible to obtain cards.
  * This version is cloneable
  */
-public interface CardSource extends Cloneable
+public interface CardSource
 {
 	/**
 	 * Returns a card from the source.
@@ -30,5 +30,8 @@ public interface CardSource extends Cloneable
 	 */
 	boolean isEmpty();
 	
-	CardSource clone();
+	/**
+	 * @return A object that is an exact deep copy of this card source.
+	 */
+	CardSource copy();
 }
