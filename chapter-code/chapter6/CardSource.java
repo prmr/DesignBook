@@ -13,7 +13,7 @@ package chapter6;
 
 /**
  * Represents an entity from which it is possible to obtain cards.
- * This version is cloneable
+ * This version can be polymorphically copied.
  */
 public interface CardSource
 {
@@ -31,7 +31,8 @@ public interface CardSource
 	boolean isEmpty();
 	
 	/**
-	 * @return A object that is an exact deep copy of this card source.
+	 * @return A object that is an exact deep copy (distinct object graph)
+	 * of this card source.
 	 */
 	CardSource copy();
 }
