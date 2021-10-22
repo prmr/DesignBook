@@ -34,7 +34,12 @@ Draw a class diagram that illustrates how a `Hand` supports being iterated over.
 
 ## Exercise 9 :star: 
 
-Modify your `Hand` class to support a poker game and compare hands in terms of their strengths as [poker hands](https://en.wikipedia.org/wiki/List_of_poker_hands). How should you deal with hands that do not have exactly five cards?
+Modify your `Hand` class to support a poker game and compare hands in terms of their strengths as [poker hands](https://en.wikipedia.org/wiki/List_of_poker_hands). How should you deal with hands that do not have exactly five cards? 
+
+*Hint: You can start by solving a less challenging variant of this problem by considering the following two simplifications. Once you have a working solution, trying improving it to remove the simplifications.*
+
+* *Only consider ace-low straights. So `Ace, Two, Three, Four, Five` is a straight, but `..., Queen, King, Ace` is not. This will allow you to use the current ordering of `Rank` directly.*
+* *Make the comparison based on only the poker hand type, without using the card value for tie-breaking. So, for example, two hands that are three-of-a-kind are considered equal, despite they being of a different rank.*
 
 ## Exercise 10
 
