@@ -12,7 +12,7 @@ The code can be found [here](../solutions-code/chapter2/EnumeratedCard.java). Wi
 
 Notice how you can define the color enumerated type as an inner type of the `Suit` type, which makes sense, because this isn't any color, but the color of a card's suit. Note also that I could have had more compact code in `getColor` by working with the enumerated value's index, but that is brittle. The current code will work even if the order of enumerated values is changed.
 
-```
+```java
 public enum Suit
 {
 	CLUBS, DIAMONDS, SPADES, HEARTS;
@@ -42,13 +42,13 @@ public enum Suit
 
 ## Exercise 5
 
-**Sketch:** An enumerated type seems like the right idea here to capture the type of joker. However, it is not a good idea to consider `null` to be a legal value for an enumerated type, so I would recommend including an enum value to represent the case where the card is not a joker. The issues of what to do with rank and suit of jokers is the same as for Exercise 4.
+**Sketch:** An enumerated type seems like the right idea here to capture the type of joker. However, it is not a good idea to consider `null` to be a legal value for an enumerated type, so I would recommend including a value of an enumerated type to represent the case where the card is not a joker. The issues of what to do with rank and suit of jokers is the same as for Exercise 4.
 
 ## Exercise 6
 
 Assuming instances of class `Card` are immutable, it is acceptable to do the following, although we will see more elegant solutions in Chapter 3.
 
-```
+```java
 public List<Card> getCard()
 {
 	return new ArrayList<>(aCards);
