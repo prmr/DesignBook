@@ -4,7 +4,9 @@ Companion web site for the book ["Introduction to Software Design with Java"](ht
 
 All the material on this site is organized by book chapter. To the extent possible, this site will be actively maintained, with new material being released occasionally. If you would like to report a problem, please use the [issue management system](https://github.com/prmr/DesignBook/issues), making sure the problem has not already been reported in the "Clarifications and Corrections" page for the chapter or in existing issue reports.
 
-Below you can find the list of [early adopters](#adopters) of the book.
+Below you can find the list of [adopters](#adopters) of the book.
+
+**News:** A second edition is in the works, planned for 2022!
 
 ## Chapter 1: Introduction
 
@@ -73,6 +75,7 @@ Below you can find the list of [early adopters](#adopters) of the book.
 
 ## Adopters
 
+A special thanks to the software design educators who have adopted the book to support their teaching. 
 *To be included in the list, please fill in [this form](https://docs.google.com/forms/d/1-Yb08kF8TnSYGmAyCMI_5SiNnGVKViyHIB-rqCEVLFY/edit)*.
 
 |Name|Institution|Course|
@@ -82,6 +85,7 @@ Below you can find the list of [early adopters](#adopters) of the book.
 |[Kostadin Damevski](http://damevski.github.io)|Virginia Commonwealth University|Software Engineering: Design and Implementation|
 |[Mattia Monga](https://homes.di.unimi.it/monga)|Universit&agrave; Degli Studi Di Milano|Computer Programming II|
 |[Carlo Nicola Maria Bellettini](https://www.unimi.it/it/ugov/person/carlo-bellettini)|Universit&agrave; Degli Studi Di Milano|Computer Programming II|
+|[Alberto Bacchelli](https://www.ifi.uzh.ch/en/zest/team/bacchelli.html)|University of Zurich|Software Construction|
 
 
 ## License
