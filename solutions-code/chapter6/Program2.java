@@ -68,13 +68,13 @@ public class Program2
 	
 	
 	/**
-	 * Removes a show from the program.
+	 * Removes a show from the program by replacing it with a null show.
 	 * @param pDay The day when we want to zap the show.
 	 */
 	public void remove(Day pDay)
 	{
 		assert pDay != null;
-		aShows.remove(pDay);
+		aShows.put(pDay, NULL);
 	}
 	
 	/**
@@ -93,11 +93,9 @@ public class Program2
 		StringBuilder result = new StringBuilder();
 		for( Day day : aShows.keySet() )
 		{
-			if( aShows.containsKey(day))
-			{
-				result.append(String.format("%9s", day.name()))
-					.append(": ").append(aShows.get(day).description()).append("\n");
-			}
+			assert aShows.containsKey(day) : "Key should have been put in constructor";
+			result.append(String.format("%9s", day.name()))
+				.append(": ").append(aShows.get(day).description()).append("\n");
 		}
 		return result.toString();
 	}
