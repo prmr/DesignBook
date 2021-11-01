@@ -19,6 +19,11 @@ import java.util.Iterator;
  */
 public class MemorizingDeck extends Deck
 {
+	public static void main(String[] args)
+	{
+		new MemorizingDeck();
+	}
+	
 	private final CardStack aDrawnCards = new CardStack();
 	
 	/**
@@ -33,7 +38,19 @@ public class MemorizingDeck extends Deck
 	public void shuffle()
 	{
 		super.shuffle();
-		aDrawnCards.clear();
+		if( aDrawnCards != null )
+		{
+			// Without the null check, attempting to create a new MemorizingDeck()
+			// will throw a NullPointerException because of the order of field
+			// initialization. When the constructor is called, the first 
+			// instruction is to call the super-constructor. At this point, 
+			// aDrawnCards is not yet initialized, and thus refers to null.
+			// Then the constructor of Deck executes, which calls method shuffle(). 
+			// However, because this method is now overridden it is this 
+			// implementation that gets selected and executes without aDrawnCards
+			// having been initialized
+			aDrawnCards.clear();
+		}
 	}
 
 	@Override
