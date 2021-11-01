@@ -12,6 +12,7 @@
 package chapter8;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
@@ -248,7 +249,7 @@ class Model
 	private static final int DEFAULT = 5;
 	private static final int MAX = 10;
 	
-	private ArrayList<Observer> aObservers = new ArrayList<Observer>();
+	private List<Observer> aObservers = new ArrayList<Observer>();
 	private int aNumber = DEFAULT;
 	
 	public void addObserver(Observer pObserver)

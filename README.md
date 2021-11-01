@@ -64,7 +64,7 @@ Below you can find the list of [adopters](#adopters) of the book.
 * [Source code](chapter-code/chapter8)
 * [Exercises](exercises/e-chapter8.md)
 * [Solutions](solutions/s-chapter8.md)
-
+* [Clarifications and Corrections](corrections/c-chapter8.md)
 
 ## Chapter 9
 
