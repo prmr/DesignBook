@@ -86,6 +86,7 @@ A special thanks to the software design educators who have adopted the book to s
 |[Mattia Monga](https://homes.di.unimi.it/monga)|Universit&agrave; Degli Studi Di Milano|Computer Programming II|
 |[Carlo Nicola Maria Bellettini](https://www.unimi.it/it/ugov/person/carlo-bellettini)|Universit&agrave; Degli Studi Di Milano|Computer Programming II|
 |[Alberto Bacchelli](https://www.ifi.uzh.ch/en/zest/team/bacchelli.html)|University of Zurich|Software Construction|
+|[Gerardo Canfora](http://www.gerardocanfora.net/)|University of Sannio|Software Engineering|
 
 
 ## License
