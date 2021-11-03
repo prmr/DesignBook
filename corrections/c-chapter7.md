@@ -1,6 +1,7 @@
 # Clarifications and Corrections for Chapter 7
 
 * Page 161: "The fact that the code in class `MemorizingDeck` cannot access (or *see*) the field declared in its superclass does not change anything about the fact that this field is inherited". Surprisingly, the [Java Language Specification (JLS)](https://docs.oracle.com/javase/specs/jls/se8/html/jls-6.html#jls-6.6.1) considers that private fields are not inherited. This is a matter of terminology, because objects of subclasses *do* include  the private fields declared in their parent classes. In the context of teaching object-oriented design mixing visibility and inheritance is very confusing, so I do not retain the terminology of the JLS. In the book, the concepts of field *inheritance* and *visibility* are kept consistently distinct.
+* Page 161: In the code example, `pulic` should be `public`.
 * Page 162: "the first instruction of any constructor is to call a constructor of its superclass" is not completely accurate because it is also possible to call a constructor *of the same class* with `this(...)`. 
 * Page 162: In the first code fragment, `Cards.get` should be `Card.get` and `Suit.SPACES` should be `Suit.SPADES`.
 * Page 162: In Figure 7.5, `MemorizingDeck` should have field named `aDrawnCards` not `aCards`.
