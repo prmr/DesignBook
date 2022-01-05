@@ -15,7 +15,7 @@ import java.util.HashSet;
 
 /**
  * Implementation of a playing card. This class yields immutable objects.
- * This version of the class is checkable for quality.
+ * This version of the class is checkable for equality.
  */
 public class Card5
 {
