@@ -110,7 +110,7 @@ We add the follow template method in `AbstractShow`:
 @Override
 public final String description() 
 {
-   return String.format("%s: %s (%d minutes", title(), extra(), time());
+   return String.format("%s: %s (%d minutes)", title(), extra(), time());
 }
 
 protected abstract String extra();
