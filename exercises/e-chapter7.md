@@ -21,7 +21,7 @@ Draw a class diagram of the refactored design completed in Exercise 3, then exte
 We want to ensure that calling method `description()` on an instance of any type of `Show` returns a string with the following format:
 
 ```
-$TITLE$ [...] ($TIME$ minutes)
+$TITLE$: [...] ($TIME$ minutes)
 ```
 
 where `$TITLE` is a placeholder for the title of the show, and `$TIME` is a placeholder for the total running time of the show. Implement this functionality by applying the Template Method design pattern.
