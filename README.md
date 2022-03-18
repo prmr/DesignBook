@@ -73,7 +73,9 @@ Below you can find the list of [adopters](#adopters) of the book.
 * [Solutions](solutions/s-chapter9.md)
 * [Clarifications and Corrections](corrections/c-chapter9.md)
 
-## Adopters
+## Acknowledgements
+
+Thanks to [Samuel Beaubien](https://github.com/samuelbeaubien), [Neil Ernst](https://github.com/neilernst), and [Benjamin Lee](https://github.com/UnHumbleBen) for flagging errors via this site.
 
 A special thanks to the software design educators who have adopted the book to support their teaching. 
 *To be included in the list, please fill in [this form](https://docs.google.com/forms/d/1-Yb08kF8TnSYGmAyCMI_5SiNnGVKViyHIB-rqCEVLFY/edit)*.
