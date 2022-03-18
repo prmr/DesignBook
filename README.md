@@ -78,7 +78,7 @@ Below you can find the list of [adopters](#adopters) of the book.
 Thanks to [Samuel Beaubien](https://github.com/samuelbeaubien), [Neil Ernst](https://github.com/neilernst), and [Benjamin Lee](https://github.com/UnHumbleBen) for flagging errors via this site.
 
 A special thanks to the software design educators who have adopted the book to support their teaching. 
-*To be included in the list, please fill in [this form](https://docs.google.com/forms/d/1-Yb08kF8TnSYGmAyCMI_5SiNnGVKViyHIB-rqCEVLFY/edit)*.
+*To be included in the list, please fill in [this form](https://forms.office.com/r/jjagth5cDk)*.
 
 |Name|Institution|Course|
 |---|---|---|
