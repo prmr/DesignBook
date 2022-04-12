@@ -6,7 +6,7 @@ Companion web site for the book ["Introduction to Software Design with Java"](ht
 
 All the material on this site is organized by book chapter. Please check the [Errata](errata-e1.md) for clarifications and corrections, and if you spot a problem. 
 
-Below you can find the list of [adopters](#adopters) of the book.
+Below you can find the list of [adopters](#acknowledgements) of the book.
 
 ## Chapter 1: Introduction
 
