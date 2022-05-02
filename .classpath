@@ -2,6 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="chapter-code"/>
 	<classpathentry kind="src" path="solutions-code"/>
+	<classpathentry kind="src" path="chapter-code-2ndEdition"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5">
 		<attributes>
 			<attribute name="module" value="true"/>
