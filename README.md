@@ -4,14 +4,25 @@ Companion web site for the book ["Introduction to Software Design with Java"](ht
 
 **News:** The second edition is expected to come out in May 2022.
 
-On this site you can find the **errata**, the commented **sample code of all chapters** for both the first and second editions, a set of **practice exercises and their solutions**, and additional **acknowledgements** for contributors to the errata and adopters of the book.
-
 ## Errata
 
-Check the Errata for clarifications and corrections, and if you spot a problem. If you spot a problem that is not in the Errata, please check the issues and open a new one if the problem has not yet been reported.
+Check the Errata for clarifications and corrections. If you spot a problem that is not listed, please check the [issues](https://github.com/prmr/DesignBook/issues) and open a new one if the problem has not yet been reported.
 
 * [Errata for the First Edition](errata-e1.md);
 * Errata for the Second Edition (will be added when the first problem is reported);
+
+## Source Code
+
+There are three source folders on this site:
+
+* `chapter-code` The complete and commented version of the code samples for the first edition of the book;
+* `chapter-code-2ndEdition` The complete and commented version of the code samples for the second edition of the book.
+* `solutions-code` The complete version of the code file for selected exercises. The code files are referenced from the appropriate solutions pages.
+
+Although you can browse the code on GitHub, the recommended way to peruse the code samples is to [clone the repository](https://www.git-scm.com/docs/git-clone). The repository includes the configurations files necessary to build the code automatically in [Eclipse](https://www.eclipse.org/). However, because some code relies on the JavaFX library, you also need to:
+1. Download the [JavaFX SDK](https://gluonhq.com/products/javafx/) and unzip it to a desired location;
+2. Create a new User Library under `Eclipse -> Window -> Preferences -> Java -> Build Path -> User Libraries -> New`
+3. Name it `JavaFX` and include the jars under the `lib` folder from your unzipped JavaFX download location.
 
 ## Chapter 1: Introduction
 
