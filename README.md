@@ -2,11 +2,16 @@
 
 Companion web site for the book ["Introduction to Software Design with Java"](https://www.springer.com/gp/book/9783030240936) by Martin P. Robillard, Springer 2019. 
 
-**News:** The second edition is expected to come out in April 2022.
+**News:** The second edition is expected to come out in May 2022.
 
-All the material on this site is organized by book chapter. Please check the [Errata](errata-e1.md) for clarifications and corrections, and if you spot a problem. 
+On this site you can find the **errata**, the commented **sample code of all chapters** for both the first and second editions, a set of **practice exercises and their solutions**, and additional **acknowledgements** for contributors to the errata and adopters of the book.
 
-Below you can find the list of [adopters](#acknowledgements) of the book.
+## Errata
+
+Check the Errata for clarifications and corrections, and if you spot a problem. If you spot a problem that is not in the Errata, please check the issues and open a new one if the problem has not yet been reported.
+
+* [Errata for the First Edition](errata-e1.md);
+* Errata for the Second Edition (will be added when the first problem is reported);
 
 ## Chapter 1: Introduction
 
