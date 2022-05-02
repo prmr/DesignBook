@@ -24,62 +24,21 @@ Although you can browse the code on GitHub, the recommended way to peruse the co
 2. Create a new User Library under `Eclipse -> Window -> Preferences -> Java -> Build Path -> User Libraries -> New`
 3. Name it `JavaFX` and include the jars under the `lib` folder from your unzipped JavaFX download location.
 
-## Chapter 1: Introduction
+## Practice Exercises
 
-* [Source code](chapter-code/chapter1)
-* [Exercises](exercises/e-chapter1.md)
-* [Solutions](solutions/s-chapter1.md)
+The exercises are meant to be completed in order, after studying each chapter. Exercises tagged with a star (:star:) are challenging and those tagged with a magnifying glass (:mag:) are based on the exploration of the sample applications. 
 
-## Chapter 2: Encapsulation
-
-* [Source code](chapter-code/chapter2)
-* [Exercises](exercises/e-chapter2.md)
-* [Solutions](solutions/s-chapter2.md)
-
-
-## Chapter 3: Types and Interfaces
-
-* [Source code](chapter-code/chapter3)
-* [Exercises](exercises/e-chapter3.md)
-* [Solutions](solutions/s-chapter3.md) 
-
-
-## Chapter 4: Object State
-
-* [Source code](chapter-code/chapter4)
-* [Exercises](exercises/e-chapter4.md)
-* [Solutions](solutions/s-chapter4.md)
-
-
-## Chapter 5: Unit Testing
-
-* [Source code](chapter-code/chapter5)
-* [Exercises](exercises/e-chapter5.md)
-* [Solutions](solutions/s-chapter5.md)
-
-## Chapter 6: Composition
-
-* [Source code](chapter-code/chapter6)
-* [Exercises](exercises/e-chapter6.md)
-* [Solutions](solutions/s-chapter6.md)
-
-## Chapter 7: Inheritance
-
-* [Source code](chapter-code/chapter7)
-* [Exercises](exercises/e-chapter7.md)
-* [Solutions](solutions/s-chapter7.md)
-
-## Chapter 8: Inversion of Control
-
-* [Source code](chapter-code/chapter8)
-* [Exercises](exercises/e-chapter8.md)
-* [Solutions](solutions/s-chapter8.md)
-
-## Chapter 9
-
-* [Source code](chapter-code/chapter9)
-* [Exercises](exercises/e-chapter9.md)
-* [Solutions](solutions/s-chapter9.md)
+|Chapter|Exercises|Solutions|
+|---|---|---|
+|1|[Exercises](exercises/e-chapter1.md)|[Solutions](solutions/s-chapter1.md)
+|2|[Exercises](exercises/e-chapter2.md)|[Solutions](solutions/s-chapter2.md)
+|3|[Exercises](exercises/e-chapter3.md)|[Solutions](solutions/s-chapter3.md)
+|4|[Exercises](exercises/e-chapter4.md)|[Solutions](solutions/s-chapter4.md)
+|5|[Exercises](exercises/e-chapter5.md)|[Solutions](solutions/s-chapter5.md)
+|6|[Exercises](exercises/e-chapter6.md)|[Solutions](solutions/s-chapter6.md)
+|7|[Exercises](exercises/e-chapter7.md)|[Solutions](solutions/s-chapter7.md)
+|8|[Exercises](exercises/e-chapter8.md)|[Solutions](solutions/s-chapter8.md)
+|9|[Exercises](exercises/e-chapter9.md)|[Solutions](solutions/s-chapter9.md)
 
 ## Acknowledgements
 
