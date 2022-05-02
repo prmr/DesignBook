@@ -59,3 +59,11 @@ _Nothing to report._
 * Page 249: there are two extra parentheses in the first sorting code fragment. See the corrected version as method `sampleSortingApplication1` in [Card.java](../chapter-code/chapter9/Card.java).
 * Page 255: in the second code fragment, `comparator.comparing..`. should be `Comparator.comparing...`.
 * Page 255: the sequence diagram shows two function objects as key extractors (`f1` and `f2`). However, there is only a single key extractor object involved in this scenario.
+
+## License
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+
+Unless otherwise noted, the content of this repository is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>. 
+
+Copyright Martin P. Robillard 2019-2022
