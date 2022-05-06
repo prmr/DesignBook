@@ -1,8 +1,6 @@
 # Introduction to Software Design with Java
 
-Companion web site for the book ["Introduction to Software Design with Java"](https://www.springer.com/gp/book/9783030240936) by Martin P. Robillard, Springer 2019. 
-
-**News:** The second edition is expected to come out in May 2022.
+Companion web site for the book ["Introduction to Software Design with Java"](https://www.springer.com/gp/book/9783030240936) by Martin P. Robillard, Springer 2019 and its [second edition](https://link.springer.com/book/10.1007/978-3-030-97899-0), 2022.
 
 ## Errata
 
