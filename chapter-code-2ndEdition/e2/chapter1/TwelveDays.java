@@ -1,23 +1,14 @@
 /*******************************************************************************
- * Companion code for the book "Introduction to Software Design with Java" 
- * by Martin P. Robillard.
+ * Companion code for the book "Introduction to Software Design with Java",
+ * 2nd edition by Martin P. Robillard.
  *
- * Copyright (C) 2019 by Martin P. Robillard
+ * Copyright (C) 2022 by Martin P. Robillard
  *
  * This code is licensed under a Creative Commons 
  * Attribution-NonCommercial-NoDerivatives 4.0 International License.
  * 
  * See http://creativecommons.org/licenses/by-nc-nd/4.0/
  * 
- *******************************************************************************/
-/*******************************************************************************
- * Additional comments and annotations adapted from
- * 
- * Martin P. Robillard,
- * "Introduction to Software Design with Java",
- * Springer, 2019.
- * 
- * (C) 2019 Springer International Publishing - all rights reserved
  *******************************************************************************/
 package e2.chapter1;
 
@@ -53,7 +44,8 @@ public class TwelveDays {
 	/*
      * Returns the first line in the verse for a given day.
 	 */
-	static String firstLine(int day) {
+	static String firstLine(int day)
+	{
 	  return "On the " + DAYS[day] +
 	    " day of Christmas my true love sent to me:\n";
 	}
@@ -62,11 +54,14 @@ public class TwelveDays {
      * Returns a string that lists all the gifts received on a given
      * day.
 	 */
-	static String allGifts(int day) {
-		if( day == 0 ) { 
+	static String allGifts(int day)
+	{
+		if( day == 0 ) 
+		{ 
 			return "and " + GIFTS[0]; 
 		}
-		else { 
+		else 
+		{ 
 			return GIFTS[day] + "\n" + allGifts(day-1);	
 		}
 	}
@@ -74,9 +69,11 @@ public class TwelveDays {
 	/*
 	 * Returns the text of the entire poem. 
 	 */
-	static String poem() {
+	static String poem()
+	{
 		String poem = firstLine(0) + GIFTS[0] + "\n\n";
-		for( int day = 1; day < 12; day++ ) { 
+		for( int day = 1; day < 12; day++ )
+		{ 
 			poem += firstLine(day) + allGifts(day) + "\n\n"; 
 		}
 		return poem;
