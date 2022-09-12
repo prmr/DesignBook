@@ -22,6 +22,10 @@ Although you can browse the code on GitHub, the recommended way to peruse the co
 2. Create a new User Library under `Eclipse -> Window -> Preferences -> Java -> Build Path -> User Libraries -> New`
 3. Name it `JavaFX` and include the jars under the `lib` folder from your unzipped JavaFX download location.
 
+## Web Version of the Code with Additional Documentation
+
+**NEW!** You can now view all the chapter code samples with additional _on-demand documentation_ accessible directly from the code. Check out our <a href="https://cs.mcgill.ca/~martin/designbook/">Cascading Documentation (CasDoc) demo</a>.
+
 ## Practice Exercises
 
 The exercises are meant to be completed in order, after studying each chapter. Exercises tagged with a star (:star:) are challenging and those tagged with a magnifying glass (:mag:) are based on the exploration of the sample applications. 
