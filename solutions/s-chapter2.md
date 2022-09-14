@@ -46,7 +46,7 @@ public enum Suit
 
 ## Exercise 6
 
-Assuming instances of class `Card` are immutable, it is acceptable to do the following, although we will see more elegant solutions in Chapter 3.
+Assuming instances of class `Card` are immutable, we can use the copy constructor of `ArrayList<>` to return a new list object that contains the references to the cards referred to in the original list encapsulated by the deck.
 
 ```java
 public List<Card> getCard()
@@ -72,4 +72,4 @@ The class is well encapsulated. The only part of the internal state returned is 
 
 Unless otherwise noted, the content of this repository is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>. 
 
-Copyright Martin P. Robillard 2019-2021
+Copyright Martin P. Robillard 2019-2022
