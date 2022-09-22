@@ -21,8 +21,8 @@ import java.util.List;
  */
 public class Hand implements Iterable<Card>, Comparable<Hand>
 {
-	private final List<Card> aCards = new ArrayList<>();
-	private final int aMaxCards;
+	private List<Card> aCards = new ArrayList<>();
+	private int aMaxCards;
 	
 	/**
 	 * Creates a new, empty hand, which can hold
