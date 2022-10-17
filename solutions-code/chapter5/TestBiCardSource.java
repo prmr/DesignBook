@@ -17,14 +17,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Optional;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class TestBiCardSource
 {
 	/*
 	 * This stub class takes either no card or a single card that
-	 * can be used as a marker to determine which source is used.
+	 * can be used to verify which of the two card sources in the 
+	 * BiCardSource was the origin of the card.
 	 */
 	private static class CardSourceStub implements CardSource
 	{
@@ -55,18 +55,17 @@ public class TestBiCardSource
 	
 	private static final Card ACE = Card.get(Rank.ACE, Suit.CLUBS);
 	private static final Card TWO = Card.get(Rank.TWO, Suit.CLUBS);
-	private CardSource aEmpty;
-	private CardSource aContainsAce;
-	private CardSource aContainsTwo;
 	
-	@BeforeEach
-	public void setup()
-	{
-		aEmpty = new CardSourceStub();
-		aContainsAce = new CardSourceStub(ACE);
-		aContainsTwo = new CardSourceStub(TWO);
-	}
-
+	/*
+	 * The field initialization relies on the fact that in JUnit,
+	 * a new instance of the test class is created for each test
+	 * method. The solution for the first edition of the book
+	 * initialized the field in a method annotated with @BeforeEach
+	 * instead.
+	 */
+	private CardSource aEmpty = new CardSourceStub();
+	private CardSource aContainsAce = new CardSourceStub(ACE);;
+	private CardSource aContainsTwo = new CardSourceStub(TWO);;
 	
 	@Test
 	public void testEmpty_True()
