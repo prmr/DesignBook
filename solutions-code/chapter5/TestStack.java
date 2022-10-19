@@ -19,19 +19,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.EmptyStackException;
 import java.util.Stack;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
 public class TestStack
 {
 	private final Stack<String> aStack = new Stack<>();
-	
-	@BeforeEach
-	public void setup()
-	{
-		aStack.clear();
-	}
 	
 	@Test
 	public void testPush_Empty()
