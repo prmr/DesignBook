@@ -7,7 +7,7 @@ Companion web site for the book ["Introduction to Software Design with Java"](ht
 Check the Errata for clarifications and corrections. If you spot a problem that is not listed, please check the [issues](https://github.com/prmr/DesignBook/issues) and open a new one if the problem has not yet been reported.
 
 * [Errata for the First Edition](errata-e1.md);
-* Errata for the Second Edition (will be added when the first problem is reported);
+* [Errata for the Second Edition](errata-e2.md);
 
 ## Source Code
 
