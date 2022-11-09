@@ -477,19 +477,17 @@ public class CommandProcessor
 We need another stack of undone commands:
 
 ```java
-public class CommandProcessor implements CommandProcessor
+public class CommandProcessor
 {
    private final List<Command> aExecutedCommands = new ArrayList<>();
    private final List<Command> aUndoneCommands = new ArrayList<>();
 
-   @Override
    public void consume(Command pCommand)
    {
       pCommand.execute();
       aExecutedCommands.add(pCommand);
    }
 	
-   @Override
    public void undoLast()
    {
       assert !aExecutedCommands.isEmpty();
