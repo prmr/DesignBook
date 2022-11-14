@@ -501,7 +501,6 @@ public class CommandProcessor
       assert !aUndoneCommands.isEmpty();
       Command command = aUndoneCommands.remove(aUndoneCommands.size()-1);
       consume(command);
-      aExecutedCommands.add(command);
    }
 }
 ```
