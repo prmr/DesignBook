@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Casdoc: CompositeShow</title>
+        <style>
+@media (max-width: 767px) {
+	.center-on-large {
+		text-align: left;
+	}
+}
+
+@media (min-width: 768px) {
+	.center-on-large {
+		text-align: center;
+	}
+}
+
+.float-top-right {
+	position: fixed;
+	top: 8.5rem;
+	right: 1.5rem;
+	max-width: 40%;
+}
+
+body {
+    padding: 1rem 1rem 0;
+}
+
+pre {
+	tab-size: 4;
+}
+
+.pin .hljs-comment {
+	font-style: normal !important;
+}
+
+.popover code {
+	background-color: #f9f2f4;
+	padding: 2px 4px;
+	font-size: 90%;
+	border-radius: 4px;
+}
+
+.greyDot,
+.greyDot .hljs-comment {
+	font-size: 5px;
+	color: transparent;
+	text-shadow: 0 0 0 #DCDCDC;
+	font-style: normal !important;
+}
+
+.greyDot::after {
+	content: " ";
+}
+
+.searchButton,
+.undoButton,
+.redoButton {
+	background-color: #C0C0C0;
+	color: white;
+	font-size: 20px;
+	border: none;
+	cursor: pointer;
+	position: fixed;
+	z-index: 1;
+	color: black;
+	width: 30px;
+}
+
+.api-ref-link {
+	display: inline-block;
+	padding: .3em .6em .2em;
+	font-size: 75%;
+	font-weight: 700;
+	text-align: center;
+	white-space: nowrap;
+	border-radius: .25em;
+	background-color: #f5f5f5;
+	border: 1px solid #ccc;
+	margin-bottom: .5em;
+}
+
+.breadcrumbs {
+	background-color: #f7f7f7 !important;
+}
+
+.breadcrumbs a {
+	cursor: pointer;
+}
+
+h5 {
+	font-style: bold;
+}
+
+.combinedHeader.Javadoc {
+	border-top: 1.5px solid #ccc;
+	padding-top: 15px;
+}
+
+.undoButton {
+	right: 6rem;
+}
+
+.redoButton {
+	right: 2rem;
+}
+
+.code-container {
+	width: 100%;
+	height: 100%;
+}
+
+.code-container code {
+	white-space: pre;
+	overflow-wrap: normal;
+}
+
+.code-container > code {
+	padding-top: 4rem;
+}
+
+.undoButton:hover,
+.redoButton:hover {
+	background-color: #a3a3a3;
+}
+
+#inputBar {
+	border: none;
+	font-size: 19px;
+	width: 500px;
+}
+
+input:focus {
+	outline: none !important;
+}
+
+.dropdown-content {
+	right: 10rem;
+	position: fixed;
+	margin-left: 35px;
+	background-color: #f6f6f6;
+	overflow-x: hidden;
+	border: 1px solid #ddd;
+	z-index: 1;
+	max-width: 400px;
+	max-height: 700px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.dropdown-content .resultEntry {
+	border-top: 1px solid #DCDCDC;
+	padding: 5px;
+	font-size: 12px;
+	width: 400px;
+	position: relative;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-family: inherit;
+}
+
+.dropdown-content .entryContent {
+	position: relative;
+	overflow: hidden;
+	text-overflow: ellipsis !important;
+	white-space: nowrap;
+}
+
+.dropdown-content .resultEntry:hover .entryContent,
+.dropdown-content div:hover {
+	background-color: #DCDCDC;
+	text-overflow: inherit;
+	word-break: break-word;
+	white-space: normal;
+	cursor: pointer;
+}
+
+.dropdown-content .entryTitle {
+	text-overflow: inherit;
+	word-break: break-word;
+	white-space: normal;
+}
+
+.dropdown-content .resultEntry:hover .entryContent {
+	text-overflow: ellipsis;
+	word-break: break-word;
+	display: -webkit-box;
+	-webkit-line-clamp: 12;
+	-webkit-box-orient: vertical;
+}
+
+.dropdown-content .entryTitle {
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.combinedPopover {
+	color: transparent;
+	text-shadow: 0 0 0 green;
+}
+
+.modal {
+	overscroll-behavior: contain;
+}
+
+html,
+body {
+	position: relative
+}
+
+.ui-widget-header {
+	border: 0px !important;
+	outline: transparent !important;
+}
+
+.dialog .member-signature .hljs {
+	position: inline;
+	background-color: transparent;
+	color: black !important;
+}
+
+.dialog .popoverHover > code {
+    background: transparent;
+}
+
+.popover .popoverHover > code {
+	background: transparent;
+}
+
+.popover-title div > code {
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.ui-dialog-titlebar span > code {
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  color: black;
+}
+
+.dialog .popoverHover > code:hover {
+    color: #00a3cc !important;
+}
+
+.dialog.ui-dialog-content {
+	width: auto !important;
+	padding: 0px;
+}
+
+.ui-dialog .ui-dialog-content {
+	overflow-x: hidden !important;
+}
+
+.dialog.ui-dialog-content code {
+	color: black;
+}
+
+.ui-widget-content a {
+	outline: transparent !important;
+	color: #337ab7 !important;
+}
+
+.ui-widget {
+	font-size: 11.5px !important;
+}
+
+.ui-draggable .ui-dialog-titlebar {
+	background: #f7f7f7 !important;
+	z-index: -1;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+	border-color: transparent !important;
+	background-color: transparent !important;
+	outline: transparent;
+}
+
+span.popoverHover+.popover.right {
+	position: fixed;
+}
+
+.closeButton:hover {
+	text-shadow: 0 0 3px #FF0000;
+}
+
+.popover {
+	max-width: 400px !important;
+}
+
+.popover.bottom {
+	margin-top: 0 !important;
+	display: block;
+}
+
+span.popoverHover {
+	border-bottom: 2px dotted #00a3cc;
+	cursor: pointer;
+}
+
+span.popoverHover.Block {
+	border-bottom: 0px;
+}
+
+span.popoverHover.Javadoc {
+	border-bottom: 0px;
+}
+
+span.blockAnchor {
+	position: relative;
+	display: inline-block;
+	/* left: -9px; */
+}
+
+.blockAnchor::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 10px;
+	box-sizing: border-box;
+	border: 1.75px solid #ddd;
+	border-right: 0;
+}
+
+div.popover-content {
+	font-size: 11.5px;
+	overflow-x: hidden;
+}
+
+div.popover_content {
+	white-space: nowrap !important;
+}
+
+.popover-content .pin {
+	display: none;
+}
+
+.hljs {
+	background: #F5F5F5;
+}
+
+.hljs-built_in {
+	color: #7928a1;
+}
+
+span.popoverHover:hover,
+span.popoverHover.Block:hover span.hljs-keyword,
+span.popoverHoverhover .hljs-built_in,
+span.popoverHover:hover .hljs-class .hljs-title {
+	color: #00a3cc !important;
+}
+
+.popover-content {
+	height: relative;
+	max-height: 160px;
+	overflow-y: auto;
+	min-height: 101%;
+	color: black !important;
+}
+
+.member-signature {
+	font-size: 10.5px;
+}
+
+div.block {
+	padding: 2.5px;
+}
+
+div.block code {
+	font-size: 11.5px;
+	font-family: 'DejaVu Sans Mono', monospace;
+}
+
+div.notes {
+	padding: 2.5px;
+}
+
+div.notes code {
+	font-size: 11.5px;
+	font-family: 'DejaVu Sans Mono', monospace;
+}
+
+span.close_popover {
+	float: right;
+}
+
+.popover-content {
+	height: relative !important;
+}
+
+.close_popover {
+	cursor: pointer;
+}
+
+.close_popover:hover {
+	text-shadow: 0 0 3px #FF0000;
+}
+
+.combinedPopover {
+	cursor: pointer;
+}
+
+.popover_title {
+	white-space: nowrap !important;
+}
+
+.highlightMatch {
+	background-color: yellow;
+}
+
+/*!
+floating-scroll v3.1.0
+https://amphiluke.github.io/floating-scroll/
+(c) 2021 Amphiluke
+*/
+.fl-scrolls {
+	overflow: auto;
+	position: fixed
+}
+
+.fl-scrolls div {
+	overflow: hidden;
+	pointer-events: none
+}
+
+.fl-scrolls div:before {
+	content: "\A0"
+}
+
+.fl-scrolls,
+.fl-scrolls div {
+	font-size: 1px;
+	line-height: 0;
+	margin: 0;
+	padding: 0
+}
+
+.fl-scrolls-hidden div:before {
+	content: "\A0\A0"
+}
+
+.fl-scrolls-viewport {
+	position: relative
+}
+
+.fl-scrolls-body {
+	overflow: auto
+}
+
+.fl-scrolls-viewport .fl-scrolls {
+	position: absolute
+}
+
+.fl-scrolls-hoverable .fl-scrolls {
+	opacity: 0;
+	transition: opacity .5s .3s
+}
+
+.fl-scrolls-hoverable:hover .fl-scrolls {
+	opacity: 1
+}
+
+.fl-scrolls:not([data-orientation]),
+.fl-scrolls[data-orientation=horizontal] {
+	bottom: 0;
+	min-height: 17px
+}
+
+.fl-scrolls:not([data-orientation]) div,
+.fl-scrolls[data-orientation=horizontal] div {
+	height: 1px
+}
+
+.fl-scrolls-hidden.fl-scrolls:not([data-orientation]),
+.fl-scrolls-hidden.fl-scrolls[data-orientation=horizontal] {
+	bottom: 9999px
+}
+
+.fl-scrolls-viewport .fl-scrolls:not([data-orientation]),
+.fl-scrolls-viewport .fl-scrolls[data-orientation=horizontal] {
+	left: 0
+}
+
+.fl-scrolls[data-orientation=vertical] {
+	right: 0;
+	min-width: 17px
+}
+
+.fl-scrolls[data-orientation=vertical] div {
+	width: 1px
+}
+
+.fl-scrolls-hidden.fl-scrolls[data-orientation=vertical] {
+	right: 9999px
+}
+
+.fl-scrolls-viewport .fl-scrolls[data-orientation=vertical] {
+	top: 0
+}
+        </style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/atom-one-light.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	/*!
+	floating-scroll v3.1.0
+	https://amphiluke.github.io/floating-scroll/
+	(c) 2021 Amphiluke
+	*/
+	!function (t, i) { "object" == typeof exports && "undefined" != typeof module ? i(require("jquery")) : "function" == typeof define && define.amd ? define(["jquery"], i) : i((t = "undefined" != typeof globalThis ? globalThis : t || self).jQuery) }(this, (function (t) { "use strict"; var i = "horizontal", n = "vertical", e = { init: function (t, n) { var e = this; e.orientationProps = function (t) { var n = t === i; return { ORIENTATION: t, SIZE: n ? "width" : "height", X_SIZE: n ? "height" : "width", OFFSET_SIZE: n ? "offsetWidth" : "offsetHeight", OFFSET_X_SIZE: n ? "offsetHeight" : "offsetWidth", CLIENT_SIZE: n ? "clientWidth" : "clientHeight", CLIENT_X_SIZE: n ? "clientHeight" : "clientWidth", INNER_X_SIZE: n ? "innerHeight" : "innerWidth", SCROLL_SIZE: n ? "scrollWidth" : "scrollHeight", SCROLL_POS: n ? "scrollLeft" : "scrollTop", START: n ? "left" : "top", X_START: n ? "top" : "left", X_END: n ? "bottom" : "right" } }(n); var o = t.closest(".fl-scrolls-body"); o.length && (e.scrollBody = o), e.container = t[0], e.visible = !0, e.initWidget(), e.updateAPI(), e.addEventHandlers(), e.skipSyncContainer = e.skipSyncWidget = !1 }, initWidget: function () { var i = this, n = i.orientationProps, e = n.ORIENTATION, o = n.SIZE, r = n.SCROLL_SIZE, l = i.widget = t('<div class="fl-scrolls" data-orientation="' + e + '"></div>'); t("<div></div>").appendTo(l)[o](i.container[r]), l.appendTo(i.container) }, addEventHandlers: function () { var i = this; (i.eventHandlers = [{ $el: i.scrollBody || t(window), handlers: { scroll: function () { i.updateAPI() }, resize: function () { i.updateAPI() } } }, { $el: i.widget, handlers: { scroll: function () { i.visible && !i.skipSyncContainer && i.syncContainer(), i.skipSyncContainer = !1 } } }, { $el: t(i.container), handlers: { scroll: function () { i.skipSyncWidget || i.syncWidget(), i.skipSyncWidget = !1 }, focusin: function () { setTimeout((function () { return i.syncWidget() }), 0) }, "update.fscroll": function (t) { "fscroll" === t.namespace && i.updateAPI() }, "destroy.fscroll": function (t) { "fscroll" === t.namespace && i.destroyAPI() } } }]).forEach((function (t) { var i = t.$el, n = t.handlers; return i.bind(n) })) }, checkVisibility: function () { var t = this, i = t.widget, n = t.container, e = t.scrollBody, o = t.orientationProps, r = o.SCROLL_SIZE, l = o.OFFSET_SIZE, c = o.X_START, s = o.X_END, d = o.INNER_X_SIZE, a = o.CLIENT_X_SIZE, f = i[0][r] <= i[0][l]; if (!f) { var u = n.getBoundingClientRect(), h = e ? e[0].getBoundingClientRect()[s] : window[d] || document.documentElement[a]; f = u[s] <= h || u[c] > h } t.visible === f && (t.visible = !f, i.toggleClass("fl-scrolls-hidden")) }, syncContainer: function () { var t = this, i = t.orientationProps.SCROLL_POS, n = t.widget[0][i]; t.container[i] !== n && (t.skipSyncWidget = !0, t.container[i] = n) }, syncWidget: function () { var t = this, i = t.orientationProps.SCROLL_POS, n = t.container[i]; t.widget[0][i] !== n && (t.skipSyncContainer = !0, t.widget[0][i] = n) }, updateAPI: function () { var i = this, n = i.orientationProps, e = n.SIZE, o = n.X_SIZE, r = n.OFFSET_X_SIZE, l = n.CLIENT_SIZE, c = n.CLIENT_X_SIZE, s = n.SCROLL_SIZE, d = n.START, a = i.widget, f = i.container, u = i.scrollBody, h = f[l], S = f[s]; a[e](h), u || a.css(d, f.getBoundingClientRect()[d] + "px"), t("div", a)[e](S), S > h && a[o](a[0][r] - a[0][c] + 1), i.syncWidget(), i.checkVisibility() }, destroyAPI: function () { var t = this; t.eventHandlers.forEach((function (t) { var i = t.$el, n = t.handlers; return i.unbind(n) })), t.widget.remove(), t.eventHandlers = t.widget = t.container = t.scrollBody = null } }; t.fn.floatingScroll = function (o, r) { if (void 0 === o && (o = "init"), void 0 === r && (r = {}), "init" === o) { var l = r.orientation, c = void 0 === l ? i : l; if (c !== i && c !== n) throw new Error("Scrollbar orientation should be either “horizontal” or “vertical”"); this.each((function (i, n) { return Object.create(e).init(t(n), c) })) } else Object.prototype.hasOwnProperty.call(e, o + "API") && this.trigger(o + ".fscroll"); return this }, t(document).ready((function () { t("body [data-fl-scrolls]").each((function (i, n) { var e = t(n); e.floatingScroll("init", e.data("flScrolls") || {}) })) })) }));
+</script>
+<script>
+	$(document).ready(function () {
+		$(".code-container code").floatingScroll();
+	});
+</script>
+		
+<script>
+    var _0x482dc0=_0x3583;(function(_0x161f3a,_0x5ae084){var _0x1c19f5=_0x3583,_0x1f4f33=_0x161f3a();while(!![]){try{var _0x5ebecb=parseInt(_0x1c19f5(0x185))/0x1+-parseInt(_0x1c19f5(0x16d))/0x2*(parseInt(_0x1c19f5(0x192))/0x3)+-parseInt(_0x1c19f5(0x1d8))/0x4*(-parseInt(_0x1c19f5(0x1c8))/0x5)+-parseInt(_0x1c19f5(0x1c3))/0x6*(-parseInt(_0x1c19f5(0x193))/0x7)+-parseInt(_0x1c19f5(0x169))/0x8*(parseInt(_0x1c19f5(0x16e))/0x9)+-parseInt(_0x1c19f5(0x153))/0xa+parseInt(_0x1c19f5(0x1ab))/0xb;if(_0x5ebecb===_0x5ae084)break;else _0x1f4f33['push'](_0x1f4f33['shift']());}catch(_0x7effc3){_0x1f4f33['push'](_0x1f4f33['shift']());}}}(_0x1ee3,0x482c6));function searchFunction(){var _0x524af7=_0x3583,_0x4ac2e9,_0x1937ee,_0x1c6b86,_0x245bb7,_0x4beb4a,_0x2856f8;_0x4ac2e9=document[_0x524af7(0x18d)]('inputBar'),_0x1937ee=_0x4ac2e9[_0x524af7(0x152)][_0x524af7(0x170)](),div=document[_0x524af7(0x18d)](_0x524af7(0x1d9)),_0x4beb4a=div[_0x524af7(0x173)](_0x524af7(0x1a3)),document[_0x524af7(0x1b3)](_0x524af7(0x1c6))[_0x524af7(0x186)](_0x3ca8e9=>$(_0x3ca8e9)['contents']()[_0x524af7(0x16b)]());for(_0x2856f8=0x0;_0x2856f8<_0x4beb4a[_0x524af7(0x15c)];_0x2856f8++){var _0x3ef62c=_0x4beb4a[_0x2856f8][_0x524af7(0x173)]('entryTitle')[0x0],_0x12ef6b=_0x3ef62c[_0x524af7(0x171)](_0x524af7(0x167))[0x0],_0x5871fa=_0x3ef62c[_0x524af7(0x182)],_0x1265a3=_0x4beb4a[_0x2856f8][_0x524af7(0x173)]('entryContent')[0x0],_0x8be5c3=_0x1265a3[_0x524af7(0x182)];if(_0x1937ee===''){_0x4beb4a[_0x2856f8][_0x524af7(0x14b)]['display']='none';continue;}if(_0x8be5c3[_0x524af7(0x170)]()[_0x524af7(0x1ce)](_0x1937ee)>-0x1){_0x8be5c3=getHighlightEntry(_0x1937ee,_0x8be5c3);;_0x1265a3['innerHTML']=_0x8be5c3,_0x4beb4a[_0x2856f8][_0x524af7(0x14b)][_0x524af7(0x1ad)]=_0x524af7(0x1b4);}else _0x5871fa[_0x524af7(0x170)]()[_0x524af7(0x1ce)](_0x1937ee)>-0x1?(_0x5871fa=getHighlightEntry(_0x1937ee,_0x5871fa),_0x12ef6b===undefined?_0x3ef62c[_0x524af7(0x1c9)]=_0x5871fa:($(_0x3ef62c)[_0x524af7(0x1d7)](),$(_0x3ef62c)[_0x524af7(0x19f)](_0x12ef6b),$(_0x3ef62c)[_0x524af7(0x19f)](_0x5871fa)),_0x4beb4a[_0x2856f8][_0x524af7(0x14b)][_0x524af7(0x1ad)]=_0x524af7(0x1b4)):_0x4beb4a[_0x2856f8][_0x524af7(0x14b)][_0x524af7(0x1ad)]=_0x524af7(0x1b1);}}function getHighlightsearch(_0x2bd7dd,_0x3b2832){var _0x531af6=_0x3583,_0xa6e021=_0x3b2832['substring'](0x0,_0x3b2832[_0x531af6(0x170)]()['indexOf'](_0x2bd7dd)),_0xaee990=_0x3b2832[_0x531af6(0x168)](_0x3b2832[_0x531af6(0x170)]()[_0x531af6(0x1ce)](_0x2bd7dd)+_0x2bd7dd['length']),_0x4c808a='<span\x20class=\x27highlightMatch\x27>'+_0x3b2832[_0x531af6(0x158)](_0xa6e021,'')[_0x531af6(0x158)](_0xaee990,'')+_0x531af6(0x176);return _0x4c808a;}function getHighlightEntry(_0x3e78c0,_0x53b098){var _0x3bb046=_0x3583,_0xd23c96=getHighlightsearch(_0x3e78c0,_0x53b098),_0x45741d=_0x53b098[_0x3bb046(0x168)](0x0,_0x53b098[_0x3bb046(0x170)]()['indexOf'](_0x3e78c0)),_0x493a72=_0x53b098[_0x3bb046(0x168)](_0x53b098[_0x3bb046(0x170)]()['indexOf'](_0x3e78c0)+_0x3e78c0['length']),_0x20a2b5=_0x45741d+_0xd23c96+_0x493a72;return _0x20a2b5;}function getOpposite(_0x3ff457){var _0x2641dd=_0x3583;if(_0x3ff457===_0x2641dd(0x187))return _0x2641dd(0x160);return _0x2641dd(0x187);}const commands=[],redoCommands=[];function saveCommand(_0x1e2e14,_0x36724d,_0x1299cf){var _0x4abfac=_0x3583;_0x1299cf[_0x4abfac(0x1d2)]({'action':{'type':_0x36724d,'subName':_0x1e2e14},'inverse':{'type':getOpposite(_0x36724d),'subName':_0x1e2e14}});}function undo(){var _0x237de7=_0x3583;const _0x551133=commands[_0x237de7(0x1d4)]();if(_0x551133===undefined)return;_0x551133[_0x237de7(0x177)][_0x237de7(0x1de)]==='add'?($(_0x237de7(0x1bc)+_0x551133[_0x237de7(0x177)][_0x237de7(0x1e0)])[_0x237de7(0x159)](_0x237de7(0x154)),toggleAllMatchingPins(_0x551133[_0x237de7(0x177)][_0x237de7(0x1e0)],_0x237de7(0x156))):($(_0x237de7(0x1bc)+_0x551133[_0x237de7(0x177)]['subName'])[_0x237de7(0x159)](_0x237de7(0x189)),$(_0x237de7(0x1b6)+_0x551133['inverse'][_0x237de7(0x1e0)])[_0x237de7(0x18e)](),toggleAllMatchingPins(_0x551133[_0x237de7(0x177)][_0x237de7(0x1e0)],_0x237de7(0x18e))),saveCommand(_0x551133[_0x237de7(0x177)][_0x237de7(0x1e0)],_0x551133[_0x237de7(0x15f)][_0x237de7(0x1de)],redoCommands);}function redo(){var _0x38a059=_0x3583;const _0x5da104=redoCommands['pop']();if(_0x5da104===undefined)return;_0x5da104['action'][_0x38a059(0x1de)]==='add'?($(_0x38a059(0x1bc)+_0x5da104['action'][_0x38a059(0x1e0)])['dialog'](_0x38a059(0x154)),toggleAllMatchingPins(_0x5da104[_0x38a059(0x15f)]['subName'],_0x38a059(0x156))):($(_0x38a059(0x1bc)+_0x5da104[_0x38a059(0x15f)][_0x38a059(0x1e0)])[_0x38a059(0x159)]('close'),$(_0x38a059(0x1b6)+_0x5da104['action'][_0x38a059(0x1e0)])[_0x38a059(0x18e)](),toggleAllMatchingPins(_0x5da104[_0x38a059(0x15f)][_0x38a059(0x1e0)],'hide')),saveCommand(_0x5da104[_0x38a059(0x177)][_0x38a059(0x1e0)],_0x5da104[_0x38a059(0x15f)][_0x38a059(0x1de)],commands);}window[_0x482dc0(0x1bb)]('keydown',function(_0x18f10c){var _0x598091=_0x482dc0;(_0x18f10c['keyCode']===0x72||_0x18f10c[_0x598091(0x1d5)]&&_0x18f10c['keyCode']===0x46||_0x18f10c['metaKey']&&_0x18f10c[_0x598091(0x1ba)]===0x46)&&(_0x18f10c['preventDefault'](),$('#inputBar')[_0x598091(0x16a)]()),_0x18f10c[_0x598091(0x1ba)]===0x1b&&(_0x18f10c[_0x598091(0x1b8)](),$(_0x598091(0x165))[_0x598091(0x1a4)](),$('.resultEntry')[_0x598091(0x190)](function(){var _0x207a03=_0x598091;$(this)[_0x207a03(0x149)]('display','none');})),(_0x18f10c[_0x598091(0x1d5)]&&_0x18f10c[_0x598091(0x1ba)]===0x5a&&!_0x18f10c[_0x598091(0x144)]||_0x18f10c[_0x598091(0x1be)]&&_0x18f10c[_0x598091(0x1ba)]===0x5a&&!_0x18f10c[_0x598091(0x144)])&&(_0x18f10c[_0x598091(0x1b8)](),undo()),(_0x18f10c[_0x598091(0x144)]&&_0x18f10c[_0x598091(0x1d5)]&&_0x18f10c['keyCode']===0x5a||_0x18f10c[_0x598091(0x144)]&&_0x18f10c[_0x598091(0x1be)]&&_0x18f10c[_0x598091(0x1ba)]===0x5a||_0x18f10c[_0x598091(0x1d5)]&&_0x18f10c[_0x598091(0x1ba)]===0x59||_0x18f10c[_0x598091(0x1be)]&&_0x18f10c['keyCode']===0x59)&&(_0x18f10c[_0x598091(0x1b8)](),redo());}),$(document)['on'](_0x482dc0(0x161),_0x482dc0(0x1ae),function(){var _0x2a2018=_0x482dc0,_0x11700b=$(this)['attr']('id')[_0x2a2018(0x168)](0xa),_0x4ceccb=$(this)['parent']()[_0x2a2018(0x1dc)]()[_0x2a2018(0x15b)]('id');highlightOrShowDialog(_0x11700b,_0x4ceccb);});function _0x1ee3(){var _0x4811af=['.member-signature','5aDQugO','innerHTML','text-shadow','<span\x20class=closeButton\x20id=closeButton','.popoverHover.Javadoc.','nextSibling','indexOf','mouseenter','prototype','background-color','push',':hidden','pop','ctrlKey','.popover','empty','425792fdVKci','dropDownBar','text','0\x200\x200\x20red','parent','.popover-content','type','ui.dialog','subName','pin','popoverHover','shiftKey','animate','class','top','right','css','entryContent','style','prev','inputBar','html','inline-block','yellow','scrollBy','value','5034320Xrgkcl','open','&#160;','show','get','replace','dialog','internal','attr','length','&#10133;','#pinnedpopover_title','action','remove','click','contents','true','setAttribute','#inputBar','bottom','img','substring','720FeRsOR','focus','unwrap','createElement','73754KKEBpS','42759FeyGlO','find','toUpperCase','getElementsByTagName','delay','getElementsByClassName','popover_content_wrapper','popoverBlock','</span>','inverse','#popover','.ui-dialog-titlebar-close','&#10134;','position','option','ready','inline','#title','>&#10060;</span>','next','innerText','substr','data-hover','137668UTjGSo','forEach','add','.closeButton','close','.combinedHeader','#popover_title','left\x20bottom','getElementById','hide','widget','each','clone','27PXfLyu','7RXOGSV','options','mouseleave','#eded5e','div','.ui-dialog.ui-widget','height',':hover','scrollIntoView','#DCDCDC','Block','.dialog','append','addClass',':visible','#blockAnchor','resultEntry','blur','0\x200\x200\x20green','title','left','button','width','undefined','14256594DAcnUz','.combinedPopover','display','.breadcrumbs\x20a','transparent','popover_content','none','stopImmediatePropagation','querySelectorAll','block','https','#pin','span','preventDefault','extend','keyCode','addEventListener','#dialog','aria-describedby','metaKey','isOpen','manual','setTimeout','.popoverHover.Block.','110202lyzPRj','popover','destroy','.highlightMatch'];_0x1ee3=function(){return _0x4811af;};return _0x1ee3();}function highlightOrShowDialog(_0x47b7c3,_0x4db532){var _0x1658c3=_0x482dc0;$(_0x1658c3(0x1bc)+_0x47b7c3)[_0x1658c3(0x159)](_0x1658c3(0x1bf))?$(_0x1658c3(0x1bc)+_0x47b7c3)[_0x1658c3(0x145)]({'background-color':_0x1658c3(0x19c)})[_0x1658c3(0x172)](0x3e8)['animate']({'background-color':_0x1658c3(0x1af)},0x320):($(_0x1658c3(0x1bc)+_0x47b7c3)[_0x1658c3(0x159)](_0x1658c3(0x154)),saveCommand(_0x47b7c3,_0x1658c3(0x187),commands),toggleAllMatchingPins(_0x47b7c3,_0x1658c3(0x156)));}function addPopoversToSearch(){var _0x5121e4=_0x482dc0,_0x3efb5e=document['getElementById']('dropDownBar');const _0x4f6db7=document['querySelectorAll'](_0x5121e4(0x19e));for(var _0x277435=0x0;_0x277435<_0x4f6db7[_0x5121e4(0x15c)];_0x277435++){var _0x1aed9c=document[_0x5121e4(0x16c)](_0x5121e4(0x197)),_0x7e24d=document[_0x5121e4(0x16c)](_0x5121e4(0x197)),_0x3d3c1a=$(_0x4f6db7[_0x277435])[_0x5121e4(0x191)]();$(_0x3d3c1a)[_0x5121e4(0x16f)](_0x5121e4(0x18a))[_0x5121e4(0x190)](function(){var _0x359e5c=_0x5121e4;$(this)[_0x359e5c(0x160)]();}),$(_0x3d3c1a)[_0x5121e4(0x16f)]('.breadcrumbs')['each'](function(){var _0x391f1d=_0x5121e4;$(this)[_0x391f1d(0x160)]();});var _0x13466c=$(_0x3d3c1a)[_0x5121e4(0x1da)]()[_0x5121e4(0x158)](/[^\x00-\x7F]/g,''),_0x2cfab6=document['getElementById']('dropDownBar'),_0x18f384=_0x2cfab6[_0x5121e4(0x171)](_0x5121e4(0x197)),_0x1e1c5e=![];for(var _0x1fd97e=0x0;_0x1fd97e<_0x18f384[_0x5121e4(0x15c)];_0x1fd97e++){if($(_0x18f384[_0x1fd97e])[_0x5121e4(0x1da)]()===_0x13466c){_0x1e1c5e=!![];break;}}if(_0x1e1c5e===!![])continue;$(_0x7e24d)[_0x5121e4(0x1da)](_0x13466c),_0x7e24d[_0x5121e4(0x164)](_0x5121e4(0x146),_0x5121e4(0x14a));var _0x100079;_0x4f6db7[_0x277435]['className']==='dialog\x20ui-dialog-content\x20ui-widget-content'?_0x100079=_0x4f6db7[_0x277435]['id']['substring'](0x6):_0x100079=_0x4f6db7[_0x277435]['id']['substring'](0xd),$(_0x1aed9c)[_0x5121e4(0x19f)]($('#popover_title'+_0x100079)[_0x5121e4(0x14e)]()),$(_0x1aed9c)[_0x5121e4(0x19f)](_0x7e24d),$(_0x1aed9c)[_0x5121e4(0x16f)]('div:first')[_0x5121e4(0x1a0)]('entryTitle'),_0x1aed9c[_0x5121e4(0x164)]('id',_0x100079),_0x1aed9c[_0x5121e4(0x164)](_0x5121e4(0x146),'resultEntry'),$(_0x1aed9c)['on'](_0x5121e4(0x161),openSearchDialog),$(_0x1aed9c)['on'](_0x5121e4(0x1cf),function(){var _0x511f8c=_0x5121e4,_0xa904c5=document[_0x511f8c(0x18d)](_0x511f8c(0x1c4)+this['id']);this['id'][_0x511f8c(0x168)](0x0,0x5)==='Block'?(_0xa904c5=document[_0x511f8c(0x18d)]('blockAnchor'+this['id']),$(_0xa904c5)[_0x511f8c(0x149)](_0x511f8c(0x1d1),_0x511f8c(0x150))):$(_0x511f8c(0x178)+this['id'])['css'](_0x511f8c(0x1d1),_0x511f8c(0x150));_0xa904c5!==null&&(_0xa904c5[_0x511f8c(0x19b)](),window[_0x511f8c(0x151)](0x0,-0x64));this['id']['includes']('internal')&&($(_0x511f8c(0x178)+this['id']+'a')['css'](_0x511f8c(0x1d1),_0x511f8c(0x150)),$(_0x511f8c(0x178)+this['id']+'b')[_0x511f8c(0x149)](_0x511f8c(0x1d1),_0x511f8c(0x150)));var _0x3d491d=$(this);window[_0x511f8c(0x1c1)](function(){var _0x352bb6=_0x511f8c;$(_0x3d491d)['is'](_0x352bb6(0x19a))&&$(_0x3d491d)['attr']('data-hover',!![]);},0x3e8);}),$(_0x1aed9c)['on'](_0x5121e4(0x195),function(){var _0x4e3d88=_0x5121e4;$('#popover'+this['id'])[_0x4e3d88(0x149)]('background-color',_0x4e3d88(0x1af)),$(_0x4e3d88(0x1a2)+this['id'])['css'](_0x4e3d88(0x1d1),'transparent'),$(_0x4e3d88(0x178)+this['id']+'a')[_0x4e3d88(0x149)](_0x4e3d88(0x1d1),_0x4e3d88(0x1af)),$(_0x4e3d88(0x178)+this['id']+'b')[_0x4e3d88(0x149)](_0x4e3d88(0x1d1),_0x4e3d88(0x1af)),$(this)['attr']('data-hover')===_0x4e3d88(0x163)&&$(this)['attr'](_0x4e3d88(0x184),![]);}),$(_0x3efb5e)['append'](_0x1aed9c),_0x1aed9c['style'][_0x5121e4(0x1ad)]=_0x5121e4(0x1b1);}}var openSearchDialog=function(){var _0x9a22da=_0x482dc0,_0x3f3287=_0x9a22da(0x1bc)+this['id'],_0x1d1b4b=document['getElementById'](_0x9a22da(0x14d))[_0x9a22da(0x152)];$(_0x3f3287)[_0x9a22da(0x159)](_0x9a22da(0x1bf))?($(_0x3f3287)[_0x9a22da(0x159)](_0x9a22da(0x189)),toggleAllMatchingPins(this['id'],_0x9a22da(0x18e)),saveCommand(this['id'],_0x9a22da(0x189),commands)):($(_0x3f3287)[_0x9a22da(0x159)](_0x9a22da(0x154)),$(_0x3f3287)['dialog']('option',_0x9a22da(0x199),getHeight(_0x3f3287)),$(_0x3f3287)[_0x9a22da(0x159)](_0x9a22da(0x17c),_0x9a22da(0x1a9),0x177),toggleAllMatchingPins(this['id'],'show'),saveCommand(this['id'],_0x9a22da(0x187),commands));};$(document)[_0x482dc0(0x17d)](function(){var _0x1c8c01=_0x482dc0;$(_0x1c8c01(0x1c7))[_0x1c8c01(0x190)](function(){var _0x5305ff=_0x1c8c01,_0x236b2a=$(this)[_0x5305ff(0x16f)]('code')['first']()[_0x5305ff(0x162)]();$(_0x236b2a)[_0x5305ff(0x16b)](),$(_0x236b2a)[_0x5305ff(0x190)](function(){var _0x4c2bff=_0x5305ff;$(this)[_0x4c2bff(0x162)]()['unwrap']();});});}),$[_0x482dc0(0x18f)](_0x482dc0(0x1df),$[_0x482dc0(0x1b9)]({},$['ui']['dialog'][_0x482dc0(0x1d0)],{'_title':function(_0x500c86){var _0x1acb37=_0x482dc0;!this[_0x1acb37(0x194)]['title']?_0x500c86[_0x1acb37(0x14e)](_0x1acb37(0x155)):_0x500c86[_0x1acb37(0x14e)](this[_0x1acb37(0x194)][_0x1acb37(0x1a6)]);}}));function removeEqualPins(_0x22b66c){var _0x2e379d=_0x482dc0,_0x2b6c87=$('#title'+_0x22b66c)[_0x2e379d(0x14e)]();const _0x41e9ac=document[_0x2e379d(0x173)]('popoverHover\x20Javadoc\x20'+_0x22b66c);if(_0x41e9ac[_0x2e379d(0x15c)]>0x0){const _0x2605e8=document[_0x2e379d(0x173)](_0x2e379d(0x159));for(var _0x2b7351=0x0;_0x2b7351<_0x2605e8[_0x2e379d(0x15c)];_0x2b7351++){var _0x29198e=_0x2605e8[_0x2b7351],_0xba6c8d=_0x29198e['id'][_0x2e379d(0x168)](0x6),_0x39417f=$(_0x2e379d(0x17f)+_0xba6c8d)[_0x2e379d(0x14e)]();if(_0x39417f===_0x2b6c87){$('#popover'+_0xba6c8d)[_0x2e379d(0x149)]('background-color',_0x2e379d(0x1af));var _0x373ec6=_0x2e379d(0x1b6)+_0xba6c8d;$(_0x373ec6)['is'](_0x2e379d(0x1a1))&&($(_0x373ec6)[_0x2e379d(0x149)](_0x2e379d(0x1ad),_0x2e379d(0x1b1)),$(_0x29198e)[_0x2e379d(0x159)](_0x2e379d(0x189)));}}}}function _0x3583(_0x59edb0,_0x40a433){var _0x1ee3a4=_0x1ee3();return _0x3583=function(_0x35833c,_0x2a9343){_0x35833c=_0x35833c-0x144;var _0x485ccb=_0x1ee3a4[_0x35833c];return _0x485ccb;},_0x3583(_0x59edb0,_0x40a433);}var leavehandler=function(){var _0x2b60c4=_0x482dc0,_0x42233c=this,_0x51bb70=$(_0x42233c)[_0x2b60c4(0x181)](_0x2b60c4(0x1d6)),_0xc0c0bd=$(_0x51bb70)['is'](_0x2b60c4(0x19a));!_0xc0c0bd&&($(this)['attr'](_0x2b60c4(0x184))===_0x2b60c4(0x163)&&$(this)[_0x2b60c4(0x15b)]('data-hover',![]),$(_0x42233c)[_0x2b60c4(0x1c4)](_0x2b60c4(0x18e)));if(this['id']['substring'](0x0,0xc)===_0x2b60c4(0x175)){var _0x2c9e65=this['id'][_0x2b60c4(0x168)](0x7);$('#blockAnchor'+_0x2c9e65)['css'](_0x2b60c4(0x1d1),_0x2b60c4(0x1af));}};function isInternalPopover(_0x552167){var _0x1158ae=_0x482dc0;return _0x552167['substring'](0x0,0x8)===_0x1158ae(0x15a);}function getInternalSubName(_0x48a0b3){var _0x1011f3=_0x482dc0;return _0x48a0b3[_0x1011f3(0x168)](0x0,_0x48a0b3['length']-0x1);}function getSubName(_0x17a3f8){return _0x17a3f8['substring'](0x7);}function getPin(_0x2a584a){var _0x2d3505=_0x482dc0,_0x59de9f=_0x2d3505(0x1e1)+_0x2a584a;return document['getElementById'](_0x59de9f);}function getDialog(_0x376fe4){var _0x19a2d8=_0x482dc0;return _0x19a2d8(0x159)+_0x376fe4;}function isJavadoc(_0x2c0551){var _0x39ab1c=_0x482dc0;return $(_0x39ab1c(0x1cc)+_0x2c0551)[_0x39ab1c(0x15c)];}function isDuplicatePopover(_0x3ec1ec){var _0x1479b=_0x482dc0,_0x4140e7=getDialog(_0x3ec1ec);$('#'+_0x4140e7)['dialog']('open'),$('#'+_0x4140e7)['dialog']('option','height',getHeight('#'+_0x4140e7)),$('#'+_0x4140e7)[_0x1479b(0x159)]('option','width',0x177);var _0x116b9a=$(_0x1479b(0x17f)+_0x3ec1ec)[_0x1479b(0x14e)]();typeof _0x116b9a===_0x1479b(0x1aa)&&(_0x116b9a=$(_0x1479b(0x15e)+_0x3ec1ec)[_0x1479b(0x14e)]());const _0x3bc83c=document['getElementsByClassName'](_0x1479b(0x159)),_0x1af4f9=document['getElementById'](_0x4140e7);for(var _0x4b6271=0x0;_0x4b6271<_0x3bc83c['length'];_0x4b6271++){var _0xa6b4fd=_0x3bc83c[_0x4b6271];if(_0xa6b4fd['id']===_0x4140e7)continue;var _0x541aaa='#'+_0xa6b4fd['id'];if($(_0x541aaa)[_0x1479b(0x159)](_0x1479b(0x1bf))){var _0x115c7a=_0xa6b4fd['id'][_0x1479b(0x168)](0x6);if(isJavadoc(_0x115c7a)&&$(_0x1479b(0x1b6)+_0x115c7a)['is'](_0x1479b(0x1a1))){var _0xb81e0d=$(_0x1479b(0x17f)+_0x115c7a)[_0x1479b(0x14e)]();if(_0xb81e0d===_0x116b9a)return $('#'+_0x4140e7)[_0x1479b(0x159)](_0x1479b(0x189)),!![];}else continue;}}return![];}var clickhandler=function(_0x930c60){var _0x2a8d93=_0x482dc0;_0x930c60[_0x2a8d93(0x1b2)]();var _0x1902de=this['id'],_0x9f8c05=getSubName(_0x1902de),_0x43c4bf=$(this)[_0x2a8d93(0x14c)]();$(this)['is'](':visible')?$(this)[_0x2a8d93(0x1c4)]('hide'):$(this)[_0x2a8d93(0x1c4)](_0x2a8d93(0x156));if($(_0x43c4bf)['is'](_0x2a8d93(0x1d3))){$(_0x43c4bf)[_0x2a8d93(0x149)]('display',_0x2a8d93(0x17e));isInternalPopover(_0x9f8c05)&&(_0x9f8c05=getInternalSubName(_0x9f8c05));var _0x308047=getDialog(_0x9f8c05),_0x3420bf={'my':'left\x20top+15','at':_0x2a8d93(0x18c),'of':_0x930c60};$('#'+_0x308047)[_0x2a8d93(0x159)]('option',_0x2a8d93(0x17b),_0x3420bf),$('#'+_0x308047)[_0x2a8d93(0x159)](_0x2a8d93(0x154)),$('#'+_0x308047)['dialog']('option',_0x2a8d93(0x199),getHeight('#'+_0x308047)),$('#'+_0x308047)[_0x2a8d93(0x159)](_0x2a8d93(0x17c),_0x2a8d93(0x1a9),0x177);var _0x4779c3=document[_0x2a8d93(0x18d)](_0x308047)['getElementsByTagName']('*');for(var _0xb54bb=0x0;_0xb54bb<_0x4779c3[_0x2a8d93(0x15c)];_0xb54bb++){var _0x55b654=_0x4779c3[_0xb54bb];if(_0x55b654['id'][_0x2a8d93(0x168)](0x0,0x7)!=='popover')continue;var _0x13af7f=getSubName(_0x55b654['id']);if(!isInternalPopover(_0x13af7f))continue;var _0x5cd23b=getInternalSubName(_0x13af7f);$(_0x2a8d93(0x1bc)+_0x5cd23b)['dialog'](_0x2a8d93(0x1bf))&&$(_0x2a8d93(0x1b6)+_0x13af7f)[_0x2a8d93(0x156)]();}toggleAllMatchingPins(_0x9f8c05,_0x2a8d93(0x156));var _0x33e8ba=![];isJavadoc(_0x9f8c05)&&(_0x33e8ba=isDuplicatePopover(_0x9f8c05)),_0x33e8ba===![]&&saveCommand(_0x9f8c05,_0x2a8d93(0x187),commands),$(this)['next']()[_0x2a8d93(0x149)](_0x2a8d93(0x1d1),_0x2a8d93(0x1af));}else{if($(_0x43c4bf)['is'](':visible')){$(_0x43c4bf)[_0x2a8d93(0x149)]('display',_0x2a8d93(0x1b1));if(isInternalPopover(_0x9f8c05)){var _0x1fa67e='#'+$(_0x43c4bf)['attr']('id')[_0x2a8d93(0x168)](0x0,$(_0x43c4bf)['attr']('id')[_0x2a8d93(0x15c)]-0x1)+'a',_0x45e4d6='#'+$(_0x43c4bf)[_0x2a8d93(0x15b)]('id')[_0x2a8d93(0x168)](0x0,$(_0x43c4bf)[_0x2a8d93(0x15b)]('id')[_0x2a8d93(0x15c)]-0x1)+'b';$(_0x1fa67e)[_0x2a8d93(0x149)]('display','none'),$(_0x45e4d6)[_0x2a8d93(0x149)](_0x2a8d93(0x1ad),_0x2a8d93(0x1b1)),_0x9f8c05=getInternalSubName(_0x9f8c05);}$(this)[_0x2a8d93(0x181)]()[_0x2a8d93(0x149)](_0x2a8d93(0x1d1),_0x2a8d93(0x1af)),saveCommand(_0x9f8c05,'remove',commands);var _0x308047=getDialog(_0x9f8c05);$('#'+_0x308047)['dialog'](_0x2a8d93(0x189)),removeEqualPins(_0x9f8c05);}}},initializePopover={'html':!![],'trigger':_0x482dc0(0x1c0),'animation':![],'title':function(){var _0x42bb60=_0x482dc0,_0x42d856=this['id'],_0x46aca3=getSubName(_0x42d856);isInternalPopover(_0x46aca3)&&(_0x46aca3=getInternalSubName(_0x46aca3));var _0x43ec8e=_0x42bb60(0x18b)+_0x46aca3;return $(_0x43ec8e)[_0x42bb60(0x14e)]();},'content':function(){var _0x5d9547=_0x482dc0,_0x5e40d3=this['id'],_0x579bb3=_0x5e40d3[_0x5d9547(0x168)](0x7);isInternalPopover(_0x579bb3)&&(_0x579bb3=getInternalSubName(_0x579bb3));var _0x1d8ed0=_0x5d9547(0x174)+_0x579bb3;return $('#'+_0x1d8ed0)[_0x5d9547(0x14e)]();},'placement':function(_0x2b171f,_0x174eeb){var _0x30fa28=_0x482dc0,_0x5cc2b7=$(_0x174eeb)[_0x30fa28(0x17b)]();if(_0x5cc2b7[_0x30fa28(0x1a7)]>0x203)return _0x30fa28(0x1a7);if(_0x5cc2b7[_0x30fa28(0x1a7)]<0x203)return _0x30fa28(0x148);if(_0x5cc2b7[_0x30fa28(0x147)]<0x6e)return _0x30fa28(0x166);return'top';}},enterhandler=function(_0x41d633){var _0xe04d7a=_0x482dc0,_0x4bb619=this;$(this)['popover'](_0xe04d7a(0x1c5)),$(this)[_0xe04d7a(0x1c4)](initializePopover);var _0x238526=getSubName(this['id']);isInternalPopover(_0x238526)&&(_0x238526=getInternalSubName(_0x238526));$(this)[_0xe04d7a(0x1c4)](_0xe04d7a(0x156));var _0x1a6ef7=$(this)[_0xe04d7a(0x181)](_0xe04d7a(0x197))[_0xe04d7a(0x16f)](_0xe04d7a(0x1dd))[_0xe04d7a(0x16f)]('p'),_0x2f6a55=$(_0x1a6ef7)['find'](_0xe04d7a(0x1b7));for(var _0x1e753e=0x0;_0x1e753e<_0x2f6a55[_0xe04d7a(0x15c)];_0x1e753e++){var _0x362d12=_0x2f6a55[_0x1e753e];if(_0x362d12['id'][_0xe04d7a(0x168)](0x0,0x7)!==_0xe04d7a(0x1c4))continue;var _0x405358=getSubName(_0x362d12['id']);if(!isInternalPopover(_0x405358))continue;var _0x120c51=getInternalSubName(_0x405358);$('#dialog'+_0x120c51)[_0xe04d7a(0x159)](_0xe04d7a(0x1bf))?$(_0x2f6a55[_0x1e753e-0x1])[_0xe04d7a(0x149)](_0xe04d7a(0x1ad),_0xe04d7a(0x17e)):$(_0x2f6a55[_0x1e753e-0x1])[_0xe04d7a(0x149)](_0xe04d7a(0x1ad),_0xe04d7a(0x1b1));}$(_0xe04d7a(0x1d6))['on'](_0xe04d7a(0x195),function(){var _0x11fc97=_0xe04d7a;$(this)[_0x11fc97(0x14c)]()[_0x11fc97(0x15b)](_0x11fc97(0x184))===_0x11fc97(0x163)&&$(this)[_0x11fc97(0x14c)]()[_0x11fc97(0x15b)](_0x11fc97(0x184),![]),$(this)['popover']('hide');});var _0x388850=$(this);window[_0xe04d7a(0x1c1)](function(){var _0x141624=_0xe04d7a;$(_0x388850)['is'](_0x141624(0x19a))&&$(_0x388850[0x0])[_0x141624(0x15b)](_0x141624(0x184),!![]);},0x3e8),highlightBlock(this);};function highlightBlock(_0x4f5a7d){var _0x378733=_0x482dc0;_0x4f5a7d['id'][_0x378733(0x168)](0x0,0xc)==='popoverBlock'&&$('#blockAnchor'+getSubName(_0x4f5a7d['id']))[_0x378733(0x149)]('background-color','#DCDCDC\x20!important');}$(document)['on'](_0x482dc0(0x161),_0x482dc0(0x1ac),function(){var _0x5f4a72=_0x482dc0;if($(this)['css'](_0x5f4a72(0x1ca))==='rgb(255,\x200,\x200)\x200px\x200px\x200px'){var _0xad04ac=$(this)[_0x5f4a72(0x181)]()['next'](),_0x5968bd=$(_0xad04ac)[_0x5f4a72(0x181)]()[_0x5f4a72(0x181)]();$(_0xad04ac)['css'](_0x5f4a72(0x1ad),'none'),$(_0x5968bd)[_0x5f4a72(0x149)](_0x5f4a72(0x1ad),'none'),$(this)['html'](_0x5f4a72(0x15d)),$(this)[_0x5f4a72(0x149)]('text-shadow',_0x5f4a72(0x1a5));}else{var _0xad04ac=$(this)[_0x5f4a72(0x181)]()['next'](),_0x5968bd=$(_0xad04ac)[_0x5f4a72(0x181)]()['next']();$(_0xad04ac)[_0x5f4a72(0x149)](_0x5f4a72(0x1ad),_0x5f4a72(0x14f)),$(_0x5968bd)[_0x5f4a72(0x149)]('display',_0x5f4a72(0x14f)),$(this)[_0x5f4a72(0x14e)](_0x5f4a72(0x17a)),$(this)['css'](_0x5f4a72(0x1ca),_0x5f4a72(0x1db));}});function getHeight(_0x793c91){var _0xc603ad=_0x482dc0,_0x48f5b9=_0x793c91[_0xc603ad(0x168)](0x7);if($(_0x793c91)['text']()[_0xc603ad(0x15c)]<=0xfa)return 0x78;var _0x1f5ce8='#title'+_0x48f5b9,_0x73b562=$(_0x1f5ce8)[_0xc603ad(0x14e)]();if(_0x73b562[_0xc603ad(0x1ce)](_0xc603ad(0x1b5))===-0x1)return 0x78;return 0x12c;}var initializeDialogs={'maxHeight':0x258,'minHeight':0x32,'minWidth':0x177,'autoOpen':![],'resizable':!![],'title':function(){var _0x453c63=_0x482dc0,_0x27938b=$(this)[_0x453c63(0x1dc)]()[_0x453c63(0x1dc)]()[_0x453c63(0x15b)](_0x453c63(0x1bd)),_0x18c7a0=$(this)[_0x453c63(0x1dc)]()[_0x453c63(0x1dc)]()[_0x453c63(0x16f)](_0x453c63(0x1a8))[_0x453c63(0x157)](0x0),_0x474fb2=_0x27938b['substring'](0x6),_0x376b2c=_0x453c63(0x17f)+_0x474fb2;$(_0x18c7a0)[_0x453c63(0x19f)](_0x453c63(0x1cb)+_0x474fb2+_0x453c63(0x180));var _0x37660d=$(_0x376b2c)[_0x453c63(0x14e)]();return _0x37660d['indexOf'](_0x453c63(0x1b5))===-0x1&&(_0x37660d=_0x37660d[_0x453c63(0x183)](0x0,0x2)+'\x20'+_0x37660d[_0x453c63(0x183)](0x2)),_0x37660d;},'content':function(){var _0x36f9a2=_0x482dc0;return $(this)[_0x36f9a2(0x14e)]();}};function formatInternals(){var _0x372a88=_0x482dc0;const _0x5423f6=document[_0x372a88(0x173)](_0x372a88(0x159));for(var _0x316877=0x0;_0x316877<_0x5423f6[_0x372a88(0x15c)];_0x316877++){var _0x558046=$(_0x5423f6[_0x316877])[_0x372a88(0x15b)]('id')[_0x372a88(0x168)](0x6,0xe);if(_0x558046==='internal'){var _0x50e444=_0x5423f6[_0x316877][_0x372a88(0x171)]('p')[0x0],_0x81a495=document[_0x372a88(0x16c)]('br');_0x5423f6[_0x316877]['insertBefore'](_0x81a495,_0x50e444[_0x372a88(0x1cd)][_0x372a88(0x1cd)]),_0x50e444[_0x372a88(0x160)]();}}}var initializeAll=function(){var _0x2685a7=_0x482dc0;$(_0x2685a7(0x19e))[_0x2685a7(0x159)](initializeDialogs);const _0x107bb3=document[_0x2685a7(0x173)](_0x2685a7(0x1e2));for(var _0x431f66=0x0;_0x431f66<_0x107bb3['length'];_0x431f66++){var _0x39c0d8=_0x107bb3[_0x431f66],_0x107f2b=getSubName(_0x39c0d8['id']),_0x58c1ea=_0x2685a7(0x178)+_0x107f2b;$(document)['on'](_0x2685a7(0x1cf),_0x58c1ea,enterhandler),$(document)['on']('mouseleave',_0x58c1ea,leavehandler),$(document)['on'](_0x2685a7(0x161),_0x58c1ea,clickhandler);}formatInternals(),addPopoversToSearch();};$(document)[_0x482dc0(0x17d)](initializeAll);function toggleAllMatchingPins(_0x34f987,_0x5591fe){var _0x13fc09=_0x482dc0,_0x4be39f=$('#popover_content_wrapper'+_0x34f987)['text'](),_0x944853=document['getElementsByClassName'](_0x13fc09(0x1b0));for(var _0x38a630=0x0;_0x38a630<_0x944853[_0x13fc09(0x15c)];_0x38a630++){var _0x21944e=_0x944853[_0x38a630],_0x1eb38e=$('#'+_0x21944e['id'])['text']();if(_0x1eb38e===_0x4be39f){var _0x56297b=_0x21944e['id'][_0x13fc09(0x168)](0x17);_0x5591fe===_0x13fc09(0x156)?($(_0x13fc09(0x1b6)+_0x56297b)[_0x13fc09(0x156)](),$(_0x13fc09(0x1b6)+_0x56297b+'a')[_0x13fc09(0x156)](),$(_0x13fc09(0x1b6)+_0x56297b+'b')['show']()):($(_0x13fc09(0x1b6)+_0x56297b)[_0x13fc09(0x18e)](),$(_0x13fc09(0x1b6)+_0x56297b+'a')[_0x13fc09(0x18e)](),$(_0x13fc09(0x1b6)+_0x56297b+'b')['hide']());}}}$(document)['on'](_0x482dc0(0x161),_0x482dc0(0x188),function(){var _0x46dfdd=_0x482dc0,_0x197348=this['id'],_0x47be26=_0x197348[_0x46dfdd(0x168)](0xb);saveCommand(_0x47be26,_0x46dfdd(0x189),commands);_0x47be26[_0x46dfdd(0x168)](0x0,0x8)==='internal'&&(_0x47be26=_0x47be26+'a');var _0x3054df=_0x46dfdd(0x1e1)+_0x47be26,_0x20c7f9=document[_0x46dfdd(0x18d)](_0x3054df);$(_0x20c7f9)[_0x46dfdd(0x149)]('display',_0x46dfdd(0x1b1)),$(_0x46dfdd(0x178)+_0x47be26)['css'](_0x46dfdd(0x1d1),'transparent'),$(_0x46dfdd(0x1c2)+_0x47be26)[_0x46dfdd(0x149)](_0x46dfdd(0x1d1),_0x46dfdd(0x1af)),removeEqualPins(_0x47be26);}),$(document)['on'](_0x482dc0(0x1cf),'.ui-dialog.ui-widget',function(){var _0x42835e=_0x482dc0,_0x24ee96=$(this)[_0x42835e(0x15b)]('aria-describedby'),_0x18797b=_0x24ee96[_0x42835e(0x168)](0x6);highlightAnchors(_0x18797b);});var highlightAnchors=function(_0x25d3a5){var _0x5ac03a=_0x482dc0;_0x25d3a5[_0x5ac03a(0x168)](0x0,0x8)===_0x5ac03a(0x15a)&&(_0x25d3a5=_0x25d3a5+'a');var _0x414424=$(_0x5ac03a(0x17f)+_0x25d3a5)['html']();_0x25d3a5['substring'](0x0,0x5)===_0x5ac03a(0x19d)?$(_0x5ac03a(0x1a2)+_0x25d3a5)[_0x5ac03a(0x149)](_0x5ac03a(0x1d1),_0x5ac03a(0x196)):$(_0x5ac03a(0x178)+_0x25d3a5)[_0x5ac03a(0x149)]('background-color',_0x5ac03a(0x196));if($(_0x5ac03a(0x1cc)+_0x25d3a5)[_0x5ac03a(0x15c)]){const _0x5728b0=document[_0x5ac03a(0x173)](_0x5ac03a(0x159));for(var _0xef6f56=0x0;_0xef6f56<_0x5728b0[_0x5ac03a(0x15c)];_0xef6f56++){var _0x40d6c4=_0x5728b0[_0xef6f56],_0x950631=_0x40d6c4['id'][_0x5ac03a(0x168)](0x6),_0x86eb1e=$(_0x5ac03a(0x17f)+_0x950631)[_0x5ac03a(0x14e)]();_0x86eb1e===_0x414424&&$(_0x5ac03a(0x178)+_0x950631)[_0x5ac03a(0x149)](_0x5ac03a(0x1d1),'#eded5e');}}};$(document)['on'](_0x482dc0(0x195),_0x482dc0(0x198),function(){var _0x2797fe=_0x482dc0,_0x2553fd=$(this)[_0x2797fe(0x15b)](_0x2797fe(0x1bd)),_0x37af9c=_0x2553fd[_0x2797fe(0x168)](0x6);_0x37af9c[_0x2797fe(0x168)](0x0,0x8)===_0x2797fe(0x15a)&&(_0x37af9c=_0x37af9c+'a');var _0x42c2c9=$(_0x2797fe(0x17f)+_0x37af9c)[_0x2797fe(0x14e)]();_0x37af9c[_0x2797fe(0x168)](0x0,0x5)===_0x2797fe(0x19d)?$(_0x2797fe(0x1a2)+_0x37af9c)[_0x2797fe(0x149)](_0x2797fe(0x1d1),'transparent'):$('#popover'+_0x37af9c)[_0x2797fe(0x149)](_0x2797fe(0x1d1),'transparent');const _0x93c686=document['getElementsByClassName'](_0x2797fe(0x159));for(var _0x5b352c=0x0;_0x5b352c<_0x93c686[_0x2797fe(0x15c)];_0x5b352c++){var _0x40983a=_0x93c686[_0x5b352c],_0x4b82e5=_0x40983a['id'][_0x2797fe(0x168)](0x6),_0x556632=$('#title'+_0x4b82e5)[_0x2797fe(0x14e)]();_0x556632===_0x42c2c9&&$(_0x2797fe(0x178)+_0x4b82e5)[_0x2797fe(0x149)](_0x2797fe(0x1d1),_0x2797fe(0x1af));}}),$(document)['on'](_0x482dc0(0x161),_0x482dc0(0x179),function(){var _0x1bc567=_0x482dc0,_0x4cd753=$(this)[_0x1bc567(0x1dc)]()['parent']()[_0x1bc567(0x15b)](_0x1bc567(0x1bd)),_0x219750=_0x4cd753['substring'](0x6),_0x1f4d18='#pin'+_0x219750;$(_0x1f4d18)['css'](_0x1bc567(0x1ad),'none');});
+</script>
+
+	</head>
+	<body>
+<pre class="code-container java"><button onclick="redo()" class="redoButton" title="Redo show/hide popover" data-toggle="tooltip">&#8618;</button><button onclick="undo()" class="undoButton" title="Undo show/hide popover" data-toggle="tooltip">&#8617;</button><div id="dropDownBar"  class="dropdown-content"><input type="text" placeholder=" Search within popovers..." id="inputBar" onkeyup="searchFunction()" title="Search within popovers" data-toggle="tooltip"></div><code>package chapter6;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+import java.util.StringJoiner;
+
+import java.util.Iterator;
+
+public class CompositeShow implements Show, Iterable&lt;Show&gt;
+{
+    private List&lt;Show&gt; aShows = <span class='pin' id='pinArrayList' style='display:none;' >&#128204;</span><span class="popoverHover Javadoc ArrayList" href="#" id="popoverArrayList" data-toggle="popover" data-placement="right" >new ArrayList&lt;&gt;()</span>;
+    
+    //constructor that takes a variable number of shows as arguments
+    public CompositeShow(Show...pShows)
+    {
+        if( pShows.length &lt; 2 || pShows.length &gt; 5)
+        {
+            throw <span class='pin' id='pincombined1' style='display:none;' >&#128204;</span><span class="popoverHover combined combined1" href="#" id="popovercombined1" data-toggle="popover" data-placement="right">new IllegalArgumentException("Arguments should be between two and five shows inclusively")</span>;
+        }
+        aShows.<span class='pin' id='pinaddAll' style='display:none;' >&#128204;</span><span class="popoverHover addAll" href="#" id="popoveraddAll" data-toggle="popover"  data-original-title="&#128161; addAll" data-placement="right">addAll</span>(Arrays.asList(pShows));
+    }
+    
+    <span class='pin' id='pinOverride' style='display:none;' >&#128204;</span><span class="popoverHover Javadoc Override" href="#" id="popoverOverride" data-toggle="popover" data-placement="right" >@Override</span>
+    public <span class='pin' id='pinString1' style='display:none;' >&#128204;</span><span class="popoverHover Javadoc String1" href="#" id="popoverString1" data-toggle="popover" data-placement="right" >String</span> <span class='pin' id='pindescription' style='display:none;' >&#128204;</span><span class="popoverHover description" href="#" id="popoverdescription" data-toggle="popover"  data-original-title="&#128161; description" data-placement="right">description</span>()
+    {
+        <span class='pin' id='pincombined0' style='display:none;' >&#128204;</span><span class="popoverHover combined combined0" href="#" id="popovercombined0" data-toggle="popover" data-placement="right">StringJoiner</span> description = new StringJoiner("; ", "[", "]");
+        for( Show show : aShows )
+        {
+            description.add(show.description());
+        }
+        return description.<span class='pin' id='pintoString' style='display:none;' >&#128204;</span><span class="popoverHover Javadoc toString" href="#" id="popovertoString" data-toggle="popover" data-placement="right" >toString</span>();
+    }
+
+    <span class='pin' id='pinOverride' style='display:none;' >&#128204;</span><span class="popoverHover Javadoc Override" href="#" id="popoverOverride" data-toggle="popover" data-placement="right" >@Override</span>
+    public int runningTime()
+    {
+        int time = 0;
+        for( Show show : aShows )
+        {
+            time += show.runningTime();
+        }
+        return time;
+    }
+
+    <span class='pin' id='pinOverride' style='display:none;' >&#128204;</span><span class="popoverHover Javadoc Override" href="#" id="popoverOverride" data-toggle="popover" data-placement="right" >@Override</span>
+    public Show <span class='pin' id='pincopy' style='display:none;' >&#128204;</span><span class="popoverHover copy" href="#" id="popovercopy" data-toggle="popover"  data-original-title="&#128161; copy" data-placement="right">copy</span>()
+    {
+        List&lt;Show&gt; copies = <span class='pin' id='pinArrayList1' style='display:none;' >&#128204;</span><span class="popoverHover Javadoc ArrayList1" href="#" id="popoverArrayList1" data-toggle="popover" data-placement="right" >new ArrayList&lt;&gt;()</span>;
+        for( Show show : aShows )
+        {
+            copies.add(show.copy());
+        }
+        return new CompositeShow(copies.<span class='pin' id='pintoArray' style='display:none;' >&#128204;</span><span class="popoverHover toArray" href="#" id="popovertoArray" data-toggle="popover"  data-original-title="&#128161; toArray" data-placement="right">toArray</span>(new Show[copies.size()]));
+    }
+
+    <span class='pin' id='pinOverride' style='display:none;' >&#128204;</span><span class="popoverHover Javadoc Override" href="#" id="popoverOverride" data-toggle="popover" data-placement="right" >@Override</span>
+    public int <span class='pin' id='pinhashCode' style='display:none;' >&#128204;</span><span class="popoverHover hashCode" href="#" id="popoverhashCode" data-toggle="popover"  data-original-title="&#128161; hashCode" data-placement="right">hashCode</span>()
+    {
+        return <span class='pin' id='pinObjectshash' style='display:none;' >&#128204;</span><span class="popoverHover Objectshash" href="#" id="popoverObjectshash" data-toggle="popover"  data-original-title="&#128161; Objects.hash" data-placement="right">Objects.hash</span>(aShows);
+    }
+
+    <span class='pin' id='pinOverride' style='display:none;' >&#128204;</span><span class="popoverHover Javadoc Override" href="#" id="popoverOverride" data-toggle="popover" data-placement="right" >@Override</span>
+    public boolean <span class='pin' id='pinequals' style='display:none;' >&#128204;</span><span class="popoverHover equals" href="#" id="popoverequals" data-toggle="popover"  data-original-title="&#128161; equals" data-placement="right">equals</span>(<span class='pin' id='pinObject' style='display:none;' >&#128204;</span><span class="popoverHover Javadoc Object" href="#" id="popoverObject" data-toggle="popover" data-placement="right" >Object</span> obj)
+    {
+        if (this == <span class='pin' id='pinobj' style='display:none;' >&#128204;</span><span class="popoverHover Javadoc obj" href="#" id="popoverobj" data-toggle="popover" data-placement="right" >obj</span>)
+            return true;
+        if (<span class='pin' id='pinobj1' style='display:none;' >&#128204;</span><span class="popoverHover Javadoc obj1" href="#" id="popoverobj1" data-toggle="popover" data-placement="right" >obj</span> == null)
+            return false;
+        if (<span class='pin' id='pingetClass' style='display:none;' >&#128204;</span><span class="popoverHover Javadoc getClass" href="#" id="popovergetClass" data-toggle="popover" data-placement="right" >getClass</span>() != obj.<span class='pin' id='pingetClass1' style='display:none;' >&#128204;</span><span class="popoverHover Javadoc getClass1" href="#" id="popovergetClass1" data-toggle="popover" data-placement="right" >getClass</span>())
+            return false;
+        CompositeShow other = (CompositeShow) <span class='pin' id='pinobj2' style='display:none;' >&#128204;</span><span class="popoverHover Javadoc obj2" href="#" id="popoverobj2" data-toggle="popover" data-placement="right" >obj</span>;
+        return Objects.equals(aShows, other.aShows);
+    }
+
+    <span class='pin' id='pinOverride' style='display:none;' >&#128204;</span><span class="popoverHover Javadoc Override" href="#" id="popoverOverride" data-toggle="popover" data-placement="right" >@Override</span>
+    public Iterator&lt;Show&gt; <span class='pin' id='piniterator' style='display:none;' >&#128204;</span><span class="popoverHover iterator" href="#" id="popoveriterator" data-toggle="popover"  data-original-title="&#128161; iterator" data-placement="right">iterator</span>()
+    {
+        return aShows.iterator();
+    }
+
+}
+</code></pre>
+<div class="dialogTitle" id="titleArrayList" style="display:none;"><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/ovr16/constr_ovr.svg" /> public ArrayList()</div><div class="dialog" id="dialogArrayList">
+  <p><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/ArrayList.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Constructs an empty list with an initial capacity of ten.
+</div></p></div><div class="popover_title" id="popover_titleArrayList" style="display: none">
+<div><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/ovr16/constr_ovr.svg" /> public ArrayList()</div></div><div class="popover_content" id="popover_content_wrapperArrayList" style="display: none; font-size: 10px;" ><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/ArrayList.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Constructs an empty list with an initial capacity of ten.
+</div></div><div class="dialogTitle" id="titletoString" style="display:none;"><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/methpub_obj.svg" /> public String toString()</div><div class="dialog" id="dialogtoString">
+  <p><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/StringJoiner.html#toString()" target="_blank">Official API Reference</a></span></p><div class="block">
+ Returns the current value, consisting of the <code>prefix</code>, the values added so far separated by the <code>delimiter</code>, and the <code>suffix</code>, unless no elements have been added in which case, the <code>prefix + suffix</code> or the <code>emptyValue</code> characters are returned.
+</div><div class="notes"> <b>Overrides:</b> 
+ <div>
+  <code><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html" title="class in java.lang">Object</a></code>
+ </div> <b>Returns:</b> 
+ <div>
+  the string representation of this <code>StringJoiner</code>
+ </div> 
+</div></p></div><div class="popover_title" id="popover_titletoString" style="display: none">
+<div><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/methpub_obj.svg" /> public String toString()</div></div><div class="popover_content" id="popover_content_wrappertoString" style="display: none; font-size: 10px;" ><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/StringJoiner.html#toString()" target="_blank">Official API Reference</a></span></p><div class="block">
+ Returns the current value, consisting of the <code>prefix</code>, the values added so far separated by the <code>delimiter</code>, and the <code>suffix</code>, unless no elements have been added in which case, the <code>prefix + suffix</code> or the <code>emptyValue</code> characters are returned.
+</div></div><div class="dialogTitle" id="titleString1" style="display:none;"><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/class_obj.svg" /> public final class String
+extends Object
+implements Serializable, Comparable&lt;String>, CharSequence, Constable, ConstantDesc</div><div class="dialog" id="dialogString1">
+  <p><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html#" target="_blank">Official API Reference</a></span></p><div class="notes"> <b>All Implemented Interfaces:</b> 
+ <div>
+  <code><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/io/Serializable.html" title="interface in java.io">Serializable</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/CharSequence.html" title="interface in java.lang">CharSequence</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Comparable.html" title="interface in java.lang">Comparable</a>&lt;<a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html" title="class in java.lang">String</a>&gt;</code>, <code><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/constant/Constable.html" title="interface in java.lang.constant">Constable</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/constant/ConstantDesc.html" title="interface in java.lang.constant">ConstantDesc</a></code>
+ </div> 
+</div><div class="block">
+ The <code>String</code> class represents character strings. All string literals in Java programs, such as <code>"abc"</code>, are implemented as instances of this class. 
+ <p></p>
+ <p> Strings are constant; their values cannot be changed after they are created. String buffers support mutable strings. Because String objects are immutable they can be shared. For example: </p>
+ <pre class="member-signature">     String str = "abc";
+ </pre>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p> is equivalent to: </p>
+ <pre class="member-signature">     char data[] = {'a', 'b', 'c'};
+     String str = new String(data);
+ </pre>
+ <p></p>
+ <p></p>
+ <p></p>
+ <p> Here are some more examples of how strings can be used: </p>
+ <pre class="member-signature">     System.out.println("abc");
+     String cde = "cde";
+     System.out.println("abc" + cde);
+     String c = "abc".substring(2, 3);
+     String d = cde.substring(1, 2);
+ </pre> 
+ <p></p>
+ <p></p>
+ <p></p>
+ <p> The class <code>String</code> includes methods for examining individual characters of the sequence, for comparing strings, for searching strings, for extracting substrings, and for creating a copy of a string with all characters translated to uppercase or to lowercase. Case mapping is based on the Unicode Standard version specified by the <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Character.html" title="class in java.lang"><code>Character</code></a> class. </p>
+ <p></p>
+ <p> The Java language provides special support for the string concatenation operator (&nbsp;+&nbsp;), and for conversion of other objects to strings. For additional information on string concatenation and conversion, see <i>The Java Language Specification</i>. </p>
+ <p></p>
+ <p> Unless otherwise noted, passing a <code>null</code> argument to a constructor or method in this class will cause a <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/NullPointerException.html" title="class in java.lang"><code>NullPointerException</code></a> to be thrown. </p>
+ <p></p>
+ <p>A <code>String</code> represents a string in the UTF-16 format in which <em>supplementary characters</em> are represented by <em>surrogate pairs</em> (see the section <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Character.html#unicode">Unicode Character Representations</a> in the <code>Character</code> class for more information). Index values refer to <code>char</code> code units, so a supplementary character uses two positions in a <code>String</code>. </p>
+ <p></p>
+ <p>The <code>String</code> class provides methods for dealing with Unicode code points (i.e., characters), in addition to those for dealing with Unicode code units (i.e., <code>char</code> values). </p>
+ <p></p>
+ <p>Unless otherwise noted, methods for comparing Strings do not take locale into account. The <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/text/Collator.html" title="class in java.text"><code>Collator</code></a> class provides methods for finer-grain, locale-sensitive String comparison.</p>
+</div><div class="notes"> <b>Implementation Note:</b> 
+ <div>
+  The implementation of the string concatenation operator is left to the discretion of a Java compiler, as long as the compiler ultimately conforms to <i>The Java Language Specification</i>. For example, the <code>javac</code> compiler may implement the operator with <code>StringBuffer</code>, <code>StringBuilder</code>, or <code>java.lang.invoke.StringConcatFactory</code> depending on the JDK version. The implementation of string conversion is typically through the method <code>toString</code>, defined by <code>Object</code> and inherited by all classes in Java.
+ </div> <b>See <i>Java Language Specification</i>:</b> 
+ <div> <a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-15.html#jls-15.18.1">15.18.1 String Concatenation Operator +</a>
+  <br>
+ </div> <b>Since:</b> 
+ <div>
+  1.0
+ </div> <b>See Also:</b> 
+ <div>
+  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#toString()"><code>Object.toString()</code></a>, <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/StringBuffer.html" title="class in java.lang"><code>StringBuffer</code></a>, <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/StringBuilder.html" title="class in java.lang"><code>StringBuilder</code></a>, <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/nio/charset/Charset.html" title="class in java.nio.charset"><code>Charset</code></a>, <a href="https://docs.oracle.com/en/java/javase/15/docs/api/serialized-form.html#java.lang.String">Serialized Form</a>
+ </div> 
+</div></p></div><div class="popover_title" id="popover_titleString1" style="display: none">
+<div><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/class_obj.svg" /> public final class String
+extends Object
+implements Serializable, Comparable&lt;String>, CharSequence, Constable, ConstantDesc</div></div><div class="popover_content" id="popover_content_wrapperString1" style="display: none; font-size: 10px;" ><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ The <code>String</code> class represents character strings. All string literals in Java programs, such as <code>"abc"</code>, are implemented as instances of this class. 
+ <pre class="member-signature">     String str = "abc";
+ </pre>
+ <pre class="member-signature">     char data[] = {'a', 'b', 'c'};
+     String str = new String(data);
+ </pre>
+ <pre class="member-signature">     System.out.println("abc");
+     String cde = "cde";
+     System.out.println("abc" + cde);
+     String c = "abc".substring(2, 3);
+     String d = cde.substring(1, 2);
+ </pre> 
+</div></div><div class="dialogTitle" id="titleOverride" style="display:none;"><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/annotation_obj.svg" /> @Target(METHOD)
+@Retention(SOURCE)
+public @interface Override</div><div class="dialog" id="dialogOverride">
+  <p><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Override.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Indicates that a method declaration is intended to override a method declaration in a supertype. If a method is annotated with this annotation type compilers are required to generate an error message unless at least one of the following conditions hold: 
+ <ul>
+  <li> The method does override or implement a method declared in a supertype. </li>
+  <li> The method has a signature that is override-equivalent to that of any public method declared in <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html" title="class in java.lang">Object</a>. </li>
+ </ul>
+</div><div class="notes">
+ <b>See <i>Java Language Specification</i>:</b> 
+ <div> <a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-8.html#jls-8.4.8">8.4.8 Inheritance, Overriding, and Hiding</a>
+  <br><a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-9.html#jls-9.4.1">9.4.1 Inheritance and Overriding</a>
+  <br><a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-9.html#jls-9.6.4.4">9.6.4.4 @Override</a>
+  <br>
+ </div> <b>Since:</b> 
+ <div>
+  1.5
+ </div> 
+</div></p></div><div class="popover_title" id="popover_titleOverride" style="display: none">
+<div><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/annotation_obj.svg" /> @Target(METHOD)
+@Retention(SOURCE)
+public @interface Override</div></div><div class="popover_content" id="popover_content_wrapperOverride" style="display: none; font-size: 10px;" ><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Override.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Indicates that a method declaration is intended to override a method declaration in a supertype. If a method is annotated with this annotation type compilers are required to generate an error message unless at least one of the following conditions hold: 
+</div></div><div class="dialogTitle" id="titleOverride" style="display:none;"><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/annotation_obj.svg" /> @Target(METHOD)
+@Retention(SOURCE)
+public @interface Override</div><div class="dialog" id="dialogOverride">
+  <p><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Override.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Indicates that a method declaration is intended to override a method declaration in a supertype. If a method is annotated with this annotation type compilers are required to generate an error message unless at least one of the following conditions hold: 
+ <ul>
+  <li> The method does override or implement a method declared in a supertype. </li>
+  <li> The method has a signature that is override-equivalent to that of any public method declared in <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html" title="class in java.lang">Object</a>. </li>
+ </ul>
+</div><div class="notes">
+ <b>See <i>Java Language Specification</i>:</b> 
+ <div> <a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-8.html#jls-8.4.8">8.4.8 Inheritance, Overriding, and Hiding</a>
+  <br><a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-9.html#jls-9.4.1">9.4.1 Inheritance and Overriding</a>
+  <br><a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-9.html#jls-9.6.4.4">9.6.4.4 @Override</a>
+  <br>
+ </div> <b>Since:</b> 
+ <div>
+  1.5
+ </div> 
+</div></p></div><div class="popover_title" id="popover_titleOverride" style="display: none">
+<div><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/annotation_obj.svg" /> @Target(METHOD)
+@Retention(SOURCE)
+public @interface Override</div></div><div class="popover_content" id="popover_content_wrapperOverride" style="display: none; font-size: 10px;" ><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Override.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Indicates that a method declaration is intended to override a method declaration in a supertype. If a method is annotated with this annotation type compilers are required to generate an error message unless at least one of the following conditions hold: 
+</div></div><div class="dialogTitle" id="titleArrayList1" style="display:none;"><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/ovr16/constr_ovr.svg" /> public ArrayList()</div><div class="dialog" id="dialogArrayList1">
+  <p><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/ArrayList.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Constructs an empty list with an initial capacity of ten.
+</div></p></div><div class="popover_title" id="popover_titleArrayList1" style="display: none">
+<div><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/ovr16/constr_ovr.svg" /> public ArrayList()</div></div><div class="popover_content" id="popover_content_wrapperArrayList1" style="display: none; font-size: 10px;" ><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/ArrayList.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Constructs an empty list with an initial capacity of ten.
+</div></div><div class="dialogTitle" id="titleOverride" style="display:none;"><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/annotation_obj.svg" /> @Target(METHOD)
+@Retention(SOURCE)
+public @interface Override</div><div class="dialog" id="dialogOverride">
+  <p><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Override.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Indicates that a method declaration is intended to override a method declaration in a supertype. If a method is annotated with this annotation type compilers are required to generate an error message unless at least one of the following conditions hold: 
+ <ul>
+  <li> The method does override or implement a method declared in a supertype. </li>
+  <li> The method has a signature that is override-equivalent to that of any public method declared in <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html" title="class in java.lang">Object</a>. </li>
+ </ul>
+</div><div class="notes">
+ <b>See <i>Java Language Specification</i>:</b> 
+ <div> <a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-8.html#jls-8.4.8">8.4.8 Inheritance, Overriding, and Hiding</a>
+  <br><a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-9.html#jls-9.4.1">9.4.1 Inheritance and Overriding</a>
+  <br><a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-9.html#jls-9.6.4.4">9.6.4.4 @Override</a>
+  <br>
+ </div> <b>Since:</b> 
+ <div>
+  1.5
+ </div> 
+</div></p></div><div class="popover_title" id="popover_titleOverride" style="display: none">
+<div><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/annotation_obj.svg" /> @Target(METHOD)
+@Retention(SOURCE)
+public @interface Override</div></div><div class="popover_content" id="popover_content_wrapperOverride" style="display: none; font-size: 10px;" ><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Override.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Indicates that a method declaration is intended to override a method declaration in a supertype. If a method is annotated with this annotation type compilers are required to generate an error message unless at least one of the following conditions hold: 
+</div></div><div class="dialogTitle" id="titleOverride" style="display:none;"><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/annotation_obj.svg" /> @Target(METHOD)
+@Retention(SOURCE)
+public @interface Override</div><div class="dialog" id="dialogOverride">
+  <p><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Override.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Indicates that a method declaration is intended to override a method declaration in a supertype. If a method is annotated with this annotation type compilers are required to generate an error message unless at least one of the following conditions hold: 
+ <ul>
+  <li> The method does override or implement a method declared in a supertype. </li>
+  <li> The method has a signature that is override-equivalent to that of any public method declared in <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html" title="class in java.lang">Object</a>. </li>
+ </ul>
+</div><div class="notes">
+ <b>See <i>Java Language Specification</i>:</b> 
+ <div> <a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-8.html#jls-8.4.8">8.4.8 Inheritance, Overriding, and Hiding</a>
+  <br><a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-9.html#jls-9.4.1">9.4.1 Inheritance and Overriding</a>
+  <br><a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-9.html#jls-9.6.4.4">9.6.4.4 @Override</a>
+  <br>
+ </div> <b>Since:</b> 
+ <div>
+  1.5
+ </div> 
+</div></p></div><div class="popover_title" id="popover_titleOverride" style="display: none">
+<div><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/annotation_obj.svg" /> @Target(METHOD)
+@Retention(SOURCE)
+public @interface Override</div></div><div class="popover_content" id="popover_content_wrapperOverride" style="display: none; font-size: 10px;" ><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Override.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Indicates that a method declaration is intended to override a method declaration in a supertype. If a method is annotated with this annotation type compilers are required to generate an error message unless at least one of the following conditions hold: 
+</div></div><div class="dialogTitle" id="titleobj" style="display:none;"><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/class_obj.svg" /> public class Object</div><div class="dialog" id="dialogobj">
+  <p><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Class <code>Object</code> is the root of the class hierarchy. Every class has <code>Object</code> as a superclass. All objects, including arrays, implement the methods of this class.
+</div><div class="notes"> <b>Since:</b> 
+ <div>
+  1.0
+ </div> <b>See Also:</b> 
+ <div>
+  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Class.html" title="class in java.lang"><code>Class</code></a>
+ </div> 
+</div></p></div><div class="popover_title" id="popover_titleobj" style="display: none">
+<div><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/class_obj.svg" /> public class Object</div></div><div class="popover_content" id="popover_content_wrapperobj" style="display: none; font-size: 10px;" ><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Class <code>Object</code> is the root of the class hierarchy. Every class has <code>Object</code> as a superclass. All objects, including arrays, implement the methods of this class.
+</div></div><div class="dialogTitle" id="titleobj1" style="display:none;"><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/class_obj.svg" /> public class Object</div><div class="dialog" id="dialogobj1">
+  <p><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Class <code>Object</code> is the root of the class hierarchy. Every class has <code>Object</code> as a superclass. All objects, including arrays, implement the methods of this class.
+</div><div class="notes"> <b>Since:</b> 
+ <div>
+  1.0
+ </div> <b>See Also:</b> 
+ <div>
+  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Class.html" title="class in java.lang"><code>Class</code></a>
+ </div> 
+</div></p></div><div class="popover_title" id="popover_titleobj1" style="display: none">
+<div><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/class_obj.svg" /> public class Object</div></div><div class="popover_content" id="popover_content_wrapperobj1" style="display: none; font-size: 10px;" ><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Class <code>Object</code> is the root of the class hierarchy. Every class has <code>Object</code> as a superclass. All objects, including arrays, implement the methods of this class.
+</div></div><div class="dialogTitle" id="titlegetClass" style="display:none;"><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/methpub_obj.svg" /> public final Class&lt;?> getClass()</div><div class="dialog" id="dialoggetClass">
+  <p><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#getClass()" target="_blank">Official API Reference</a></span></p><div class="block">
+ Returns the runtime class of this <code>Object</code>. The returned <code>Class</code> object is the object that is locked by <code> static synchronized</code> methods of the represented class. 
+ <p></p>
+ <p><b>The actual result type is <code>Class&lt;? extends |X|&gt;</code> where <code>|X|</code> is the erasure of the static type of the expression on which <code>getClass</code> is called.</b> For example, no cast is required in this code fragment:</p> 
+ <p></p>
+ <p> <code>Number n = 0; </code><br> <code>Class&lt;? extends Number&gt; c = n.getClass(); </code> </p>
+</div><div class="notes"> <b>Returns:</b> 
+ <div>
+  The <code>Class</code> object that represents the runtime class of this object.
+ </div> <b>See <i>Java Language Specification</i>:</b> 
+ <div> <a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-15.html#jls-15.8.2">15.8.2 Class Literals</a>
+  <br>
+ </div>
+</div></p></div><div class="popover_title" id="popover_titlegetClass" style="display: none">
+<div><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/methpub_obj.svg" /> public final Class&lt;?> getClass()</div></div><div class="popover_content" id="popover_content_wrappergetClass" style="display: none; font-size: 10px;" ><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#getClass()" target="_blank">Official API Reference</a></span></p><div class="block">
+ Returns the runtime class of this <code>Object</code>. The returned <code>Class</code> object is the object that is locked by <code> static synchronized</code> methods of the represented class.  
+</div></div><div class="dialogTitle" id="titlegetClass1" style="display:none;"><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/methpub_obj.svg" /> public final Class&lt;?> getClass()</div><div class="dialog" id="dialoggetClass1">
+  <p><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#getClass()" target="_blank">Official API Reference</a></span></p><div class="block">
+ Returns the runtime class of this <code>Object</code>. The returned <code>Class</code> object is the object that is locked by <code> static synchronized</code> methods of the represented class. 
+ <p></p>
+ <p><b>The actual result type is <code>Class&lt;? extends |X|&gt;</code> where <code>|X|</code> is the erasure of the static type of the expression on which <code>getClass</code> is called.</b> For example, no cast is required in this code fragment:</p> 
+ <p></p>
+ <p> <code>Number n = 0; </code><br> <code>Class&lt;? extends Number&gt; c = n.getClass(); </code> </p>
+</div><div class="notes"> <b>Returns:</b> 
+ <div>
+  The <code>Class</code> object that represents the runtime class of this object.
+ </div> <b>See <i>Java Language Specification</i>:</b> 
+ <div> <a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-15.html#jls-15.8.2">15.8.2 Class Literals</a>
+  <br>
+ </div>
+</div></p></div><div class="popover_title" id="popover_titlegetClass1" style="display: none">
+<div><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/methpub_obj.svg" /> public final Class&lt;?> getClass()</div></div><div class="popover_content" id="popover_content_wrappergetClass1" style="display: none; font-size: 10px;" ><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#getClass()" target="_blank">Official API Reference</a></span></p><div class="block">
+ Returns the runtime class of this <code>Object</code>. The returned <code>Class</code> object is the object that is locked by <code> static synchronized</code> methods of the represented class.  
+</div></div><div class="dialogTitle" id="titleobj2" style="display:none;"><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/class_obj.svg" /> public class Object</div><div class="dialog" id="dialogobj2">
+  <p><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Class <code>Object</code> is the root of the class hierarchy. Every class has <code>Object</code> as a superclass. All objects, including arrays, implement the methods of this class.
+</div><div class="notes"> <b>Since:</b> 
+ <div>
+  1.0
+ </div> <b>See Also:</b> 
+ <div>
+  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Class.html" title="class in java.lang"><code>Class</code></a>
+ </div> 
+</div></p></div><div class="popover_title" id="popover_titleobj2" style="display: none">
+<div><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/class_obj.svg" /> public class Object</div></div><div class="popover_content" id="popover_content_wrapperobj2" style="display: none; font-size: 10px;" ><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Class <code>Object</code> is the root of the class hierarchy. Every class has <code>Object</code> as a superclass. All objects, including arrays, implement the methods of this class.
+</div></div><div class="dialogTitle" id="titleObject" style="display:none;"><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/class_obj.svg" /> public class Object</div><div class="dialog" id="dialogObject">
+  <p><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Class <code>Object</code> is the root of the class hierarchy. Every class has <code>Object</code> as a superclass. All objects, including arrays, implement the methods of this class.
+</div><div class="notes"> <b>Since:</b> 
+ <div>
+  1.0
+ </div> <b>See Also:</b> 
+ <div>
+  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Class.html" title="class in java.lang"><code>Class</code></a>
+ </div> 
+</div></p></div><div class="popover_title" id="popover_titleObject" style="display: none">
+<div><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/class_obj.svg" /> public class Object</div></div><div class="popover_content" id="popover_content_wrapperObject" style="display: none; font-size: 10px;" ><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Class <code>Object</code> is the root of the class hierarchy. Every class has <code>Object</code> as a superclass. All objects, including arrays, implement the methods of this class.
+</div></div><div class="dialogTitle" id="titleOverride" style="display:none;"><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/annotation_obj.svg" /> @Target(METHOD)
+@Retention(SOURCE)
+public @interface Override</div><div class="dialog" id="dialogOverride">
+  <p><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Override.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Indicates that a method declaration is intended to override a method declaration in a supertype. If a method is annotated with this annotation type compilers are required to generate an error message unless at least one of the following conditions hold: 
+ <ul>
+  <li> The method does override or implement a method declared in a supertype. </li>
+  <li> The method has a signature that is override-equivalent to that of any public method declared in <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html" title="class in java.lang">Object</a>. </li>
+ </ul>
+</div><div class="notes">
+ <b>See <i>Java Language Specification</i>:</b> 
+ <div> <a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-8.html#jls-8.4.8">8.4.8 Inheritance, Overriding, and Hiding</a>
+  <br><a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-9.html#jls-9.4.1">9.4.1 Inheritance and Overriding</a>
+  <br><a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-9.html#jls-9.6.4.4">9.6.4.4 @Override</a>
+  <br>
+ </div> <b>Since:</b> 
+ <div>
+  1.5
+ </div> 
+</div></p></div><div class="popover_title" id="popover_titleOverride" style="display: none">
+<div><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/annotation_obj.svg" /> @Target(METHOD)
+@Retention(SOURCE)
+public @interface Override</div></div><div class="popover_content" id="popover_content_wrapperOverride" style="display: none; font-size: 10px;" ><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Override.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Indicates that a method declaration is intended to override a method declaration in a supertype. If a method is annotated with this annotation type compilers are required to generate an error message unless at least one of the following conditions hold: 
+</div></div><div class="dialogTitle" id="titleOverride" style="display:none;"><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/annotation_obj.svg" /> @Target(METHOD)
+@Retention(SOURCE)
+public @interface Override</div><div class="dialog" id="dialogOverride">
+  <p><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Override.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Indicates that a method declaration is intended to override a method declaration in a supertype. If a method is annotated with this annotation type compilers are required to generate an error message unless at least one of the following conditions hold: 
+ <ul>
+  <li> The method does override or implement a method declared in a supertype. </li>
+  <li> The method has a signature that is override-equivalent to that of any public method declared in <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Object.html" title="class in java.lang">Object</a>. </li>
+ </ul>
+</div><div class="notes">
+ <b>See <i>Java Language Specification</i>:</b> 
+ <div> <a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-8.html#jls-8.4.8">8.4.8 Inheritance, Overriding, and Hiding</a>
+  <br><a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-9.html#jls-9.4.1">9.4.1 Inheritance and Overriding</a>
+  <br><a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-9.html#jls-9.6.4.4">9.6.4.4 @Override</a>
+  <br>
+ </div> <b>Since:</b> 
+ <div>
+  1.5
+ </div> 
+</div></p></div><div class="popover_title" id="popover_titleOverride" style="display: none">
+<div><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/annotation_obj.svg" /> @Target(METHOD)
+@Retention(SOURCE)
+public @interface Override</div></div><div class="popover_content" id="popover_content_wrapperOverride" style="display: none; font-size: 10px;" ><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Override.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Indicates that a method declaration is intended to override a method declaration in a supertype. If a method is annotated with this annotation type compilers are required to generate an error message unless at least one of the following conditions hold: 
+</div></div><div class="dialogTitle" id="titleaddAll" style="display:none;">&#128161;addAll</div><div class="dialog" id="dialogaddAll">
+  <p><p>Adds all of the elements in the specified collection to this list. addAll() is a method in the List interface that takes a collection as a parameter and adds all of the elements in the collection to the list. Here, we use it to add all of the elements in the array pShows to the list aShows.</p>
+</p></div><div class="popover_title" id="popover_titleaddAll" style="display: none">
+<div>&#128161;addAll</div></div><div class="popover_content" id="popover_content_wrapperaddAll" style="display: none; font-size: 10px;" ><p>Adds all of the elements in the specified collection to this list. addAll() is a method in the List interface that takes a collection as a parameter and adds all of the elements in the collection to the list. Here, we use it to add all of the elements in the array pShows to the list aShows.</p>
+</div><div class="dialogTitle" id="titledescription" style="display:none;">&#128161;description</div><div class="dialog" id="dialogdescription">
+  <p><p>Returns a string representation of the composite show. description() is a method in the Show interface that returns a string representation of the show. Here, we use it to return a string representation of the composite show by using StringJoiner to join the descriptions of the shows in the composite show.</p>
+</p></div><div class="popover_title" id="popover_titledescription" style="display: none">
+<div>&#128161;description</div></div><div class="popover_content" id="popover_content_wrapperdescription" style="display: none; font-size: 10px;" ><p>Returns a string representation of the composite show. description() is a method in the Show interface that returns a string representation of the show. Here, we use it to return a string representation of the composite show by using StringJoiner to join the descriptions of the shows in the composite show.</p>
+</div><div class="dialogTitle" id="titletoArray" style="display:none;">&#128161;toArray</div><div class="dialog" id="dialogtoArray">
+  <p><p>Returns an array containing all of the elements in this list in proper sequence (from first to last element). toArray() is a method in the List interface that returns an array containing all of the elements in the list. Here, we use it to return an array containing all of the copies of the shows in the composite show.</p>
+</p></div><div class="popover_title" id="popover_titletoArray" style="display: none">
+<div>&#128161;toArray</div></div><div class="popover_content" id="popover_content_wrappertoArray" style="display: none; font-size: 10px;" ><p>Returns an array containing all of the elements in this list in proper sequence (from first to last element). toArray() is a method in the List interface that returns an array containing all of the elements in the list. Here, we use it to return an array containing all of the copies of the shows in the composite show.</p>
+</div><div class="dialogTitle" id="titlecopy" style="display:none;">&#128161;copy</div><div class="dialog" id="dialogcopy">
+  <p><p>Returns a copy of the composite show. copy() is a method in the Show interface that returns a copy of the show. Here, we use it to return a copy of the composite show by creating a list of copies of the shows in the composite show and then creating a new composite show with the copies of the shows in the list.</p>
+</p></div><div class="popover_title" id="popover_titlecopy" style="display: none">
+<div>&#128161;copy</div></div><div class="popover_content" id="popover_content_wrappercopy" style="display: none; font-size: 10px;" ><p>Returns a copy of the composite show. copy() is a method in the Show interface that returns a copy of the show. Here, we use it to return a copy of the composite show by creating a list of copies of the shows in the composite show and then creating a new composite show with the copies of the shows in the list.</p>
+</div><div class="dialogTitle" id="titleObjectshash" style="display:none;">&#128161;Objects.hash</div><div class="dialog" id="dialogObjectshash">
+  <p><p>Returns a hash code value for the arguments. hash() is a static method in the Objects class that returns a hash code value for the arguments. Here, we use it to return a hash code value for the list of shows in the composite show. The hash code of a list is computed by calling hash() on each of the elements in the list.</p>
+</p></div><div class="popover_title" id="popover_titleObjectshash" style="display: none">
+<div>&#128161;Objects.hash</div></div><div class="popover_content" id="popover_content_wrapperObjectshash" style="display: none; font-size: 10px;" ><p>Returns a hash code value for the arguments. hash() is a static method in the Objects class that returns a hash code value for the arguments. Here, we use it to return a hash code value for the list of shows in the composite show. The hash code of a list is computed by calling hash() on each of the elements in the list.</p>
+</div><div class="dialogTitle" id="titlehashCode" style="display:none;">&#128161;hashCode</div><div class="dialog" id="dialoghashCode">
+  <p><p>Returns a hash code value for the object. This method is supported for the benefit of hash tables such as those provided by HashMap. hashCode() is a method in the Object class that returns a hash code value for the object. Here, we use it to return a hash code value for the composite show by using Objects.hash() to hash the list of shows in the composite show.</p>
+</p></div><div class="popover_title" id="popover_titlehashCode" style="display: none">
+<div>&#128161;hashCode</div></div><div class="popover_content" id="popover_content_wrapperhashCode" style="display: none; font-size: 10px;" ><p>Returns a hash code value for the object. This method is supported for the benefit of hash tables such as those provided by HashMap. hashCode() is a method in the Object class that returns a hash code value for the object. Here, we use it to return a hash code value for the composite show by using Objects.hash() to hash the list of shows in the composite show.</p>
+</div><div class="dialogTitle" id="titleequals" style="display:none;">&#128161;equals</div><div class="dialog" id="dialogequals">
+  <p><p>Indicates whether some other object is &quot;equal to&quot; this one. equals() is a method in the Object class that indicates whether some other object is &quot;equal to&quot; this one. Here, we are trying to define equality for the composite show. We define two composite shows to be equal if they contain the same shows. We use Objects.equals() to compare the lists of shows in the two composite shows to determine if they are equal.</p>
+</p></div><div class="popover_title" id="popover_titleequals" style="display: none">
+<div>&#128161;equals</div></div><div class="popover_content" id="popover_content_wrapperequals" style="display: none; font-size: 10px;" ><p>Indicates whether some other object is &quot;equal to&quot; this one. equals() is a method in the Object class that indicates whether some other object is &quot;equal to&quot; this one. Here, we are trying to define equality for the composite show. We define two composite shows to be equal if they contain the same shows. We use Objects.equals() to compare the lists of shows in the two composite shows to determine if they are equal.</p>
+</div><div class="dialogTitle" id="titleiterator" style="display:none;">&#128161;iterator</div><div class="dialog" id="dialogiterator">
+  <p><p>Returns an iterator over a set of elements of type T. iterator() is a method required by the Iterable interface. Here, we use it to return an iterator over the list of shows in the composite show. This allows us to use a for-each loop to iterate over the shows in the composite show as follows: <code>for( Show show : compositeShow ) { ... }</code></p>
+</p></div><div class="popover_title" id="popover_titleiterator" style="display: none">
+<div>&#128161;iterator</div></div><div class="popover_content" id="popover_content_wrapperiterator" style="display: none; font-size: 10px;" ><p>Returns an iterator over a set of elements of type T. iterator() is a method required by the Iterable interface. Here, we use it to return an iterator over the list of shows in the composite show. This allows us to use a for-each loop to iterate over the shows in the composite show as follows: <code>for( Show show : compositeShow ) { ... }</code></p>
+</div><div class="dialogTitle" id="titlecombined0" style="display:none;"><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/class_obj.svg" />&#128161;StringJoiner</div><br><div class="dialog" id="dialogcombined0">
+  <p><h5 class="combinedHeader"> &#128161;StringJoiner</h5><p>StringJoiner is a class that takes a delimiter, prefix, and suffix as parameters and joins strings with the delimiter and prefix and suffix. Here, we use it to join the descriptions of the shows in the composite show with a semicolon and space as the delimiter, a left square bracket as the prefix, and a right square bracket as the suffix.</p>
+<h5 class="combinedHeader Javadoc"> <img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/class_obj.svg" /> public final class StringJoiner
+extends Object</h5><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/StringJoiner.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ <code>StringJoiner</code> is used to construct a sequence of characters separated by a delimiter and optionally starting with a supplied prefix and ending with a supplied suffix. 
+ <p></p>
+ <p> Prior to adding something to the <code>StringJoiner</code>, its <code>sj.toString()</code> method will, by default, return <code>prefix + suffix</code>. However, if the <code>setEmptyValue</code> method is called, the <code>emptyValue</code> supplied will be returned instead. This can be used, for example, when creating a string using set notation to indicate an empty set, i.e. <code>"{}"</code>, where the <code>prefix</code> is <code>"{"</code>, the <code>suffix</code> is <code>"}"</code> and nothing has been added to the <code>StringJoiner</code>.</p>
+</div><div class="notes"> <b>API Note:</b> 
+ <div>
+  <p></p>
+  <p>The String <code>"[George:Sally:Fred]"</code> may be constructed as follows: </p>
+  <pre class="member-signature"> <code>
+ StringJoiner sj = new StringJoiner(":", "[", "]");
+ sj.add("George").add("Sally").add("Fred");
+ String desiredString = sj.toString();
+ </code></pre> 
+  <p></p>
+  <p></p>
+  <p></p>
+  <p> A <code>StringJoiner</code> may be employed to create formatted output from a <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/stream/Stream.html" title="interface in java.util.stream"><code>Stream</code></a> using <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/stream/Collectors.html#joining(java.lang.CharSequence)"><code>Collectors.joining(CharSequence)</code></a>. For example: </p>
+  <pre class="member-signature"> <code>
+ List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4);
+ String commaSeparatedNumbers = numbers.stream()
+     .map(i -&gt; i.toString())
+     .collect(Collectors.joining(", "));
+ </code></pre>
+  <p></p>
+  <p></p>
+ </div> <b>Since:</b> 
+ <div>
+  1.8
+ </div> <b>See Also:</b> 
+ <div>
+  <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/stream/Collectors.html#joining(java.lang.CharSequence)"><code>Collectors.joining(CharSequence)</code></a>, <a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/stream/Collectors.html#joining(java.lang.CharSequence,java.lang.CharSequence,java.lang.CharSequence)"><code>Collectors.joining(CharSequence, CharSequence, CharSequence)</code></a>
+ </div> 
+</div></p><br></div><div class="popover_title" id="popover_titlecombined0" style="display: none">
+<div><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/class_obj.svg" />&#128161;StringJoiner</div></div><div class="popover_content" id="popover_content_wrappercombined0" style="display: none; font-size: 10px;" ><h5 class="combinedHeader"> &#128161;StringJoiner</h5><p>StringJoiner is a class that takes a delimiter, prefix, and suffix as parameters and joins strings with the delimiter and prefix and suffix. Here, we use it to join the descriptions of the shows in the composite show with a semicolon and space as the delimiter, a left square bracket as the prefix, and a right square bracket as the suffix.</p>
+<h5 class="combinedHeader Javadoc"> <img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/obj16/class_obj.svg" /> public final class StringJoiner
+extends Object</h5><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/StringJoiner.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ <code>StringJoiner</code> is used to construct a sequence of characters separated by a delimiter and optionally starting with a supplied prefix and ending with a supplied suffix. 
+</div></div><div class="dialogTitle" id="titlecombined1" style="display:none;"><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/ovr16/constr_ovr.svg" />&#128161;new IllegalArgumentException("Arguments should be between two and five shows inclusively")</div><br><div class="dialog" id="dialogcombined1">
+  <p><h5 class="combinedHeader"> &#128161;IllegalArgumentException</h5><p>Thrown to indicate that a method has been passed an illegal or inappropriate argument.</p>
+<h5 class="combinedHeader Javadoc"> <img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/ovr16/constr_ovr.svg" /> public IllegalArgumentException()</h5><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/IllegalArgumentException.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Constructs an <code>IllegalArgumentException</code> with the specified detail message.
+</div><div class="notes"> <b>Parameters:</b> 
+ <div>
+  <code>s</code> - the detail message.
+ </div> 
+</div></p><br></div><div class="popover_title" id="popover_titlecombined1" style="display: none">
+<div><img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/ovr16/constr_ovr.svg" />&#128161;new IllegalArgumentException("Arguments should be between two and five shows inclusively")</div></div><div class="popover_content" id="popover_content_wrappercombined1" style="display: none; font-size: 10px;" ><h5 class="combinedHeader"> &#128161;IllegalArgumentException</h5><p>Thrown to indicate that a method has been passed an illegal or inappropriate argument.</p>
+<h5 class="combinedHeader Javadoc"> <img src="https://help.eclipse.org/2019-12/topic/org.eclipse.jdt.doc.user/images/org.eclipse.jdt.ui/ovr16/constr_ovr.svg" /> public IllegalArgumentException()</h5><p><span class="api-ref-link"><a href="https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/IllegalArgumentException.html#" target="_blank">Official API Reference</a></span></p><div class="block">
+ Constructs an <code>IllegalArgumentException</code> with the specified detail message.
+</div></div>
+	</body>
+</html>
