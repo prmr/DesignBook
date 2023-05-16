@@ -6,7 +6,7 @@ Design and implement a well-encapsulated abstraction to represent a `Hand` of ca
 
 ## Exercise 2
 
-Make is possible to compare two `Hand` objects using the `Comparable` interface. Compare hands by increasing number of cards in the hand. Write a small program to test your class. You do not need to handle the case where the argument is `null`.
+Make it possible to compare two `Hand` objects using the `Comparable` interface. Compare hands by increasing number of cards in the hand. Write a small program to test your class. You do not need to handle the case where the argument is `null`.
 
 ## Exercise 3
 
