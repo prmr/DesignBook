@@ -44,7 +44,7 @@ The exercises are meant to be completed in order, after studying each chapter. E
 
 ## Acknowledgements
 
-Thanks to [Samuel Beaubien](https://github.com/samuelbeaubien), [Neil Ernst](https://github.com/neilernst), and [Benjamin Lee](https://github.com/UnHumbleBen) for flagging errors via this site.
+Thanks to [Samuel Beaubien](https://github.com/samuelbeaubien), [Neil Ernst](https://github.com/neilernst), [Benjamin Lee](https://github.com/UnHumbleBen), [Christian Joudrey](https://github.com/cjoudrey), and [joshuamanascu](https://github.com/joshuamanascu) for flagging errors via this site.
 
 A special thanks to the software design educators who have adopted the book to support their teaching. 
 *To be included in the list, please fill in [this form](https://forms.office.com/r/jjagth5cDk)*.
