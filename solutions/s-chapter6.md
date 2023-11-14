@@ -99,7 +99,7 @@ default Iterator<Show> iterator()
 
 ## Exercise 9
 
-For `DoubleBill` to work with `Movie` instances specifically (as opposed to `Show` instances), and thereby not be a constructor, it is simply a matter of declaring the two aggregated objects to be of type `Movie`:
+For `DoubleBill` to work with `Movie` instances specifically (as opposed to `Show` instances), and thereby not be a decorator, it is simply a matter of declaring the two aggregated objects to be of type `Movie`:
 
 ```java
 /**
