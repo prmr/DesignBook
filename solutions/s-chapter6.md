@@ -132,6 +132,11 @@ public class DoubleBill implements Show
    { 
       return aMovie1.runningTime() + aMovie2.runningTime(); 
    }
+   
+   public Iterator<Show> iterator()
+   {
+	   return List.of(aMovie1, aMovie2).iterator();
+   }
 }
 
 ```
