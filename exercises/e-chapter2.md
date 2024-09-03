@@ -32,13 +32,21 @@ Create a new class called `MultiDeck` that contains a list of decks (some card g
 
 Create a UML Object Diagram of a `MultiDeck` instance.
 
-## Exercise 9 :mag:
+## Exercise 9
 
-Study JetUML's [MultiLineString](https://github.com/prmr/JetUML/blob/v1.0/src/ca/mcgill/cs/stg/jetuml/framework/MultiLineString.java) class and assess the quality of its encapsulation. Is it possible to modify its state without going through its methods?
+Improve the code of [TwelveDays](../chapter-code/chapter1/TwelveDays.java) to take advantage of enumerated types. 
+
+_Hint 1: Remember that you can define fields and methods in enumerated types._
+
+_Hint 2: Try implementing your solution using [`StringJoiner`](https://docs.oracle.com/en/java/javase/21/docs//api/java.base/java/util/StringJoiner.html)._ 
+
+## Exercise 10 :mag:
+
+Study an old version of JetUML's [MultiLineString](https://github.com/prmr/JetUML/blob/v1.0/src/ca/mcgill/cs/stg/jetuml/framework/MultiLineString.java) class and assess the quality of its encapsulation. Is it possible to modify its state without going through its methods?
 
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
 Unless otherwise noted, the content of this repository is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>. 
 
-Copyright Martin P. Robillard 2019-2022
+Copyright Martin P. Robillard 2019-2024

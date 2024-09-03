@@ -61,9 +61,13 @@ The code of a partial solution can be found [here](../solutions-code/chapter2/Mu
 
 ## Exercise 8
 
-![Answer to exercise 7](c2-multideck.png)
+![Answer to exercise 8](c2-multideck.png)
 
 ## Exercise 9
+
+We can define an enumerated type `Day` that eliminates the instance of Primitive Obsession that involved referring to days by their integer index number. We can also store the description of a gift directly within the values of the enumerated type, thereby avoiding the need for a separate data structure that needs to be correctly indexed. Finally, we can add useful computation within the enumerated type, such as a method `previous()` to return the previous day. If you haven't already, try these out before looking at [a complete solution](../solutions-code/chapter2/TwelveDaysWithEnums.java).
+
+## Exercise 10
 
 The class is well encapsulated. The only part of the internal state returned is the inner `String`, but that is an immutable object.
 
