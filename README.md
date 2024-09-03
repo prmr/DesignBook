@@ -1,6 +1,8 @@
 # Introduction to Software Design with Java
 
-Companion web site for the book ["Introduction to Software Design with Java"](https://www.springer.com/gp/book/9783030240936) by Martin P. Robillard, Springer 2019 and its [second edition](https://link.springer.com/book/10.1007/978-3-030-97899-0), 2022.
+Companion web site for the book ["Introduction to Software Design with Java"](https://www.springer.com/gp/book/9783030240936) by Martin P. Robillard, Springer 2019 and its [second edition](https://link.springer.com/book/10.1007/978-3-030-97899-0), 2022. 
+
+**NEW!** You can now view all the chapter code samples with additional _on-demand documentation_ accessible directly from the code. Check out the [CodeSample.info website](https://codesample.info).
 
 ## Errata
 
@@ -21,10 +23,6 @@ Although you can browse the code on GitHub, the recommended way to peruse the co
 1. Download the [JavaFX SDK](https://gluonhq.com/products/javafx/) and unzip it to a desired location;
 2. Create a new User Library under `Eclipse -> Window -> Preferences -> Java -> Build Path -> User Libraries -> New`
 3. Name it `JavaFX` and include the jars under the `lib` folder from your unzipped JavaFX download location.
-
-## Web Version of the Code with Additional Documentation
-
-**NEW!** You can now view all the chapter code samples with additional _on-demand documentation_ accessible directly from the code. Check out our <a href="https://cs.mcgill.ca/~martin/designbook/">Cascading Documentation (CasDoc) demo</a>.
 
 ## Practice Exercises
 
