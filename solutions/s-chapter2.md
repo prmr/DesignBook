@@ -38,13 +38,30 @@ public enum Suit
 
 ## Exercise 4
 
-**Sketch:** There are many different ways to answer this question. For a single Joker, it would make sense to have an additional boolean field `aIsJoker`. The interesting questions to solve become, what should the rank and suit of a Joker be, and what should `getRank` and `getSuit` return for a joker? Experiment with design by contract and exception handling. This issue will be revisited in Chapter 4.
+Assuming that `Rank` and `Suit` both define a method [`next()`](https://codesample.info/samples/designbook/essentials/EnumTypes.html#pop-8), one solution is: 
+
+```java
+public Card next()
+{
+	Rank rank = aRank.next();
+	Suit suit = aSuit;
+	if (rank == Rank.ACE)
+	{
+		suit = suit.next();
+	}
+	return new Card(rank, suit);
+}
+```
 
 ## Exercise 5
 
-**Sketch:** An enumerated type seems like the right idea here to capture the type of joker. However, it is not a good idea to consider `null` to be a legal value for an enumerated type, so I would recommend including a value of an enumerated type to represent the case where the card is not a joker. The issues of what to do with rank and suit of jokers is the same as for Exercise 4.
+**Sketch:** There are many different ways to answer this question. For a single Joker, it would make sense to have an additional boolean field `aIsJoker`. The interesting questions to solve become, what should the rank and suit of a Joker be, and what should `getRank` and `getSuit` return for a joker? Experiment with design by contract and exception handling. This issue will be revisited in Chapter 4.
 
 ## Exercise 6
+
+**Sketch:** An enumerated type seems like the right idea here to capture the type of joker. However, it is not a good idea to consider `null` to be a legal value for an enumerated type, so I would recommend including a value of an enumerated type to represent the case where the card is not a joker. The issues of what to do with rank and suit of jokers is the same as for Exercise 4.
+
+## Exercise 7
 
 Assuming instances of class `Card` are immutable, we can use the copy constructor of `ArrayList<>` to return a new list object that contains the references to the cards referred to in the original list encapsulated by the deck.
 
@@ -55,19 +72,19 @@ public List<Card> getCard()
 }
 ```
 
-## Exercise 7
+## Exercise 8
 
 The code of a partial solution can be found [here](../solutions-code/chapter2/MultiDeck.java). The solution leaves out the copying part of the exercise. To implement the object copying, you will need a way to copy `Deck` and `Card` instances. One way to do this at this point is simply to define copy constructors for these two classes.
 
-## Exercise 8
+## Exercise 9
 
 ![Answer to exercise 8](c2-multideck.png)
 
-## Exercise 9
+## Exercise 10
 
 We can define an enumerated type `Day` that eliminates the instance of Primitive Obsession that involved referring to days by their integer index number. We can also store the description of a gift directly within the values of the enumerated type, thereby avoiding the need for a separate data structure that needs to be correctly indexed. Finally, we can add useful computation within the enumerated type, such as a method `previous()` to return the previous day. If you haven't already, try these out before looking at [a complete solution](../solutions-code/chapter2/TwelveDaysWithEnums.java).
 
-## Exercise 10
+## Exercise 11
 
 The class is well encapsulated. The only part of the internal state returned is the inner `String`, but that is an immutable object.
 
