@@ -38,7 +38,7 @@ See methods `invokeIsStraightFlush` and `testIsStraightFlush_True` is class [Tes
 
 ## Exercise 9
 
-Including either method `testIsStraightFlush_WrongSuit` or `testIsStraightFlush_WrongRank` in the test suite will achieve 100% statement coverage.
+Including either method `testIsStraightFlush_WrongSuit` or `testIsStraightFlush_WrongRank` in the test suite will achieve 100% statement coverage. Including both with achieve 100% branch coverage.
 
 ## Exercise 10
 
