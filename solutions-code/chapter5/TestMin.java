@@ -18,25 +18,25 @@ import org.junit.jupiter.api.Test;
 public class TestMin
 {
 	@Test
-	public void testMin_FirstGreater()
+	void testMin_FirstGreater()
 	{
 		assertEquals(0, Math.min(2, 0));
 	}
 	
 	@Test
-	public void testMin_SecondGreater()
+	void testMin_SecondGreater()
 	{
 		assertEquals(0, Math.min(0, 2));
 	}
 	
 	@Test
-	public void testMin_SamePositive()
+	void testMin_SamePositive()
 	{
 		assertEquals(2, Math.min(2, 2));
 	}
 	
 	@Test
-	public void testMin_SameNegative()
+	void testMin_SameNegative()
 	{
 		assertEquals(-2, Math.min(-2, -2));
 	}

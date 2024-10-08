@@ -68,43 +68,43 @@ public class TestBiCardSource
 	private CardSource aContainsTwo = new CardSourceStub(TWO);;
 	
 	@Test
-	public void testEmpty_True()
+	void testEmpty_True()
 	{
 		assertTrue(new BiCardSource(aEmpty, aEmpty).isEmpty());
 	}
 	
 	@Test
-	public void testEmpty_False_FirstEmpty()
+	void testEmpty_False_FirstEmpty()
 	{
 		assertFalse(new BiCardSource(aEmpty, aContainsAce).isEmpty());
 	}
 	
 	@Test
-	public void testEmpty_False_SecondEmpty()
+	void testEmpty_False_SecondEmpty()
 	{
 		assertFalse(new BiCardSource(aContainsAce, aEmpty).isEmpty());
 	}
 	
 	@Test
-	public void testEmpty_False_NeitherEmpty()
+	void testEmpty_False_NeitherEmpty()
 	{
 		assertFalse(new BiCardSource(aContainsAce, aContainsTwo).isEmpty());
 	}
 	
 	@Test
-	public void testDraw_FirstEmpty()
+	void testDraw_FirstEmpty()
 	{
 		assertSame(ACE, new BiCardSource(aEmpty, aContainsAce).draw());
 	}
 	
 	@Test
-	public void testDraw_SecondEmpty()
+	void testDraw_SecondEmpty()
 	{
 		assertSame(ACE, new BiCardSource(aContainsAce, aEmpty).draw());
 	}
 	
 	@Test
-	public void testDraw_NeitherEmpty()
+	void testDraw_NeitherEmpty()
 	{
 		assertSame(ACE, new BiCardSource(aContainsAce, aContainsTwo).draw());
 	}

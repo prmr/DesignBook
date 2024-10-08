@@ -42,7 +42,7 @@ public class TestPokerHand
 	}
 	
 	@Test
-	public void testIsStraightFlush_True()
+	void testIsStraightFlush_True()
 	{
 		PokerHand hand = new PokerHand(Card.get(Rank.TWO, Suit.CLUBS),
 				Card.get(Rank.THREE, Suit.CLUBS),
@@ -53,7 +53,7 @@ public class TestPokerHand
 	}
 	
 	@Test
-	public void testIsStraightFlush_WrongSuit()
+	void testIsStraightFlush_WrongSuit()
 	{
 		PokerHand hand = new PokerHand(Card.get(Rank.TWO, Suit.CLUBS),
 				Card.get(Rank.THREE, Suit.CLUBS),
@@ -64,7 +64,7 @@ public class TestPokerHand
 	}
 	
 	@Test
-	public void testIsStraightFlush_WrongRank()
+	void testIsStraightFlush_WrongRank()
 	{
 		PokerHand hand = new PokerHand(Card.get(Rank.TWO, Suit.CLUBS),
 				Card.get(Rank.THREE, Suit.CLUBS),

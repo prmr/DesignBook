@@ -27,7 +27,7 @@ public class TestStack
 	private final Stack<String> aStack = new Stack<>();
 	
 	@Test
-	public void testPush_Empty()
+	void testPush_Empty()
 	{
 		String foo = "foo";
 		assertSame(foo, aStack.push(foo));
@@ -35,7 +35,7 @@ public class TestStack
 	}
 	
 	@Test
-	public void testPush_NonEmpty()
+	void testPush_NonEmpty()
 	{
 		aStack.push("A");
 		String foo = "foo";
@@ -44,14 +44,14 @@ public class TestStack
 	}
 	
 	@Test
-	public void testPush_Null()
+	void testPush_Null()
 	{   // Stack (i.e., Vector) allows null references as elements
 		assertNull(aStack.push(null));
 		assertNull(aStack.peek());
 	}
 	
 	@Test
-	public void testPop_NonEmpty()
+	void testPop_NonEmpty()
 	{
 		String foo = "foo";
 		aStack.push(foo);
@@ -60,7 +60,7 @@ public class TestStack
 	}
 	
 	@Test
-	public void testPop_Empty()
+	void testPop_Empty()
 	{
 		// Lambda expressions will be covered in Chapter 9
 		assertThrows(EmptyStackException.class, new Executable()
