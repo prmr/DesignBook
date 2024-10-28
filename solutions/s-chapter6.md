@@ -106,7 +106,7 @@ For `DoubleBill` to work with `Movie` instances specifically (as opposed to `Sho
  * Represents a show that consists of the screening of two movies
  * in sequence.
  */
-public class DoubleBill implements Show
+public class DoubleBill implements Show, Iterable<Movie>
 {
    private Movie aMovie1;
    private Movie aMovie2;
@@ -133,10 +133,11 @@ public class DoubleBill implements Show
       return aMovie1.runningTime() + aMovie2.runningTime(); 
    }
    
-   public Iterator<Show> iterator()
-   {
-	   return List.of(aMovie1, aMovie2).iterator();
-   }
+   @Override
+	public Iterator<Movie> iterator()
+	{
+		return List.of(aMovie1, aMovie2).iterator();
+	}
 }
 
 ```
