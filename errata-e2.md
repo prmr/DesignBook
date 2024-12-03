@@ -4,6 +4,8 @@ If you spot a problem in the second edition that is not listed here, please [ope
 
 ## Chapter 3
 
+* Page 54: "...if we are designing a type of represent a deck of cards..." should be "...a type **to** represent a deck of cards...".
+
 * Page 65: "...interface `PlayingStrategy`, which defines a method `computeNextMove`." This method was renamed to `getLegalMove` in version 1.2, the version the book is based on. All mentions to `computeNextMove` refer to `getLegalMove`.
 
 ## Chapter 4
