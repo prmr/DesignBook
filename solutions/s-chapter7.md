@@ -132,7 +132,7 @@ and in `SponsoredConcert`:
 
 ```java
 @Override
-public String extra()
+protected String extra()
 {
    return super.extra() + " sponsored by " + aSponsor;
 }
