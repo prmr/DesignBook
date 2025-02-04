@@ -56,6 +56,7 @@ A special thanks to the software design educators who have adopted the book to s
 |[Carlo Nicola Maria Bellettini](https://www.unimi.it/it/ugov/person/carlo-bellettini)|Universit&agrave; Degli Studi Di Milano|Computer Programming II|
 |[Alberto Bacchelli](https://www.ifi.uzh.ch/en/zest/team/bacchelli.html)|University of Zurich|Software Construction|
 |[Gerardo Canfora](http://www.gerardocanfora.net/)|University of Sannio|Software Engineering|
+|[Ivano Malavolta](https://www.ivanomalavolta.com)|Vrije Universiteit Amsterdam|Software Design|
 
 
 ## License
@@ -64,5 +65,5 @@ A special thanks to the software design educators who have adopted the book to s
 
 Unless otherwise noted, the content of this repository is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>. 
 
-Copyright Martin P. Robillard 2019-2022
+Copyright Martin P. Robillard 2019-2025
 
