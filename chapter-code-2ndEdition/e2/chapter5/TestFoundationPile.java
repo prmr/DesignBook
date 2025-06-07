@@ -12,8 +12,8 @@
  *******************************************************************************/
 package e2.chapter5;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -43,6 +43,14 @@ public class TestFoundationPile {
 			aPile.push(temp.remove(temp.size() - 1)); 
 		}
 		return size;
+	}
+	
+	@Test
+	void testCanMoveTo_EmptyReturnsFalse()
+	{
+		FoundationPile emptyPile = new FoundationPile();
+		Card threeOfClubs = Card.get(Rank.THREE, Suit.CLUBS);
+		assertFalse(emptyPile.canMoveTo(threeOfClubs));
 	}
 	
 	@Test

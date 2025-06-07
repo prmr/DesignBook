@@ -61,6 +61,14 @@ public class TestFoundationPile
 	}
 	
 	@Test
+	void testCanMoveTo_EmptyReturnsFalse()
+	{
+		FoundationPile emptyPile = new FoundationPile();
+		Card threeOfClubs = Card.get(Rank.THREE, Suit.CLUBS);
+		assertFalse(emptyPile.canMoveTo(threeOfClubs));
+	}
+	
+	@Test
 	public void testCanMoveTo_NotEmptyAndSameSuit()
 	{
 		aPile.push(ACE_CLUBS);
