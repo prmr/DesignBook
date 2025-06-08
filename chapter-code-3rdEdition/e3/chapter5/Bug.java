@@ -13,10 +13,12 @@
 package e3.chapter5;
 
 import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -26,10 +28,14 @@ import chapter5.Suit;
 
 public class Bug {
 	
+	/*
+	 * Primitive testing of the toCard method.
+	 */
 	public static void main(String[] args) {
 		System.out.println(toCard("Two of Clubs"));
 		System.out.println(toCard("jack of spades"));
-		System.out.println(toCard("jack if spades"));
+		System.out.println(toCard(""));
+		System.out.println();
 	}
 	
 	/**
@@ -57,6 +63,14 @@ public class Bug {
 		assertSame(pCard, actual);
 	}
 	
+	@ParameterizedTest
+	@MethodSource("allCards")
+	void testToCard_AllCardsValidLowercase(Card pCard) {
+		Card actual = toCard("%s of %s".formatted(pCard.getRank().toString().toLowerCase(), 
+				pCard.getSuit().toString().toLowerCase()));
+		assertSame(pCard, actual);
+	}
+	
 	static List<Card> allCards() {
 		List<Card> result = new ArrayList<>();
 		for (Rank rank : Rank.values()) {
@@ -65,5 +79,40 @@ public class Bug {
 			}
 		}
 		return result;
+	}
+	
+	@Test
+	void testToCard_InvalidRank() {
+		assertThrows(IllegalArgumentException.class, () -> toCard("X of Clubs"));
+	}
+	
+	@Test
+	void testToCard_InvalidSuit() {
+		assertThrows(IllegalArgumentException.class, () -> toCard("Two of X"));
+	}
+	
+	@Test
+	void testToCard_InvalidMiddleComponent() {
+		assertThrows(IllegalArgumentException.class, () -> toCard("Two X Clubs"));
+	}
+	
+	@Test
+	void testToCard_MissingMiddleComponent() {
+		assertThrows(IllegalArgumentException.class, () -> toCard("Two Clubs"));
+	}
+	
+	@Test
+	void testToCard_Empty() {
+		assertThrows(IllegalArgumentException.class, () -> toCard(""));
+	}
+	
+	@Test
+	void testToCard_Blank() {
+		assertThrows(IllegalArgumentException.class, () -> toCard("   "));
+	}
+	
+	@Test
+	void testToCard_ExtraComponent() {
+		assertThrows(IllegalArgumentException.class, () -> toCard("Two of Clubs and then some"));
 	}
 }
