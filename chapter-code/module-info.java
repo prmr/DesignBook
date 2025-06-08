@@ -15,4 +15,5 @@ module designbook
 	requires transitive javafx.graphics;	
 	requires static junit;
 	requires static org.junit.jupiter.api;
+	requires static org.junit.jupiter.params;
 }
