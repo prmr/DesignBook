@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 2nd edition by Martin P. Robillard.
+ * 3nd edition by Martin P. Robillard.
  *
- * Copyright (C) 2022 by Martin P. Robillard
+ * Copyright (C) 2025 by Martin P. Robillard
  *
  * This code is licensed under a Creative Commons 
  * Attribution-NonCommercial-NoDerivatives 4.0 International License.
@@ -54,14 +54,14 @@ public class Card {
 	/**
 	 * @return The rank of the card.
 	 */
-	public Rank getRank() {
+	public Rank rank() {
 		return aRank;
 	}
 	
 	/**
 	 * @return The suit of the card.
 	 */
-	public Suit getSuit() {
+	public Suit suit() {
 		return aSuit;
 	}
 	

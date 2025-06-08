@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 2nd edition by Martin P. Robillard.
+ * 3nd edition by Martin P. Robillard.
  *
- * Copyright (C) 2022 by Martin P. Robillard
+ * Copyright (C) 2025 by Martin P. Robillard
  *
  * This code is licensed under a Creative Commons 
  * Attribution-NonCommercial-NoDerivatives 4.0 International License.
@@ -30,7 +30,7 @@ public class MetaprogrammingSamples {
 	private static void introspection() {
 		try {
 			String fullyQualifiedName = "e2.chapter5.Card";
-			Class<?> cardClass1 = (Class<?>) Class.forName(fullyQualifiedName);
+			Class<?> cardClass1 = Class.forName(fullyQualifiedName);
 			System.out.println(cardClass1.getName());
 			
 			Class<Card> cardClass2 = Card.class;
