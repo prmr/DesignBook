@@ -46,10 +46,19 @@ public class FoundationPileTest {
 	}
 	
 	@Test
-	void testCanMoveTo_EmptyReturnsFalse() {
+	void testCanMoveTo_Empty_ReturnsFalse() {
 		FoundationPile emptyPile = new FoundationPile();
 		Card threeOfClubs = Card.get(Rank.THREE, Suit.CLUBS);
 		assertFalse(emptyPile.canMoveTo(threeOfClubs));
+	}
+	
+	@Test
+	void testCanMoveTo_NotEmptyAndSameSuit_ReturnsFalse() {
+		FoundationPile pile = new FoundationPile();
+		Card aceOfClubs = Card.get(Rank.ACE, Suit.CLUBS);
+		pile.push(aceOfClubs);
+		Card threeOfClubs = Card.get(Rank.THREE, Suit.CLUBS);
+		assertFalse(pile.canMoveTo(threeOfClubs));
 	}
 	
 	@Test
