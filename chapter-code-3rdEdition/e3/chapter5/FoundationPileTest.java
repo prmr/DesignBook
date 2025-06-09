@@ -24,7 +24,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-public class TestFoundationPile {
+public class FoundationPileTest {
 	
 	private static final Card ACE_CLUBS = Card.get(Rank.ACE, Suit.CLUBS);
 	private static final Card TWO_CLUBS = Card.get(Rank.TWO, Suit.CLUBS);
@@ -35,56 +35,53 @@ public class TestFoundationPile {
 	private int size() {
 		List<Card> temp = new ArrayList<>();
 		int size = 0;
-		while( !aPile.isEmpty() ) { 
+		while (!aPile.isEmpty()) { 
 			size++; 
 			temp.add(aPile.pop()); 
 		}
-		while( !temp.isEmpty() ) { 
+		while (!temp.isEmpty()) { 
 			aPile.push(temp.remove(temp.size() - 1)); 
 		}
 		return size;
 	}
 	
 	@Test
-	void testCanMoveTo_EmptyReturnsFalse()
-	{
+	void testCanMoveTo_EmptyReturnsFalse() {
 		FoundationPile emptyPile = new FoundationPile();
 		Card threeOfClubs = Card.get(Rank.THREE, Suit.CLUBS);
 		assertFalse(emptyPile.canMoveTo(threeOfClubs));
 	}
 	
 	@Test
-	public void testCanMoveTo_Empty() {
+	void testCanMoveTo_Empty() {
 		assertTrue(aPile.canMoveTo(ACE_CLUBS));
 		assertFalse(aPile.canMoveTo(THREE_CLUBS));
 	}
 	
 	@Test
-	public void testCanMoveTo_NotEmptyAndSameSuit() {
+	void testCanMoveTo_NotEmptyAndSameSuit() {
 		aPile.push(ACE_CLUBS);
 		assertTrue(aPile.canMoveTo(TWO_CLUBS));
 		assertFalse(aPile.canMoveTo(THREE_CLUBS));
 	}
 	
 	@Test
-	public void testPeek_Empty_Version1()
-	{
+	void testPeek_Empty_Version1(){
 		assertThrows(EmptyStackException.class, () -> aPile.peek());
 	}
 	
 	@Test
-	public void testPeek_Empty_Version2() {
+	void testPeek_Empty_Version2() {
 		try {
 			aPile.peek();
 			fail();
 		}
-		catch(EmptyStackException e ) 
-		{}
+		catch(EmptyStackException e ) {}
 		assertTrue(aPile.isEmpty());
 	}
 	
 	@Test
-	public void testPop_FromTwoToOne() {
+	void testPop_FromTwoToOne() {
 		aPile.push(ACE_CLUBS);
 		aPile.push(TWO_CLUBS);
 		assertEquals(2, size());
