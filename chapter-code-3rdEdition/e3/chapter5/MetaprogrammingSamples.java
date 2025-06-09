@@ -29,18 +29,18 @@ public class MetaprogrammingSamples {
 	 */
 	private static void introspection() {
 		try {
-			String fullyQualifiedName = "e2.chapter5.Card";
-			Class<?> cardClass1 = Class.forName(fullyQualifiedName);
-			System.out.println(cardClass1.getName());
+			String fullyQualifiedName = "java.lang.String";
+			Class<?> stringClass1 = Class.forName(fullyQualifiedName);
+			System.out.println(stringClass1.getName());
 			
-			Class<Card> cardClass2 = Card.class;
+			Class<String> stringClass2 = String.class;
 			
-			Card card = Card.get(Rank.ACE, Suit.CLUBS);
+			String title = "Introduction to Software Design";
 			
-			Class<?> cardClass3 = card.getClass();
-			System.out.println(cardClass2 == cardClass3);
+			Class<? extends String> stringClass3 = title.getClass();
+			System.out.println(stringClass2 == stringClass3);
 			
-			for( Method method : String.class.getDeclaredMethods() ) {
+			for (Method method : stringClass3.getDeclaredMethods()) {
 				System.out.println(method.getName());
 			}
 		}
