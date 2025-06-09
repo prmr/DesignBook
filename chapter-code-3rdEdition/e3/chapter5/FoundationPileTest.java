@@ -40,7 +40,7 @@ public class FoundationPileTest {
 			temp.add(aPile.pop()); 
 		}
 		while (!temp.isEmpty()) { 
-			aPile.push(temp.remove(temp.size() - 1)); 
+			aPile.push(temp.removeLast()); 
 		}
 		return size;
 	}
