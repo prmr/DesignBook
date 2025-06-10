@@ -17,12 +17,10 @@ package e3.chapter5;
  */
 public class GameModel implements GameModelView {
 	
-	private static GameModel INSTANCE = new GameModel();
-	
-	private PlayingStrategy aPlayingStrategy;
-	
-	public static GameModel instance() {
-		return INSTANCE;
+	private final PlayingStrategy aPlayingStrategy;
+
+	public GameModel(PlayingStrategy pStrategy) {
+		aPlayingStrategy = pStrategy;
 	}
 	
 	public void tryToAutoPlay() {

@@ -13,11 +13,13 @@
 package e3.chapter5;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertSame;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.List;
@@ -96,5 +98,22 @@ public class FoundationPileTest {
 		assertEquals(2, size());
 		assertEquals(TWO_CLUBS, aPile.pop());
 		assertEquals(1, size());
+	}
+	
+	private Suit executeGetSuit() {
+		try {
+			Method method = FoundationPile.class.getDeclaredMethod("getSuit");
+			method.setAccessible(true);
+			return (Suit) method.invoke(aPile);
+		}
+		catch (ReflectiveOperationException exception) {
+			throw new AssertionError("Reflection error");
+		}
+	}
+	
+	@Test
+	void testGetSuit() {
+		aPile.push(ACE_CLUBS);
+		assertSame(Suit.CLUBS, executeGetSuit());
 	}
 }

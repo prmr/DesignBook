@@ -37,17 +37,9 @@ public class TestGameModel {
 	
 	@Test
 	void testTryToAutoPlay() {
-		try {
-			Field strategyField = GameModel.class.getDeclaredField("aPlayingStrategy");
-			strategyField.setAccessible(true);
-			StubStrategy strategy = new StubStrategy();
-			GameModel model = GameModel.instance();
-			strategyField.set(model, strategy);
-			model.tryToAutoPlay();
-			assertTrue(strategy.hasExecuted());
-		}
-		catch( ReflectiveOperationException e ) {
-			fail();
-		}
+		StubStrategy stub = new StubStrategy();
+		GameModel model = new GameModel(stub);
+		model.tryToAutoPlay();
+		assertTrue(stub.hasExecuted());
 	}
 }

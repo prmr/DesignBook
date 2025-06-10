@@ -60,4 +60,10 @@ public class FoundationPile {
 					peek().rank().ordinal()+1;
 		}
 	}
+	
+	@SuppressWarnings("unused")
+	private Suit getSuit() {
+		assert !isEmpty();
+		return aPile.getFirst().suit();
+	}
 }
