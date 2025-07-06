@@ -1,18 +1,17 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 2nd edition by Martin P. Robillard.
+ * 3rd edition by Martin P. Robillard.
  *
- * Copyright (C) 2022 by Martin P. Robillard
+ * Copyright (C) 2025 by Martin P. Robillard
  *
  * This code is licensed under a Creative Commons 
  * Attribution-NonCommercial-NoDerivatives 4.0 International License.
  * 
  * See http://creativecommons.org/licenses/by-nc-nd/4.0/
- * 
  *******************************************************************************/
 package e3.chapter9;
 
-import static java.util.Comparator.*;
+import static java.util.Comparator.comparing;
 
 import java.util.Comparator;
 import java.util.List;
@@ -25,7 +24,8 @@ import e3.chapter9.Suit.Color;
  */
 public class Card implements Comparable<Card> {
 	
-	private static final Comparator<Card> COMPARATOR = Comparator.comparing(Card::getSuit).thenComparing(Card::getRank);
+	private static final Comparator<Card> COMPARATOR = 
+			Comparator.comparing(Card::suit).thenComparing(Card::rank);
 	
 	// Flyweight store
 	private static final Card[][] CARDS = new Card[Suit.values().length][Rank.values().length];
@@ -35,8 +35,8 @@ public class Card implements Comparable<Card> {
 	
 	// Initialization of the flyweight store
 	static {
-		for( Suit suit : Suit.values() ) {
-			for( Rank rank : Rank.values() ) {
+		for (Suit suit : Suit.values()) {
+			for (Rank rank : Rank.values()) {
 				CARDS[suit.ordinal()][rank.ordinal()] = new Card(rank, suit);
 			}
 		}
@@ -62,14 +62,14 @@ public class Card implements Comparable<Card> {
 	/**
 	 * @return The rank of the card.
 	 */
-	public Rank getRank() {
+	public Rank rank() {
 		return aRank;
 	}
 	
 	/**
 	 * @return The suit of the card.
 	 */
-	public Suit getSuit() {
+	public Suit suit() {
 		return aSuit;
 	}
 	
@@ -78,8 +78,8 @@ public class Card implements Comparable<Card> {
 		return String.format("%s of %s", aRank, aSuit);
 	}
 	
-	public static int compareByRank(Card pCard1, Card pCard2) {
-		return pCard1.getRank().compareTo(pCard2.getRank()); 
+	public static int comparingByRank(Card pCard1, Card pCard2) {
+		return pCard1.rank().compareTo(pCard2.rank()); 
 	}
 	
 	public boolean hasBlackSuit() {
@@ -92,47 +92,47 @@ public class Card implements Comparable<Card> {
 	
 	// ********** Code samples for Section 9.3 **********
 	
-	public static Comparator<Card> bySuitComparator() {
-		return (card1, card2) -> card1.getSuit().compareTo(card2.getSuit());
+	public static Comparator<Card> comparingBySuit() {
+		return (card1, card2) -> card1.suit().compareTo(card2.suit());
 	}
 	
-	public static Comparator<Card> byRankComparator() {
-		return (card1, card2) -> card1.getRank().compareTo(card2.getRank()); 
+	public static Comparator<Card> comparingByRank() {
+		return (card1, card2) -> card1.rank().compareTo(card2.rank()); 
 	}
 	
 	/*
 	 * This version uses basic comparison logic
 	 */
-	public static Comparator<Card> bySuitThenRankComparator1() {
+	public static Comparator<Card> comparingBySuitThenRank() {
 		return (card1, card2) -> {
-			if (card1.getSuit() == card2.getSuit()) {
-				return card1.getRank().compareTo(card2.getRank());
+			if (card1.suit() == card2.suit()) {
+				return card1.rank().compareTo(card2.rank());
 			}
 			else {
-				return card1.getSuit().compareTo(card2.getSuit());
+				return card1.suit().compareTo(card2.suit());
 			}
 		};
 	}
 	
 	/* This version uses comparator factories */
-	public static Comparator<Card> bySuitThenRankComparator2() {
+	public static Comparator<Card> comparingBySuitThenRank2() {
 		return (card1, card2) -> {
-			if(bySuitComparator().compare(card1, card2) == 0) {
-				return byRankComparator().compare(card1, card2);
+			if(comparingBySuit().compare(card1, card2) == 0) {
+				return comparingByRank().compare(card1, card2);
 			}
 			else {
-				return bySuitComparator().compare(card1, card2);
+				return comparingBySuit().compare(card1, card2);
 			}
 		};
 	}
 	
-	public static Comparator<Card> byRankThenSuitComparator() {
+	public static Comparator<Card> comparingByRankThenSuit() {
 		return (card1, card2) -> {
-			if (byRankComparator().compare(card1, card2) == 0) {
-				return bySuitComparator().compare(card1, card2);
+			if (comparingByRank().compare(card1, card2) == 0) {
+				return comparingBySuit().compare(card1, card2);
 			}
 			else {
-				return byRankComparator().compare(card1, card2);
+				return comparingByRank().compare(card1, card2);
 			}
 		};
 	}
@@ -140,70 +140,70 @@ public class Card implements Comparable<Card> {
 	/*
 	 * This version uses the comparing method with a lambda.
 	 */
-	public static Comparator<Card> byRankComparator2() {
-		return Comparator.comparing(card -> card.getRank()); 
+	public static Comparator<Card> comparingByRank2() {
+		return Comparator.comparing(card -> card.rank()); 
 	}
 	
 	/*
 	 * Uses comparator factories combined with thenComparing
 	 */
-	public static Comparator<Card> byRankThenSuitComparator2() {
-		return byRankComparator().thenComparing(bySuitComparator()); 
+	public static Comparator<Card> comparingByRankThenSuit2() {
+		return comparingByRank().thenComparing(comparingBySuit()); 
 	}
 	
 	/*
 	 * Uses comparator factories combined with thenComparing
 	 */
-	public static Comparator<Card> bySuitThenRankComparator3() {
-		return bySuitComparator().thenComparing(byRankComparator());
+	public static Comparator<Card> comparingBySuitThenRank3() {
+		return comparingBySuit().thenComparing(comparingByRank());
 	}
 	
-	public static Comparator<Card> byRankComparatorReversed() {
-		return (card1, card2) -> card2.getRank().compareTo(card1.getRank()); 
+	public static Comparator<Card> comparingByRankReversed() {
+		return (card1, card2) -> card2.rank().compareTo(card1.rank()); 
 	}
 	
-	public static Comparator<Card> bySuitReversedThenRankComparator() {
-		return bySuitComparator().reversed().thenComparing(byRankComparator());
+	public static Comparator<Card> comparingBySuitReversedThenRank() {
+		return comparingBySuit().reversed().thenComparing(comparingByRank());
 	}
 	
-	public static Comparator<Card> bySuitReversedThenRankReversedComparator() {
-		return bySuitComparator().reversed().thenComparing(byRankComparator().reversed());
+	public static Comparator<Card> comparingBySuitReversedThenRankReversed() {
+		return comparingBySuit().reversed().thenComparing(comparingByRank().reversed());
 	}
 	
 	public static void sampleSortingApplication1() {
 		List<Card> cards = new Deck().getCards();
 		cards.sort(
 			Comparator
-				.comparing((Card card) -> card.getSuit())
+				.comparing((Card card) -> card.suit())
 				.reversed()
-				.thenComparing(Comparator.comparing((Card card) -> card.getRank())
+				.thenComparing(Comparator.comparing((Card card) -> card.rank())
 						.reversed()));
 	}
 	
 	public static void sampleSortingApplication2() {
 		List<Card> cards = new Deck().getCards();
-		cards.sort(comparing((Card card) -> card.getSuit())
+		cards.sort(comparing((Card card) -> card.suit())
 				.reversed()
-				.thenComparing(comparing((Card card) -> card.getRank())
+				.thenComparing(comparing((Card card) -> card.rank())
 						.reversed()));
 	}
 	
 	public static void sampleSortingApplication3() {
 		List<Card> cards = new Deck().getCards();
-		cards.sort(comparing(Card::getSuit)
+		cards.sort(comparing(Card::suit)
 				.reversed()
-				.thenComparing(comparing(Card::getRank)
+				.thenComparing(comparing(Card::rank)
 						.reversed()));
 	}
 	
 	public static void sampleSortingApplication4() {
 		List<Card> cards = new Deck().getCards();
-		cards.sort(comparing(Card::getSuit)
-				.thenComparing(Card::getRank).reversed());
+		cards.sort(comparing(Card::suit)
+				.thenComparing(Card::rank).reversed());
 	}
 	
 	public boolean isFaceCard() {
-		return getRank().ordinal() >= Rank.JACK.ordinal(); 
+		return rank().ordinal() >= Rank.JACK.ordinal(); 
 	}
 
 	@Override

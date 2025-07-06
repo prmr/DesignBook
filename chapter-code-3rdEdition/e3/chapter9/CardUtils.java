@@ -1,14 +1,13 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 2nd edition by Martin P. Robillard.
+ * 3rd edition by Martin P. Robillard.
  *
- * Copyright (C) 2022 by Martin P. Robillard
+ * Copyright (C) 2025 by Martin P. Robillard
  *
  * This code is licensed under a Creative Commons 
  * Attribution-NonCommercial-NoDerivatives 4.0 International License.
  * 
  * See http://creativecommons.org/licenses/by-nc-nd/4.0/
- * 
  *******************************************************************************/
 package e3.chapter9;
 
@@ -20,6 +19,6 @@ import e3.chapter9.Suit.Color;
  */
 public class CardUtils {
 	public static boolean hasBlackSuit(Card pCard) {
-		return pCard.getSuit().getColor() != Color.BLACK;
+		return pCard.suit().getColor() != Color.BLACK;
 	}
 }

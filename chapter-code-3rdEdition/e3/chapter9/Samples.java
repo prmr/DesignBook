@@ -1,14 +1,13 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 2nd edition by Martin P. Robillard.
+ * 3rd edition by Martin P. Robillard.
  *
- * Copyright (C) 2022 by Martin P. Robillard
+ * Copyright (C) 2025 by Martin P. Robillard
  *
  * This code is licensed under a Creative Commons 
  * Attribution-NonCommercial-NoDerivatives 4.0 International License.
  * 
  * See http://creativecommons.org/licenses/by-nc-nd/4.0/
- * 
  *******************************************************************************/
 package e3.chapter9;
 
@@ -43,13 +42,13 @@ public class Samples
 		// Calling 'sort' with an object of an anonymous class
 		Collections.sort(cards, new Comparator<Card>() {
 			public int compare(Card pCard1, Card pCard2) { 
-				return pCard1.getRank().compareTo(pCard2.getRank()); 
+				return pCard1.rank().compareTo(pCard2.rank()); 
 			}
 		});
 		printAll(cards);
 		
 		// Calling 'sort' with a method reference
-		Collections.sort(cards, Card::compareByRank);
+		Collections.sort(cards, Card::comparingByRank);
 		printAll(cards);
 	}
 	
@@ -61,30 +60,30 @@ public class Samples
 		// Defining a function object of type Filter, which is an application-defined functional interface
 		Filter blackCards1 = new Filter() {
 			public boolean accept(Card pCard) {
-				return pCard.getSuit().getColor() == Suit.Color.BLACK;
+				return pCard.suit().getColor() == Suit.Color.BLACK;
 			}
 		};
 		
 		// Defining a function object whose type is a library functional interface
 		Predicate<Card> blackCards2 = new Predicate<Card>() {
 			public boolean test(Card pCard) {
-				return pCard.getSuit().getColor() == Suit.Color.BLACK;
+				return pCard.suit().getColor() == Suit.Color.BLACK;
 			}
 		};
 		
 		// Defining a predicate using a lambda expression (expression syntax with parameter type specified)
-		Predicate<Card> blackCards3 = (Card card) -> card.getSuit().getColor() == Suit.Color.BLACK;
+		Predicate<Card> blackCards3 = (Card card) -> card.suit().getColor() == Suit.Color.BLACK;
 		
 		// Defining a predicate using a lambda expression (block syntax with parameter type specified)
 		Predicate<Card> blackCards4 =
-				(Card card) -> { return card.getSuit().getColor() == Suit.Color.BLACK; };
+				(Card card) -> { return card.suit().getColor() == Suit.Color.BLACK; };
 				
 		// Defining a predicate using a lambda expression (expression syntax with parameter type not specified)
-		Predicate<Card> blackCards5 = (card) -> card.getSuit().getColor() == Suit.Color.BLACK;
+		Predicate<Card> blackCards5 = (card) -> card.suit().getColor() == Suit.Color.BLACK;
 		
 		// Defining a predicate using a lambda expression (expression syntax with parameter type not specified
 		// and no parentheses around the parameter
-		Predicate<Card> blackCards6 = card -> card.getSuit().getColor() == Suit.Color.BLACK;
+		Predicate<Card> blackCards6 = card -> card.suit().getColor() == Suit.Color.BLACK;
 		
 		// Sample use of the filter:
 		int total = 0;
@@ -97,7 +96,7 @@ public class Samples
 		
 		// Example use of removeIf with a lambda that implements the filter
 		ArrayList<Card> cards = new ArrayList<>(new Deck().getCards());
-		cards.removeIf(card -> card.getSuit().getColor() == Suit.Color.BLACK );
+		cards.removeIf(card -> card.suit().getColor() == Suit.Color.BLACK );
 		printAll(cards);
 		
 		// Using a lambda expression that delegates to an implementation method
@@ -151,42 +150,42 @@ public class Samples
 		new Deck().stream().forEach(System.out::println);
 
 		boolean allClubs = new Deck().stream()
-				.allMatch(card -> card.getSuit() == Suit.CLUBS );
+				.allMatch(card -> card.suit() == Suit.CLUBS );
 		
 		// Filtering streams
 		long numberOfFaceCards = new Deck().stream()
-				.filter(card -> card.getRank().ordinal() >= Rank.JACK.ordinal()).count();
+				.filter(card -> card.rank().ordinal() >= Rank.JACK.ordinal()).count();
 		
 		long numberOfFaceCards2 = new Deck().stream()
 				.filter(Card::isFaceCard)
 				.count();
 		
 		long result = new Deck().stream()
-				.filter(card -> card.getRank().ordinal() >= Rank.JACK.ordinal()
-				&& card.getSuit()==Suit.CLUBS).count();
+				.filter(card -> card.rank().ordinal() >= Rank.JACK.ordinal()
+				&& card.suit()==Suit.CLUBS).count();
 		
 		long result2 = new Deck().stream()
 				.filter(Card::isFaceCard)
-				.filter(card -> card.getSuit() == Suit.CLUBS)
+				.filter(card -> card.suit() == Suit.CLUBS)
 				.count();
 		
 		// Mapping data elements
-		new Deck().stream().map(card -> card.getSuit().getColor() );
+		new Deck().stream().map(card -> card.suit().getColor() );
 		
 		long result3 = new Deck().stream()
-				.map(card -> card.getSuit().getColor() )
+				.map(card -> card.suit().getColor() )
 				.filter( color -> color == e3.chapter9.Suit.Color.BLACK )
 				.count();
 		
 		new Deck().stream()
-			.map(card -> Math.min(10, card.getRank().ordinal() + 1));
+			.map(card -> Math.min(10, card.rank().ordinal() + 1));
 		
 		int total2 = new Deck().stream()
-				.mapToInt(card -> Math.min(10, card.getRank().ordinal() + 1))
+				.mapToInt(card -> Math.min(10, card.rank().ordinal() + 1))
 				.sum();
 		
 		int total3 = new Deck().stream()
-				.map(Card::getRank)
+				.map(Card::rank)
 				.mapToInt(Rank::ordinal)
 				.map(ordinal -> Math.min(10, ordinal + 1))
 				.sum();
