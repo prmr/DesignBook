@@ -10,7 +10,7 @@
  * See http://creativecommons.org/licenses/by-nc-nd/4.0/
  * 
  *******************************************************************************/
-package e2.chapter7;
+package e3.chapter7;
 
 import java.util.Iterator;
 
@@ -19,11 +19,6 @@ import java.util.Iterator;
  * all the cards drawn since the last shuffle.
  */
 public class MemorizingDeck extends Deck {
-	
-	public static void main(String[] args) {
-		new MemorizingDeck();
-		System.out.println();
-	}
 	
 	private CardStack aDrawnCards = new CardStack();
 	
@@ -43,9 +38,9 @@ public class MemorizingDeck extends Deck {
 		// will also get dispatched down to this method when the constructor of `Deck` is
 		// executing. At that point, field `aDrawnCards` is not yet initialized. If you
 		// remove the null check, creating a new `MemorizingDeck` will raise a `NullPointerException`.
-//		if( aDrawnCards != null ) {
-			aDrawnCards = new CardStack();
-//		}
+		if( aDrawnCards != null ) {
+			aDrawnCards.clear();
+		}
 	}
 
 	@Override
