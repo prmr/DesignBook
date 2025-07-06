@@ -35,14 +35,25 @@ public class FoundationPileTest {
 	private FoundationPile aPile  = new FoundationPile();
 	
 	private int size() {
-		List<Card> temp = new ArrayList<>();
-		int size = 0;
+		List<Card> cards = new ArrayList<>();
 		while (!aPile.isEmpty()) { 
-			size++; 
-			temp.add(aPile.pop()); 
+			cards.add(aPile.pop()); 
 		}
-		while (!temp.isEmpty()) { 
-			aPile.push(temp.removeLast()); 
+		int size = cards.size();
+		while (!cards.isEmpty()) { 
+			aPile.push(cards.removeLast()); 
+		}
+		return size;
+	}
+	
+	private static int size(FoundationPile pPile) {
+		List<Card> cards = new ArrayList<>();
+		while (!pPile.isEmpty()) { 
+			cards.add(pPile.pop()); 
+		}
+		int size = cards.size();
+		while (!cards.isEmpty()) { 
+			pPile.push(cards.removeLast()); 
 		}
 		return size;
 	}
