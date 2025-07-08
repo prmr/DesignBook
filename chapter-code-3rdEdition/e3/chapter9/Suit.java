@@ -14,8 +14,7 @@ package e3.chapter9;
 /**
  * Represents the suit of a playing card.
  */
-public enum Suit 
-{ 
+public enum Suit { 
 	CLUBS, DIAMONDS, SPADES, HEARTS;
 	
 	public enum Color { RED, BLACK }
@@ -23,14 +22,11 @@ public enum Suit
 	/**
 	 * @return The color of the suit.
 	 */
-	public Color getColor()
-	{
-		if( this == CLUBS || this == SPADES )
-		{
+	public Color color() {
+		if (this == CLUBS || this == SPADES) {
 			return Color.BLACK;
 		}
-		else
-		{
+		else {
 			return Color.RED;
 		}
 	}

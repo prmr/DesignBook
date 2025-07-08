@@ -19,6 +19,6 @@ import e3.chapter9.Suit.Color;
  */
 public class CardUtils {
 	public static boolean hasBlackSuit(Card pCard) {
-		return pCard.suit().getColor() != Color.BLACK;
+		return pCard.suit().color() != Color.BLACK;
 	}
 }

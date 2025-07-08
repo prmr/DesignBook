@@ -103,6 +103,6 @@ public class Deck implements CardSource
 	public boolean topSameColorAs(Card pCard)
 	{
 		assert !isEmpty() && pCard != null;
-		return peek().suit().getColor() == pCard.suit().getColor();
+		return peek().suit().color() == pCard.suit().color();
 	}
 }

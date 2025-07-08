@@ -60,35 +60,35 @@ public class Samples
 		// Defining a function object of type Filter, which is an application-defined functional interface
 		Filter blackCards1 = new Filter() {
 			public boolean accept(Card pCard) {
-				return pCard.suit().getColor() == Suit.Color.BLACK;
+				return pCard.suit().color() == Suit.Color.BLACK;
 			}
 		};
 		
 		// Defining a function object whose type is a library functional interface
 		Predicate<Card> blackCards2 = new Predicate<Card>() {
 			public boolean test(Card pCard) {
-				return pCard.suit().getColor() == Suit.Color.BLACK;
+				return pCard.suit().color() == Suit.Color.BLACK;
 			}
 		};
 		
 		// Defining a predicate using a lambda expression (expression syntax with parameter type specified)
-		Predicate<Card> blackCards3 = (Card card) -> card.suit().getColor() == Suit.Color.BLACK;
+		Predicate<Card> blackCards3 = (Card card) -> card.suit().color() == Suit.Color.BLACK;
 		
 		// Defining a predicate using a lambda expression (block syntax with parameter type specified)
 		Predicate<Card> blackCards4 =
-				(Card card) -> { return card.suit().getColor() == Suit.Color.BLACK; };
+				(Card card) -> { return card.suit().color() == Suit.Color.BLACK; };
 				
 		// Defining a predicate using a lambda expression (expression syntax with parameter type not specified)
-		Predicate<Card> blackCards5 = (card) -> card.suit().getColor() == Suit.Color.BLACK;
+		Predicate<Card> blackCards5 = (card) -> card.suit().color() == Suit.Color.BLACK;
 		
 		// Defining a predicate using a lambda expression (expression syntax with parameter type not specified
 		// and no parentheses around the parameter
-		Predicate<Card> blackCards6 = card -> card.suit().getColor() == Suit.Color.BLACK;
+		Predicate<Card> blackCards6 = card -> card.suit().color() == Suit.Color.BLACK;
 		
 		// Sample use of the filter:
 		int total = 0;
-		for( Card card : new Deck().getCards() ) {
-			if( blackCards6.test(card) ) {
+		for (Card card : new Deck().getCards()) {
+			if (blackCards6.test(card)) {
 				total++;
 			}
 		}
@@ -96,7 +96,7 @@ public class Samples
 		
 		// Example use of removeIf with a lambda that implements the filter
 		ArrayList<Card> cards = new ArrayList<>(new Deck().getCards());
-		cards.removeIf(card -> card.suit().getColor() == Suit.Color.BLACK );
+		cards.removeIf(card -> card.suit().color() == Suit.Color.BLACK );
 		printAll(cards);
 		
 		// Using a lambda expression that delegates to an implementation method
@@ -170,10 +170,10 @@ public class Samples
 				.count();
 		
 		// Mapping data elements
-		new Deck().stream().map(card -> card.suit().getColor() );
+		new Deck().stream().map(card -> card.suit().color() );
 		
 		long result3 = new Deck().stream()
-				.map(card -> card.suit().getColor() )
+				.map(card -> card.suit().color() )
 				.filter( color -> color == e3.chapter9.Suit.Color.BLACK )
 				.count();
 		

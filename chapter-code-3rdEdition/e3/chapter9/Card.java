@@ -83,11 +83,11 @@ public class Card implements Comparable<Card> {
 	}
 	
 	public boolean hasBlackSuit() {
-		return aSuit.getColor() == Color.BLACK;
+		return aSuit.color() == Color.BLACK;
 	}
 
 	public boolean hasRedSuit() {
-		return aSuit.getColor() == Color.RED; 
+		return aSuit.color() == Color.RED; 
 	}
 	
 	// ********** Code samples for Section 9.3 **********
