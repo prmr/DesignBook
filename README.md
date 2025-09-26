@@ -57,7 +57,7 @@ A special thanks to the software design educators who have adopted the book to s
 |[Alberto Bacchelli](https://www.ifi.uzh.ch/en/zest/team/bacchelli.html)|University of Zurich|Software Construction|
 |[Gerardo Canfora](http://www.gerardocanfora.net/)|University of Sannio|Software Engineering|
 |[Ivano Malavolta](https://www.ivanomalavolta.com)|Vrije Universiteit Amsterdam|Software Design|
-
+|[Istvan David](https://istvandavid.com/)|McMaster University|Introduction to Software Development|
 
 ## License
 
