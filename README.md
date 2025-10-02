@@ -2,7 +2,13 @@
 
 Companion web site for the book ["Introduction to Software Design with Java"](https://www.springer.com/gp/book/9783030240936) by Martin P. Robillard, Springer 2019 and its [second edition](https://link.springer.com/book/10.1007/978-3-030-97899-0), 2022. 
 
-**NEW!** You can now view all the chapter code samples with additional _on-demand documentation_ accessible directly from the code. Check out the [CodeSample.info website](https://codesample.info).
+**NEW! The third edition of the book is now in production, with publication expected in January 2026.** It improves the presentation of numerous topics and provides a thoroughly revised set of code fragments that incorporate the latest features of the language (such as records and the latests APIs) and follow a more effective style. The diagrams are now included as vector graphics and follow the UML standard more closely. 
+
+## Interactive Code Samples
+
+You can now view all the chapter code samples with additional _on-demand documentation_ accessible directly from the code. Check out the [CodeSample.info website](https://codesample.info).
+
+![Screenshot of a page on CodeSample.info](codesample.png)
 
 ## Errata
 
