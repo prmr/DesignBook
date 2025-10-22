@@ -11,6 +11,8 @@
  *******************************************************************************/
 package chapter5;
 
+import e1.chapter5.Card;
+
 /**
  * Represents an entity from which it is possible to obtain cards.
  * This version supports the Null Object pattern.

@@ -13,6 +13,10 @@ package chapter3;
 
 import java.util.Comparator;
 
+import e1.chapter3.Card;
+import e1.chapter3.Rank;
+import e1.chapter3.Suit;
+
 /**
  * Can compare hands in either increasing or decreasing number of 
  * cards. This is not an example of good design, but the idea of the 

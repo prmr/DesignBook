@@ -11,6 +11,9 @@
  *******************************************************************************/
 package chapter2;
 
+import e1.chapter2.Rank;
+import e1.chapter2.Suit;
+
 /**
  * Implementation of a playing card. This class yields immutable objects.
  * This version is a facetious implementation with 6 Boolean values.

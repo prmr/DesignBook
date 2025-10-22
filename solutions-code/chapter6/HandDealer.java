@@ -11,6 +11,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import e1.chapter6.Card;
+import e1.chapter6.Deck;
+
 @SuppressWarnings("serial")
 public class HandDealer extends JFrame
 {

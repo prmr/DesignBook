@@ -16,6 +16,8 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
+import e1.chapter3.Card;
+
 /**
  * A collection of cards in a player's hand. Basic version for Exercise 1.
  */

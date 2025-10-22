@@ -13,6 +13,9 @@ package chapter4;
 
 import java.util.Optional;
 
+import e1.chapter4.Rank;
+import e1.chapter4.Suit;
+
 /**
  * Implementation of a playing card. This class yields immutable objects.
  * This version of the class also implements the Comparable interface and

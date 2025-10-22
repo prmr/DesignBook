@@ -1,5 +1,8 @@
 package chapter2;
 
+import e1.chapter2.Card;
+import e1.chapter2.Deck;
+
 /**
  * A class that represents a deck of cards composed of multiple decks
  * of cards. This version does not implement the copy-constructor 

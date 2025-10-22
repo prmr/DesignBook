@@ -16,6 +16,8 @@ import java.util.Map;
 
 import javax.swing.ImageIcon;
 
+import e1.chapter6.Card;
+
 /**
  * A class to store and manage images of the 52 cards.
  */

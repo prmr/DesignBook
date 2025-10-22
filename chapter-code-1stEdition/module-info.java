@@ -1,14 +1,14 @@
 module designbook
 {
-	exports chapter4;
-	exports chapter3;
-	exports chapter2;
-	exports chapter1;
-	exports chapter8;
-	exports chapter7;
-	exports chapter6;
-	exports chapter5;
-	exports chapter9;
+	exports e1.chapter4;
+	exports e1.chapter3;
+	exports e1.chapter2;
+	exports e1.chapter1;
+	exports e1.chapter8;
+	exports e1.chapter7;
+	exports e1.chapter6;
+	exports e1.chapter5;
+	exports e1.chapter9;
 
 	requires java.desktop;
 	requires javafx.controls;

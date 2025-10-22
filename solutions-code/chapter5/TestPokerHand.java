@@ -19,6 +19,10 @@ import java.lang.reflect.Method;
 
 import org.junit.jupiter.api.Test;
 
+import e1.chapter5.Card;
+import e1.chapter5.Rank;
+import e1.chapter5.Suit;
+
 public class TestPokerHand
 {
 	/*

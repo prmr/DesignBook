@@ -1,5 +1,8 @@
 package chapter2;
 
+import e1.chapter2.Rank;
+import e1.chapter2.Suit;
+
 public enum EnumeratedCard
 {
 	ACE_CLUBS, TWO_CLUBS, THREE_CLUBS, FOUR_CLUBS, FIVE_CLUBS, SIX_CLUBS, SEVEN_CLUBS, 

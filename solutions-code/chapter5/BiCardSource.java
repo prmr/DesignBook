@@ -11,6 +11,8 @@
  *******************************************************************************/
 package chapter5;
 
+import e1.chapter5.Card;
+
 public class BiCardSource implements CardSource
 {
 	private final CardSource aSource1;

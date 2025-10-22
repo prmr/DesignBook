@@ -16,6 +16,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+import e1.chapter8.Card;
+import e1.chapter8.Rank;
+import e1.chapter8.Suit;
+
 /**
  * Represents a deck of playing cards. In this version, the cards in the 
  * deck are stored in a list and the list of cards in the deck can 

@@ -16,6 +16,10 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
+import e1.chapter5.Card;
+import e1.chapter5.Rank;
+import e1.chapter5.Suit;
+
 // Let's assume we only consider ace-low as valid for straights, for simplicity.
 public class PokerHand
 {

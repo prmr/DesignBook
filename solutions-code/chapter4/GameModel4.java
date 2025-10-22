@@ -1,5 +1,7 @@
 package chapter4;
 
+import e1.chapter4.Deck;
+
 public class GameModel4
 {
 	private static final GameModel4 INSTANCE = new GameModel4();

@@ -15,6 +15,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import e1.chapter4.Rank;
+import e1.chapter4.Suit;
+
 /**
  * Represents a deck of playing cards. Simple version that 
  * includes the jokers.
