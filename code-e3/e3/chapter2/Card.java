@@ -16,6 +16,7 @@ package e3.chapter2;
  * Implementation of a playing card. This class yields immutable objects.
  */
 public class Card {
+	
 	private Rank aRank;
 	private Suit aSuit;
 	
@@ -36,14 +37,19 @@ public class Card {
 	/**
 	 * @return The rank of the card.
 	 */
-	public Rank getRank() {
+	public Rank rank() {
 		return aRank;
 	}
 	
 	/**
 	 * @return The suit of the card.
 	 */
-	public Suit getSuit() {
+	public Suit suit() {
 		return aSuit;
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("%s of %s", aRank, aSuit);
 	}
 }
