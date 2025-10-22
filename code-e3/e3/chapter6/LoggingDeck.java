@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 2nd edition by Martin P. Robillard.
+ * 3rd edition by Martin P. Robillard.
  *
  * Copyright (C) 2025 by Martin P. Robillard
  *
@@ -17,30 +17,29 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * A deck that logs cards when they are drawn. 
- * Although an implementing class of CardSource,
- * this class is not decorator.
+ * A deck that logs cards when they are drawn. Although an implementing class of
+ * CardSource, this class is not decorator.
  */
 public class LoggingDeck implements CardSource {
-	
+
 	private CardStack aCards = new CardStack();
-	
+
 	/**
 	 * Creates a new deck of 52 cards, shuffled.
 	 */
 	public LoggingDeck() {
 		shuffle();
 	}
-	
+
 	/**
 	 * Reinitializes the deck with all 52 cards, and shuffles them.
 	 */
 	public void shuffle() {
 		List<Card> cards = new ArrayList<>();
-		for( Suit suit : Suit.values() ) {
-            for( Rank rank : Rank.values())  {
-                cards.add( Card.get( rank, suit ));
-            }
+		for (Suit suit : Suit.values()) {
+			for (Rank rank : Rank.values()) {
+				cards.add(Card.get(rank, suit));
+			}
 		}
 		Collections.shuffle(cards);
 		aCards = new CardStack(cards);

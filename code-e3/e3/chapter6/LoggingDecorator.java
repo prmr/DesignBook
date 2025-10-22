@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 2nd edition by Martin P. Robillard.
+ * 3rd edition by Martin P. Robillard.
  *
  * Copyright (C) 2025 by Martin P. Robillard
  *
@@ -13,14 +13,13 @@
 package e3.chapter6;
 
 /**
- * A CardSource decorator that logs cards drawn from the
- * source.
+ * A CardSource decorator that logs cards drawn from the source.
  */
 public class LoggingDecorator implements CardSource {
-	
+
 	private CardSource aSource;
-	
-	public LoggingDecorator( CardSource pSource ) {
+
+	public LoggingDecorator(CardSource pSource) {
 		aSource = pSource;
 	}
 

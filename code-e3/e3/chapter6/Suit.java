@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 2nd edition by Martin P. Robillard.
+ * 3rd edition by Martin P. Robillard.
  *
  * Copyright (C) 2025 by Martin P. Robillard
  *
@@ -13,11 +13,8 @@
 package e3.chapter6;
 
 /**
- * Represents an abstract command in the Command design pattern.
+ * Represents the suit of a playing card.
  */
-public interface Command
-{
-	void execute();
-	
-	void undo();
+public enum Suit {
+	CLUBS, DIAMONDS, SPADES, HEARTS;
 }

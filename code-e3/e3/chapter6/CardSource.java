@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 2nd edition by Martin P. Robillard.
+ * 3rd edition by Martin P. Robillard.
  *
  * Copyright (C) 2025 by Martin P. Robillard
  *
@@ -13,11 +13,11 @@
 package e3.chapter6;
 
 /**
- * Represents an entity from which it is possible to obtain cards.
- * This version can be polymorphically copied.
+ * Represents an entity from which it is possible to obtain cards. This version
+ * can be polymorphically copied.
  */
-public interface CardSource
-{
+public interface CardSource {
+
 	/**
 	 * Returns a card from the source.
 	 *
@@ -25,15 +25,15 @@ public interface CardSource
 	 * @pre !isEmpty()
 	 */
 	Card draw();
-	
+
 	/**
 	 * @return True if there is no card in the source.
 	 */
 	boolean isEmpty();
-	
+
 	/**
-	 * @return A card source that is a deep copy (distinct object graph)
-	 *     of this card source.
+	 * @return A card source that is a deep copy (distinct object graph) of this
+	 *         card source.
 	 */
 	CardSource copy();
 }

@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 2nd edition by Martin P. Robillard.
+ * 3rd edition by Martin P. Robillard.
  *
  * Copyright (C) 2025 by Martin P. Robillard
  *
@@ -17,16 +17,15 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * A CardSource implementation that represents an aggregation
- * of zero or more card sources.
+ * A CardSource implementation that represents an aggregation of zero or more
+ * card sources.
  */
-public class CompositeCardSource implements CardSource
-{
+public class CompositeCardSource implements CardSource {
+
 	private final List<CardSource> aElements;
-	
+
 	/**
-	 * Creates a composite card source comprising all the elements
-	 * in pCardSources
+	 * Creates a composite card source comprising all the elements in pCardSources
 	 * 
 	 * @param pCardSources A sequence of cards sources to aggregate.
 	 */
@@ -35,9 +34,9 @@ public class CompositeCardSource implements CardSource
 		// to support the implementation of copy()
 		aElements = new ArrayList<>(Arrays.asList(pCardSources));
 	}
-	
+
 	@Override
-	public Card draw() { 
+	public Card draw() {
 		assert !isEmpty();
 		for (CardSource source : aElements) {
 			if (!source.isEmpty()) {
@@ -51,13 +50,13 @@ public class CompositeCardSource implements CardSource
 	@Override
 	public boolean isEmpty() {
 		for (CardSource source : aElements) {
-			if (!source.isEmpty()) { 
-				return false; 
+			if (!source.isEmpty()) {
+				return false;
 			}
 		}
 		return true;
 	}
-	
+
 	@Override
 	public CompositeCardSource copy() {
 		CompositeCardSource copy = new CompositeCardSource();

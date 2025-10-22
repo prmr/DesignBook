@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 2nd edition by Martin P. Robillard.
+ * 3rd edition by Martin P. Robillard.
  *
  * Copyright (C) 2025 by Martin P. Robillard
  *
@@ -16,11 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A CardSource decorator that memorizes cards drawn from the
- * source.
+ * A CardSource decorator that memorizes cards drawn from the source.
  */
-public class MemorizingDecorator implements CardSource
-{
+public class MemorizingDecorator implements CardSource {
+
 	private CardSource aElement;
 	private List<Card> aDrawnCards = new ArrayList<>();
 
