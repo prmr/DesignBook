@@ -18,6 +18,7 @@ import java.util.List;
 /**
  * Code for the Inventory case study of section .4.
  */
+@SuppressWarnings("exports")
 public class Inventory implements Iterable<Item>
 {
 	/**

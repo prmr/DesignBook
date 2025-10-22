@@ -27,6 +27,7 @@ import e1.chapter8.Suit;
  * deck are stored in a list and the list of cards in the deck can 
  * be obtained by client code using an immutable wrapper object.
  */
+@SuppressWarnings("deprecation")
 public class ObservableDeck3 extends Observable
 {
 	private final List<Card> aCards = new ArrayList<>();
@@ -103,6 +104,7 @@ public class ObservableDeck3 extends Observable
 	}
 }
 
+@SuppressWarnings("deprecation")
 class DrawLogger3 implements Observer
 {
 	@Override
@@ -116,6 +118,7 @@ class DrawLogger3 implements Observer
 	}
 }
 
+@SuppressWarnings("deprecation")
 class SizeStatus3 implements Observer
 {
 	@Override
