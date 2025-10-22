@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="chapter-code-1stEdition"/>
+	<classpathentry kind="src" path="code-e1"/>
 	<classpathentry kind="src" path="solutions-code"/>
 	<classpathentry kind="src" path="chapter-code-2ndEdition"/>
 	<classpathentry kind="src" path="code"/>
