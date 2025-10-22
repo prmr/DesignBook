@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="code-e1"/>
-	<classpathentry kind="src" path="solutions-code"/>
 	<classpathentry kind="src" path="code-e2"/>
-	<classpathentry kind="src" path="code"/>
+	<classpathentry kind="src" path="code-e3"/>
+	<classpathentry kind="src" path="solutions-code"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5">
 		<attributes>
 			<attribute name="module" value="true"/>
