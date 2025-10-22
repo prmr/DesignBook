@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 3nd edition by Martin P. Robillard.
+ * 3rd edition by Martin P. Robillard.
  *
  * Copyright (C) 2025 by Martin P. Robillard
  *
@@ -21,10 +21,6 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-
-import chapter5.Card;
-import chapter5.Rank;
-import chapter5.Suit;
 
 public class Bug {
 	
@@ -59,15 +55,15 @@ public class Bug {
 	@ParameterizedTest
 	@MethodSource("allCards")
 	void testToCard_AllCardsValid(Card pCard) {
-		Card actual = toCard("%s of %s".formatted(pCard.getRank(), pCard.getSuit()));
+		Card actual = toCard("%s of %s".formatted(pCard.rank(), pCard.suit()));
 		assertSame(pCard, actual);
 	}
 	
 	@ParameterizedTest
 	@MethodSource("allCards")
 	void testToCard_AllCardsValidLowercase(Card pCard) {
-		Card actual = toCard("%s of %s".formatted(pCard.getRank().toString().toLowerCase(), 
-				pCard.getSuit().toString().toLowerCase()));
+		Card actual = toCard("%s of %s".formatted(pCard.rank().toString().toLowerCase(), 
+				pCard.suit().toString().toLowerCase()));
 		assertSame(pCard, actual);
 	}
 	

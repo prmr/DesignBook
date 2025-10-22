@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 3nd edition by Martin P. Robillard.
+ * 3rd edition by Martin P. Robillard.
  *
  * Copyright (C) 2025 by Martin P. Robillard
  *
@@ -12,25 +12,18 @@
  *******************************************************************************/
 package e3.chapter5;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import org.junit.jupiter.api.Test;
-
-public class AbsTest {
+/*
+ * Sample class under test.
+ */
+public class GameModel implements GameModelView {
 	
-	@Test
-	void testAbs_Positive() { 
-		assertEquals(5, Math.abs(5)); 
+	private final PlayingStrategy aPlayingStrategy;
+
+	public GameModel(PlayingStrategy pStrategy) {
+		aPlayingStrategy = pStrategy;
 	}
 	
-	@Test
-	void testAbs_Negative() { 
-		assertEquals(5, Math.abs(-5)); 
-	}
-	
-	@Test
-	void testAbs_Max() { 
-		// This test will fail.
-		assertEquals(Integer.MAX_VALUE, Math.abs(Integer.MIN_VALUE));
+	public void tryToAutoPlay() {
+		aPlayingStrategy.computeNextMove(this);
 	}
 }

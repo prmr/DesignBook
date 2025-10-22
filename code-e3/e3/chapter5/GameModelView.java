@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 3nd edition by Martin P. Robillard.
+ * 3rd edition by Martin P. Robillard.
  *
  * Copyright (C) 2025 by Martin P. Robillard
  *
@@ -13,17 +13,8 @@
 package e3.chapter5;
 
 /*
- * Sample class under test.
+ * Dependency of the sample class under test GameModel.
+ * Provided here just to make the code compile.
  */
-public class GameModel implements GameModelView {
-	
-	private final PlayingStrategy aPlayingStrategy;
-
-	public GameModel(PlayingStrategy pStrategy) {
-		aPlayingStrategy = pStrategy;
-	}
-	
-	public void tryToAutoPlay() {
-		aPlayingStrategy.computeNextMove(this);
-	}
-}
+public interface GameModelView
+{}

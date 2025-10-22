@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 3nd edition by Martin P. Robillard.
+ * 3rd edition by Martin P. Robillard.
  *
  * Copyright (C) 2025 by Martin P. Robillard
  *
@@ -13,9 +13,6 @@
 package e3.chapter5;
 
 import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
-
-import java.lang.reflect.Field;
 
 import org.junit.jupiter.api.Test;
 

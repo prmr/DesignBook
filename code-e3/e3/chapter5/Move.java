@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 3nd edition by Martin P. Robillard.
+ * 3rd edition by Martin P. Robillard.
  *
  * Copyright (C) 2025 by Martin P. Robillard
  *
@@ -13,9 +13,11 @@
 package e3.chapter5;
 
 /*
- * Dependency of the sample class under test GameModel.
+ * Dependencies of the sample class under test GameModel.
  * Provided here just to make the code compile.
  */
-public interface PlayingStrategy {
-	Move computeNextMove(GameModelView pModel);
-}
+public interface Move
+{}
+
+class NullMove implements Move
+{}

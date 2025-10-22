@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 3nd edition by Martin P. Robillard.
+ * 3rd edition by Martin P. Robillard.
  *
  * Copyright (C) 2025 by Martin P. Robillard
  *
@@ -42,18 +42,6 @@ public class FoundationPileTest {
 		int size = cards.size();
 		while (!cards.isEmpty()) { 
 			aPile.push(cards.removeLast()); 
-		}
-		return size;
-	}
-	
-	private static int size(FoundationPile pPile) {
-		List<Card> cards = new ArrayList<>();
-		while (!pPile.isEmpty()) { 
-			cards.add(pPile.pop()); 
-		}
-		int size = cards.size();
-		while (!cards.isEmpty()) { 
-			pPile.push(cards.removeLast()); 
 		}
 		return size;
 	}
