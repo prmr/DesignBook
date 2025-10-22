@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 2nd edition by Martin P. Robillard.
+ * 3rd edition by Martin P. Robillard.
  *
- * Copyright (C) 2022 by Martin P. Robillard
+ * Copyright (C) 2025 by Martin P. Robillard
  *
  * This code is licensed under a Creative Commons 
  * Attribution-NonCommercial-NoDerivatives 4.0 International License.
@@ -13,8 +13,8 @@
 package e3.chapter8;
 
 /**
- * Represents the suit of a playing card.
+ * Represents the rank of a playing card.
  */
-public enum Suit { 
-	CLUBS, DIAMONDS, SPADES, HEARTS;
+public enum Rank { 
+	ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING 
 }

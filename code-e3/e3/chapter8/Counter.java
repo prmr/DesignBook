@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 2nd edition by Martin P. Robillard.
+ * 3rd edition by Martin P. Robillard.
  *
- * Copyright (C) 2022 by Martin P. Robillard
+ * Copyright (C) 2025 by Martin P. Robillard
  *
  * This code is licensed under a Creative Commons 
  * Attribution-NonCommercial-NoDerivatives 4.0 International License.
@@ -13,10 +13,11 @@
 package e3.chapter8;
 
 /**
- * Sample observer of ObservableCardStack. Counts the number of
- * cards pushed on a stack.
+ * Sample observer of ObservableCardStack. Counts the number of cards pushed on
+ * a stack.
  */
 public class Counter implements CardStackObserver {
+
 	private int aCount = 0;
 
 	@Override

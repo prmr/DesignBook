@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 2nd edition by Martin P. Robillard.
+ * 3rd edition by Martin P. Robillard.
  *
- * Copyright (C) 2022 by Martin P. Robillard
+ * Copyright (C) 2025 by Martin P. Robillard
  *
  * This code is licensed under a Creative Commons 
  * Attribution-NonCommercial-NoDerivatives 4.0 International License.
@@ -42,63 +42,56 @@ import java.util.List;
 /**
  * Models a deck of 52 cards.
  */
-public class Deck implements CardSource, Iterable<Card>
-{
+public class Deck implements CardSource, Iterable<Card> {
+
 	private CardStack aCards;
-	
+
 	/**
 	 * Creates a new deck of 52 cards, shuffled.
 	 */
-	public Deck()
-	{
+	public Deck() {
 		shuffle();
 	}
-	
+
 	/**
 	 * Reinitializes the deck with all 52 cards, and shuffles them.
 	 */
-	public void shuffle()
-	{
+	public void shuffle() {
 		List<Card> cards = new ArrayList<>();
-		for( Suit suit : Suit.values() )
-		{
-            for( Rank rank : Rank.values() )
-            {
-                cards.add( Card.get( rank, suit ));
-            }
+		for (Suit suit : Suit.values()) {
+			for (Rank rank : Rank.values()) {
+				cards.add(Card.get(rank, suit));
+			}
 		}
 		Collections.shuffle(cards);
 		aCards = new CardStack(cards);
 	}
-	
+
 	/**
 	 * Draws a card from the deck and removes the card from the deck.
+	 * 
 	 * @return The card drawn.
 	 * @pre !isEmpty()
 	 */
-	public Card draw()
-	{
+	public Card draw() {
 		assert !isEmpty();
 		return aCards.pop();
 	}
-	
+
 	/**
 	 * @return True iff there are no cards in the deck.
 	 */
-	public boolean isEmpty()
-	{
+	public boolean isEmpty() {
 		return aCards.isEmpty();
 	}
 
 	@Override
-	public Iterator<Card> iterator()
-	{
+	public Iterator<Card> iterator() {
 		return aCards.iterator();
 	}
-	
+
 	@Override
-	public void accept(CardSourceVisitor pVisitor)
-	{
+	public void accept(CardSourceVisitor pVisitor) {
 		pVisitor.visitDeck(this);
 	}
 }

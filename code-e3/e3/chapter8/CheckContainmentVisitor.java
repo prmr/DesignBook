@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 2nd edition by Martin P. Robillard.
+ * 3rd edition by Martin P. Robillard.
  *
- * Copyright (C) 2022 by Martin P. Robillard
+ * Copyright (C) 2025 by Martin P. Robillard
  *
  * This code is licensed under a Creative Commons 
  * Attribution-NonCommercial-NoDerivatives 4.0 International License.
@@ -16,12 +16,12 @@ package e3.chapter8;
  * A visitor that checks whether a card is contained in a card source 
  * structure.
  */
-public class ChecksContainmentVisitor extends AbstractCardSourceVisitor
+public class CheckContainmentVisitor extends AbstractCardSourceVisitor
 {
 	private final Card aCard;
 	private boolean aResult = false;
 	
-	public ChecksContainmentVisitor(Card pCard)
+	public CheckContainmentVisitor(Card pCard)
 	{
 		aCard = pCard;
 	}

@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 2nd edition by Martin P. Robillard.
+ * 3rd edition by Martin P. Robillard.
  *
- * Copyright (C) 2022 by Martin P. Robillard
+ * Copyright (C) 2025 by Martin P. Robillard
  *
  * This code is licensed under a Creative Commons 
  * Attribution-NonCommercial-NoDerivatives 4.0 International License.
@@ -13,16 +13,10 @@
 package e3.chapter8;
 
 /**
- * Sample observer of ObservableCardStack. Detects when an ace is pushed onto
- * the stack. Two of the callbacks are unnecessary and purposefully not 
- * overridden.
+ * An object that observes a CardStack. Design with push data flow.
  */
-public class AceDetector implements CardStackObserver {
-
-	@Override
-	public void pushed(Card pCard) {
-		if (pCard.getRank() == Rank.ACE) {
-			System.out.println("Ace detected!");
-		}
-	}
+public interface CardStackObserver {
+	default void pushed(Card pCard) {}
+	default void popped(Card pCard) {}
+	default void cleared() {}
 }

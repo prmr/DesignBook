@@ -19,6 +19,15 @@ module designbook
 	exports e2.chapter7;
 	exports e2.chapter8;
 	exports e2.chapter9;
+	
+	exports e3.chapter1;
+	exports e3.chapter2;
+	exports e3.chapter3;
+	exports e3.chapter4;
+	exports e3.chapter5;
+	exports e3.chapter6;
+	exports e3.chapter7;
+	exports e3.chapter8;
 
 	requires java.desktop;
 	requires javafx.controls;
