@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Companion code for the book "Introduction to Software Design with Java",
- * 2nd edition by Martin P. Robillard.
+ * 3rd edition by Martin P. Robillard.
  *
- * Copyright (C) 2022 by Martin P. Robillard
+ * Copyright (C) 2025 by Martin P. Robillard
  *
  * This code is licensed under a Creative Commons 
  * Attribution-NonCommercial-NoDerivatives 4.0 International License.
@@ -12,19 +12,21 @@
  *******************************************************************************/
 package e3.chapter7;
 
-/**
- * Decorator that prints the card drawn on the console.
- */
-public class LoggingDecorator extends AbstractDecorator {
+public abstract class AbstractDecorator implements CardSource {
 	
-	public LoggingDecorator(CardSource pElement) {
-		super(pElement);
+	private final CardSource aElement;
+	
+	protected AbstractDecorator( CardSource pElement ) {
+		aElement = pElement;
 	}
 	
 	@Override
 	public Card draw() {
-		Card card = super.draw();
-		System.out.println(String.format("Draws %s", card));
-		return card;
+		return aElement.draw();
+	}
+
+	@Override
+	public boolean isEmpty() {
+		return aElement.isEmpty();
 	}
 }
