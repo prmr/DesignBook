@@ -24,13 +24,6 @@ Although you can browse the code on GitHub, the recommended way to peruse the co
 2. Create a new User Library under `Eclipse -> Window -> Preferences -> Java -> Build Path -> User Libraries -> New`
 3. Name it `JavaFX` and include the jars under the `lib` folder from your unzipped JavaFX download location.
 
-## Errata
-
-Check the Errata for clarifications and corrections. If you spot a problem that is not listed, please check the [issues](https://github.com/prmr/DesignBook/issues) and open a new one if the problem has not yet been reported.
-
-* [Errata for the First Edition](errata-e1.md);
-* [Errata for the Second Edition](errata-e2.md);
-
 ## Practice Exercises
 
 The exercises are meant to be completed in order, after studying each chapter. Exercises tagged with a star (:star:) are challenging and those tagged with a magnifying glass (:mag:) are based on the exploration of the sample applications. 
@@ -46,6 +39,13 @@ The exercises are meant to be completed in order, after studying each chapter. E
 |7|[Exercises](exercises/e-chapter7.md)|[Solutions](solutions/s-chapter7.md)
 |8|[Exercises](exercises/e-chapter8.md)|[Solutions](solutions/s-chapter8.md)
 |9|[Exercises](exercises/e-chapter9.md)|[Solutions](solutions/s-chapter9.md)
+
+## Errata
+
+Check the Errata for clarifications and corrections. If you spot a problem that is not listed, please check the [issues](https://github.com/prmr/DesignBook/issues) and open a new one if the problem has not yet been reported.
+
+* [Errata for the First Edition](errata-e1.md);
+* [Errata for the Second Edition](errata-e2.md);
 
 ## Acknowledgements
 
