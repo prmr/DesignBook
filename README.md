@@ -10,25 +10,26 @@ You can now view all the chapter code samples with additional _on-demand documen
 
 ![Screenshot of a page on CodeSample.info](codesample.png)
 
+## Source Code
+
+There are three source folders on this site:
+
+* `code-e1` The complete and commented version of the code samples for the first edition of the book;
+* `code-e2` The complete and commented version of the code samples for the second edition of the book.
+* `code-e3` The complete and commented version of the code samples for the third edition of the book.
+* `solutions-code` The code file for selected exercises. The code files are referenced from the appropriate solutions pages.
+
+Although you can browse the code on GitHub, the recommended way to peruse the code samples is to [clone the repository](https://www.git-scm.com/docs/git-clone). The repository includes the configurations files necessary to build the code automatically in [Eclipse](https://www.eclipse.org/). However, because some code relies on the JavaFX library, you also need to:
+1. Download the [JavaFX SDK](https://gluonhq.com/products/javafx/) and unzip it to a desired location;
+2. Create a new User Library under `Eclipse -> Window -> Preferences -> Java -> Build Path -> User Libraries -> New`
+3. Name it `JavaFX` and include the jars under the `lib` folder from your unzipped JavaFX download location.
+
 ## Errata
 
 Check the Errata for clarifications and corrections. If you spot a problem that is not listed, please check the [issues](https://github.com/prmr/DesignBook/issues) and open a new one if the problem has not yet been reported.
 
 * [Errata for the First Edition](errata-e1.md);
 * [Errata for the Second Edition](errata-e2.md);
-
-## Source Code
-
-There are three source folders on this site:
-
-* `chapter-code` The complete and commented version of the code samples for the first edition of the book;
-* `chapter-code-2ndEdition` The complete and commented version of the code samples for the second edition of the book.
-* `solutions-code` The complete version of the code file for selected exercises. The code files are referenced from the appropriate solutions pages.
-
-Although you can browse the code on GitHub, the recommended way to peruse the code samples is to [clone the repository](https://www.git-scm.com/docs/git-clone). The repository includes the configurations files necessary to build the code automatically in [Eclipse](https://www.eclipse.org/). However, because some code relies on the JavaFX library, you also need to:
-1. Download the [JavaFX SDK](https://gluonhq.com/products/javafx/) and unzip it to a desired location;
-2. Create a new User Library under `Eclipse -> Window -> Preferences -> Java -> Build Path -> User Libraries -> New`
-3. Name it `JavaFX` and include the jars under the `lib` folder from your unzipped JavaFX download location.
 
 ## Practice Exercises
 
