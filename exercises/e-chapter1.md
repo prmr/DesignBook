@@ -26,7 +26,7 @@ Building on your solution to Exercise 2, add a new option to control the capital
 
 [_Solution_](https://codesample.info/samples/designbook/solutions1/Exercise03.html)
 
-## Exercise 4 :star:
+## Exercise 4 ⭐
 
 Modify the code of [TwelveDays](../chapter-code-2ndEdition/chapter1/TwelveDays.java) so that all the strings are _externalized_ in a properties file. Externalizing strings allows you to [localize](https://en.wikipedia.org/wiki/Language_localisation) the program, for example by having versions in different languages. For this project you will need to learn how to use class [ResourceBundle](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ResourceBundle.html).
 

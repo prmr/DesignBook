@@ -102,13 +102,13 @@ _Hint 2: Try implementing your solution using [`StringJoiner`](https://docs.orac
 
 [_Solution_](https://codesample.info/samples/designbook/solutions2/Exercise12.html)
 
-## Exercise 13 :mag:
+## Exercise 13 :mag: 🔍 ⭐
 
 Check out [Solitaire 1.3](https://github.com/prmr/Solitaire/tree/v1.3). Re-write the `Deck` class so that instead of representing a shuffled deck of cards, it construct objects with a pre-determined order of cards that allows you to win the game. Run the application to play (and win) a few games.
 
 For an additional challenge, revise the design of the `Deck` class so it supports a small number of winnable configurations, and figure out how to select the desired configuration by passing a command-line argument to the application.
 
-_No solution is provided for the exploration projects._
+_No solution is provided for starred exercises._
 
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
