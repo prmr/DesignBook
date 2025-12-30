@@ -32,7 +32,7 @@ The exercises are meant to be completed in order, after studying each chapter. E
 |---|---|---|
 |1|[Exercises](exercises/e-chapter1.md)|On the exercise page.
 |2|[Exercises](exercises/e-chapter2.md)|On the exercise page.
-|3|[Exercises](exercises/e-chapter3.md)|[Solutions](solutions/s-chapter3.md)
+|3|[Exercises](exercises/e-chapter3.md)|On the exercise page.
 |4|[Exercises](exercises/e-chapter4.md)|[Solutions](solutions/s-chapter4.md)
 |5|[Exercises](exercises/e-chapter5.md)|[Solutions](solutions/s-chapter5.md)
 |6|[Exercises](exercises/e-chapter6.md)|[Solutions](solutions/s-chapter6.md)
