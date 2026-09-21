@@ -55,7 +55,7 @@ public class ObservableDeck3 extends Observable
 		}
 		Collections.shuffle(aCards);
 		setChanged();
-		notifyObservers(DeckChangeType.SHUFFLED);
+		notifyObservers(new DeckChangeEvent(DeckChangeType.SHUFFLED));
 	}
 	
 	/**
