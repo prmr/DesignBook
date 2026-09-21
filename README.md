@@ -36,7 +36,7 @@ The exercises are meant to be completed in order, after studying each chapter. E
 |4|[Exercises](exercises/e-chapter4.md)|On the exercise page.
 |5|[Exercises](exercises/e-chapter5.md)|On the exercise page.
 |6|[Exercises](exercises/e-chapter6.md)|On the exercise page.
-|7|[Exercises](exercises/e-chapter7.md)|[Solutions](solutions/s-chapter7.md)
+|7|[Exercises](exercises/e-chapter7.md)|On the exercise page.
 |8|[Exercises](exercises/e-chapter8.md)|[Solutions](solutions/s-chapter8.md)
 |9|[Exercises](exercises/e-chapter9.md)|[Solutions](solutions/s-chapter9.md)
 
@@ -71,7 +71,7 @@ A special thanks to the software design educators who have adopted the book to s
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
-Unless otherwise noted, the content of this repository is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>. 
+The content of this repository is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>. 
 
-Copyright Martin P. Robillard 2019-2025
+Copyright Martin P. Robillard 2019-2026
 
