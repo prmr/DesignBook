@@ -2,7 +2,7 @@
  * Companion code for the book "Introduction to Software Design with Java",
  * 3rd edition by Martin P. Robillard.
  *
- * Copyright (C) 2025 by Martin P. Robillard
+ * Copyright (C) 2026 by Martin P. Robillard
  *
  * This code is licensed under a Creative Commons 
  * Attribution-NonCommercial-NoDerivatives 4.0 International License.
@@ -23,10 +23,10 @@ public class ConsumingDecorator implements CardSource {
 
 	private final CardSource aSource;
 	private final Consumer<Card> aCardConsumer;
-	
+
 	/**
-	 * Illustrates who to create a decorated card source
-	 * that prints every card drawn to the console.
+	 * Illustrates who to create a decorated card source that prints every card
+	 * drawn to the console.
 	 */
 	public static void main(String[] args) {
 		ConsumingDecorator source = new ConsumingDecorator(new Deck(), System.out::println);

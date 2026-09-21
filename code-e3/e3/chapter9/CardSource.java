@@ -2,7 +2,7 @@
  * Companion code for the book "Introduction to Software Design with Java",
  * 3rd edition by Martin P. Robillard.
  *
- * Copyright (C) 2025 by Martin P. Robillard
+ * Copyright (C) 2026 by Martin P. Robillard
  *
  * This code is licensed under a Creative Commons 
  * Attribution-NonCommercial-NoDerivatives 4.0 International License.
@@ -12,14 +12,19 @@
 package e3.chapter9;
 
 /**
- * Functional interface used in Section 9.2.
+ * Represents an entity from which it is possible to obtain cards.
  */
-public interface Filter {
+public interface CardSource {
+	/**
+	 * Returns a card from the source.
+	 *
+	 * @return The next available card.
+	 * @pre !isEmpty()
+	 */
+	Card draw();
 	
 	/**
-	 * @param pCard The card to test
-	 * @return True if this filter accepts pCard
-	 * @pre pCard != null
+	 * @return True if there is no card in the source.
 	 */
-	boolean accept(Card pCard);
+	boolean isEmpty();
 }

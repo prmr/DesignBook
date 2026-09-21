@@ -2,7 +2,7 @@
  * Companion code for the book "Introduction to Software Design with Java",
  * 3rd edition by Martin P. Robillard.
  *
- * Copyright (C) 2025 by Martin P. Robillard
+ * Copyright (C) 2026 by Martin P. Robillard
  *
  * This code is licensed under a Creative Commons 
  * Attribution-NonCommercial-NoDerivatives 4.0 International License.
@@ -11,20 +11,14 @@
  *******************************************************************************/
 package e3.chapter9;
 
+import e3.chapter9.Suit.Color;
+
 /**
- * Represents an entity from which it is possible to obtain cards.
+ * Used to demonstrate how to use references to static method.
+ * See corresponding client code in class Samples.
  */
-public interface CardSource {
-	/**
-	 * Returns a card from the source.
-	 *
-	 * @return The next available card.
-	 * @pre !isEmpty()
-	 */
-	Card draw();
-	
-	/**
-	 * @return True if there is no card in the source.
-	 */
-	boolean isEmpty();
+public class CardUtils {
+	public static boolean hasBlackSuit(Card pCard) {
+		return pCard.suit().color() != Color.BLACK;
+	}
 }

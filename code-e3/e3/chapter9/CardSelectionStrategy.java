@@ -2,7 +2,7 @@
  * Companion code for the book "Introduction to Software Design with Java",
  * 3rd edition by Martin P. Robillard.
  *
- * Copyright (C) 2025 by Martin P. Robillard
+ * Copyright (C) 2026 by Martin P. Robillard
  *
  * This code is licensed under a Creative Commons 
  * Attribution-NonCommercial-NoDerivatives 4.0 International License.
@@ -19,12 +19,11 @@ import java.util.Optional;
  *
  */
 public interface CardSelectionStrategy {
-	
+
 	/**
 	 * Select an instance of Card from pCards.
 	 * 
-	 * @param A
-	 *            list of cards to choose from.
+	 * @param A list of cards to choose from.
 	 * @pre pCards != null && !pCards.isEmpty()
 	 * @post If RETURN.isPresent(), pCards.contains(RETURN.get())
 	 */
@@ -34,11 +33,11 @@ public interface CardSelectionStrategy {
 		return Optional.of(pCards.get(0));
 	}
 
-	static Optional<Card> lowestBlackCard(List<Card> pCards) { 
+	static Optional<Card> lowestBlackCard(List<Card> pCards) {
 		return null; // This is a stub
 	}
 
-	 static Optional<Card> highestFaceCard(List<Card> pCards) { 
+	static Optional<Card> highestFaceCard(List<Card> pCards) {
 		return null; // This is a stub
 	}
 }

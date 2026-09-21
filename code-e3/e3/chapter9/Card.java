@@ -2,7 +2,7 @@
  * Companion code for the book "Introduction to Software Design with Java",
  * 3rd edition by Martin P. Robillard.
  *
- * Copyright (C) 2025 by Martin P. Robillard
+ * Copyright (C) 2026 by Martin P. Robillard
  *
  * This code is licensed under a Creative Commons 
  * Attribution-NonCommercial-NoDerivatives 4.0 International License.
@@ -11,10 +11,7 @@
  *******************************************************************************/
 package e3.chapter9;
 
-import static java.util.Comparator.comparing;
-
 import java.util.Comparator;
-import java.util.List;
 
 import e3.chapter9.Suit.Color;
 
@@ -170,38 +167,6 @@ public class Card implements Comparable<Card> {
 		return comparingBySuit().reversed().thenComparing(comparingByRank().reversed());
 	}
 	
-	public static void sampleSortingApplication1() {
-		List<Card> cards = new Deck().getCards();
-		cards.sort(
-			Comparator
-				.comparing((Card card) -> card.suit())
-				.reversed()
-				.thenComparing(Comparator.comparing((Card card) -> card.rank())
-						.reversed()));
-	}
-	
-	public static void sampleSortingApplication2() {
-		List<Card> cards = new Deck().getCards();
-		cards.sort(comparing((Card card) -> card.suit())
-				.reversed()
-				.thenComparing(comparing((Card card) -> card.rank())
-						.reversed()));
-	}
-	
-	public static void sampleSortingApplication3() {
-		List<Card> cards = new Deck().getCards();
-		cards.sort(comparing(Card::suit)
-				.reversed()
-				.thenComparing(comparing(Card::rank)
-						.reversed()));
-	}
-	
-	public static void sampleSortingApplication4() {
-		List<Card> cards = new Deck().getCards();
-		cards.sort(comparing(Card::suit)
-				.thenComparing(Card::rank).reversed());
-	}
-	
 	public boolean isFaceCard() {
 		return rank().ordinal() >= Rank.JACK.ordinal(); 
 	}
@@ -209,12 +174,5 @@ public class Card implements Comparable<Card> {
 	@Override
 	public int compareTo(Card o) {
 		return COMPARATOR.compare(this, o);
-	}
-	
-	/**
-	 * @return A random card.
-	 */
-	public static Card random() {
-		return new Deck().draw();
 	}
 }

@@ -2,7 +2,7 @@
  * Companion code for the book "Introduction to Software Design with Java",
  * 3rd edition by Martin P. Robillard.
  *
- * Copyright (C) 2025 by Martin P. Robillard
+ * Copyright (C) 2026 by Martin P. Robillard
  *
  * This code is licensed under a Creative Commons 
  * Attribution-NonCommercial-NoDerivatives 4.0 International License.
@@ -11,24 +11,15 @@
  *******************************************************************************/
 package e3.chapter9;
 
-import java.util.function.Consumer;
-
 /**
- * Sample observable object where the Observer design pattern is applied using
- * functional-style design.
- * 
- * See Section 9.5.
+ * Functional interface used in Section 9.2.
  */
-public class ObservableDeck extends Deck {
-	private Consumer<Card> aDrawHandler;
-
-	public ObservableDeck(Consumer<Card> pDrawHandler) {
-		aDrawHandler = pDrawHandler;
-	}
-
-	public Card draw() {
-		Card card = super.draw();
-		aDrawHandler.accept(card);
-		return card;
-	}
+public interface Filter {
+	
+	/**
+	 * @param pCard The card to test
+	 * @return True if this filter accepts pCard
+	 * @pre pCard != null
+	 */
+	boolean accept(Card pCard);
 }
